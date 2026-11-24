@@ -31,4 +31,22 @@ class TestSolver(unittest.TestCase):
         with self.assertRaises(ValueError): solve(d)
     def test_audit_missing(self):
         self.assertTrue(audit(example(),{"L1":0},PROFILES["balanced"])["errors"])
+    def test_institute_pilot(self):
+        import json
+        from pathlib import Path
+        p=Path(__file__).resolve().parents[1]/"pilot-fifth.js"
+        src=json.loads(p.read_text(encoding="utf-8").split("=",1)[1].strip().rstrip(";"))
+        groups=sorted({g for x in src["records"] for g in x["groups"]})
+        d={"institute":"Институт экономики и управления АПК","term":"2026/2027-1","scope":"pilot",
+           "groupUnits":{g:[g] for g in groups},"routes":{"02|03":5,"03|02":5},
+           "bufferMinutes":5,"maxGroupDay":5,"maxTeacherDay":5,"blocked":[],"lessons":[]}
+        for x in src["records"]:
+            d["lessons"].append({"id":x["id"],"title":x["title"],"groups":x["groups"],"units":x["groups"],
+              "teachers":[x["teacher"]],"room":x["room"],"building":x["room"][:2],
+              "slot":x["week"]*25+x["day"]*5+x["period"],"allowedSlots":list(range(x["week"]*25,x["week"]*25+25))})
+        result=solve(d,seconds=15)
+        self.assertIn(result["status"],("FEASIBLE","OPTIMAL"))
+        self.assertFalse(result["audit"]["errors"])
+        self.assertEqual(len(result["lessons"]),len(src["records"]))
+        print("PILOT (hypothetical routes):",json.dumps({k:result[k] for k in ("status","objective","best_bound","relative_gap","audit","baseline")},ensure_ascii=False))
 if __name__=="__main__":unittest.main()
