@@ -24,3 +24,26 @@ const result=new Function("performance","document","inputs",source+"\nreturn ("+
 console.log(JSON.stringify(result,null,2));
 assert.equal(result.pages,10);assert.equal(result.legacy,28);assert.ok(result.covered);
 for(const r of result.results){assert.ok(r.closed&&r.expanded,r.page);assert.ok(r.html>100,r.page);assert.deepEqual(r.duplicates,[],r.page)}
+
+const manifest=inputs.calendar;
+const files=manifest.groups.map(g=>JSON.parse(read("data/calendar-11/"+g.file)));
+const roomChecks=new Function("manifest","files",read("rooms-18.js")+"\nreturn {aggregateRooms18,roomClass18,roomEvidence18};")(manifest,files);
+const cat=JSON.parse(read("institute-catalog.js").split(/=(.*)/s)[1].trim().replace(/;$/,""));
+const inventory=roomChecks.aggregateRooms18(manifest,files,cat.buildings);
+assert.equal(inventory.total,manifest.totals.cards);
+assert.equal(inventory.recognized+inventory.unknown.reduce((s,u)=>s+u.cards,0),inventory.total);
+assert.ok(inventory.rooms.length>0);
+assert.equal(new Set(inventory.rooms.map(r=>r.id)).size,inventory.rooms.length);
+assert.ok(inventory.rooms.every(r=>r.intervals<=r.cards&&r.groups<=83&&r.groups<=r.cards));
+assert.equal(roomChecks.roomClass18("02-108; 02-108",cat.buildings).room,"02-108");
+assert.equal(roomChecks.roomClass18("02-108; 02-109",cat.buildings).reason,"multiple");
+assert.equal(roomChecks.roomClass18("29-218",cat.buildings).reason,"unresolved");
+assert.throws(()=>roomChecks.aggregateRooms18(manifest,files.slice(1),cat.buildings));
+const id=inventory.rooms[0].id,passport={id,capacity:40,equipment:"Synthetic test only",source:"Synthetic test evidence",verifiedDate:"2026-11-24"};
+const envelope=rooms=>({version:"0.18",checked:inventory.checked,rooms});
+assert.equal(roomChecks.roomEvidence18(envelope([passport]),inventory)[id].capacity,40);
+assert.throws(()=>roomChecks.roomEvidence18(envelope([{...passport,capacity:0}]),inventory));
+assert.throws(()=>roomChecks.roomEvidence18(envelope([{...passport,verifiedDate:"2026-02-30"}]),inventory));
+assert.throws(()=>roomChecks.roomEvidence18(envelope([passport,passport]),inventory));
+assert.throws(()=>roomChecks.roomEvidence18(envelope([{...passport,source:""}]),inventory));
+console.log("Room inventory:",JSON.stringify({total:inventory.total,recognized:inventory.recognized,rooms:inventory.rooms.length,unknown:inventory.total-inventory.recognized}));
