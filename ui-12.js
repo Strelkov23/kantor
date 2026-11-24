@@ -41,6 +41,6 @@ async function loadVisual12(){
  let s=visual12;s.loading=true;s.error="";render();
  try{let d=await getJson08("data/review-08/baseline-09.json");if(d.groups.length!==83||!Array.isArray(d.routes))throw Error("Неполный исходный снимок");s.baseline=d}catch(e){s.error=e.message}
  try{let c=await getJson08("data/calendar-11/manifest.json");if(c.complete===true&&c.groups.length===83)s.calendar=c}catch(e){/* full calendar not yet published */}
- s.loading=false;if(["home12","space12"].includes(tab))render();
+ s.loading=false;if(visible16("home12")||visible16("space12"))render();
 }
 function bindVisual12(){on("saveMeasure12","click",()=>{let a=visual12.from,b=visual12.to,k=a+"|"+b,v=$("measure12").value,n=$("evidence12").value.trim();if(a===b||v.trim()===""||!Number.isFinite(+v)||+v<0||+v>180||!n){$("measureStatus12").textContent="Выберите разные корпуса, время 0–180 минут и укажите источник.";return}routeBook04[k]=+v;routeEvidence06[k]={minutes:+v,source:n,recordedAt:new Date().toISOString()};render();$("measureStatus12").textContent="Значение сохранено в текущем сеансе."});on("exportMeasure12","click",()=>download("kantor-campus-measurements.json",JSON.stringify({routes:routeBook04,evidence:routeEvidence06},null,2),"application/json"));on("visualLoad12","click",loadVisual12);on("from12","change",e=>{visual12.from=e.target.value;render()});on("to12","change",e=>{visual12.to=e.target.value;render()})}
