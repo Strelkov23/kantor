@@ -4,3 +4,40 @@
 
 /* 0.16 merged workspaces */
 .workspace16{padding:18px 22px;margin:0 0 14px;background:#fff;border:1px solid var(--line);border-radius:14px}.workspace16 h2{font-size:25px;line-height:1.2;margin:6px 0}.workspace16 p{color:var(--mut);margin:7px 0}.breadcrumb16{font-size:12px;color:var(--mut)}.workspace-links16{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}.tooljump16{font-size:12px;color:#174e52;background:#edf7f5;border-color:#d4e7e4;text-align:left;padding:6px 10px}.fold16{border:1px solid var(--line);border-radius:12px;background:#fff;margin-bottom:12px;scroll-margin-top:18px;overflow:hidden}.foldhead16{display:flex;width:100%;border:0;background:#f7fafb;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;text-align:left;font-size:15px;font-weight:650;border-radius:0}.foldhead16[aria-expanded=true]{background:#e8f4f1;color:#145d55}.foldhead16 span:last-child{font-size:22px;line-height:1;color:var(--accent)}.foldhint16{font-size:12px;color:var(--mut);margin:9px 18px}.foldbody16{padding:12px}.foldbody16>.panel:last-child{margin-bottom:0}.foldbody16>.panel{border-radius:8px}.foldbody16 .scroll{max-width:100%}@media(max-width:760px){.workspace16{padding:14px}.workspace16 h2{font-size:21px}.workspace-links16{display:grid;grid-template-columns:1fr}.foldhead16{padding:13px;font-size:14px}.foldbody16{padding:6px}.foldbody16>.panel{padding:10px}.foldhint16{margin:8px 13px}}
+
+/* 0.17: constrain intrinsic widths without hiding document-level overflow. */
+main,#screen,[id^="tool16-"],.foldbody16,.panel,.workspace16,.metric,
+.hero12>*,.split12>*,.route12>*,.grid>*,.task-grid12>*,.daylesson12>*,
+.chartline12>*,.row>*,.workspace-links16>*,.foldhead16>span:first-child{min-width:0}
+.panel,.workspace16,.metric,.task12,.schedulecard12,.foldhead16,
+th,td,button,label,summary,a{overflow-wrap:anywhere}
+.grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,175px),1fr))}
+.task-grid12{grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))}
+.hero12{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.split12{grid-template-columns:repeat(2,minmax(0,1fr))}
+.chartline12{grid-template-columns:minmax(94px,150px) minmax(0,1fr) 44px}
+.daylesson12{grid-template-columns:65px minmax(0,1fr)}
+input,select,textarea,button,img,svg{max-width:100%}
+img{height:auto}
+pre{max-width:100%;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
+.scroll{width:100%;overflow-x:auto}
+.scroll table{overflow-wrap:normal}
+.foldhead16>span:last-child{flex:none}
+.nav-main12 button.active{color:#fff}
+@media(max-width:760px){
+ .hero12,.split12,.route12{grid-template-columns:minmax(0,1fr)}
+ .task-grid12{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .chartline12{grid-template-columns:85px minmax(0,1fr) 35px}
+ .row>label{flex:1 1 150px;max-width:100%}
+ .row>label>select,.row>label>input:not([type=checkbox]):not([type=radio]){min-width:0;max-width:100%}
+ .workspace-links16{grid-template-columns:minmax(0,1fr)}
+ .foldhead16{align-items:flex-start}
+ .task12{min-height:0}
+}
+@media(max-width:360px){
+ .task-grid12{grid-template-columns:minmax(0,1fr)}
+ .chartline12{grid-template-columns:72px minmax(0,1fr) 32px;gap:6px}
+ .nav-main12 button{flex-basis:45%}
+ .panel,.workspace16{padding:10px}
+ .metric strong{font-size:24px}
+}
