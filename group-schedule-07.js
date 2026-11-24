@@ -39,7 +39,7 @@ async function loadGroup07(report=false){
   else{if(d.course!==course||!Array.isArray(d.records)||!Array.isArray(d.groups))throw Error("Некорректный набор курса");group07.data=d}
   group07.status="ready";
  }catch(e){if(token!==groupToken07)return;group07.status="error";group07.error=e.message}
- if(tab==="group07")render()
+ if(visible16("group07"))render()
 }
 function bindGroup07(){
  on("groupView07","change",e=>{group07.view=e.target.value;group07.error="";if(group07.view==="report"&&!group07.report)loadGroup07(true);else if(group07.view==="timetable"&&!group07.data)loadGroup07();else render()});
