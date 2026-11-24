@@ -81,6 +81,14 @@ function jointPlans30(ready,screen){
   return {id:p.id,name:p.name,moves:moves.slice().sort((a,b)=>a.date.localeCompare(b.date)||a.group.localeCompare(b.group,"ru")||a.oldStart-b.oldStart),considered:p.list.length,excluded:p.list.length-moves.length,windows,spanMinutes,before:audit.before,after:audit.after,unresolvedMoves:moves.filter(x=>x.unresolved>0).length,audit:"passed-observed-constraints"};
  });
 }
+function renderUncertainty30(x){
+ const ready=opportunities29.readiness,q=ready?.cards.find(c=>c.id===x.id);
+ if(!q)return "";
+ const next={...q,start:x.newStart,end:x.newEnd};
+ const rows=ready.cards.filter(c=>c.id!==q.id&&c.date===q.date&&(!c.time||overlap29(c,q)||overlap29(c,next))&&(!c.time||!c.teacher||!c.room));
+ if(!rows.length)return '<p class="muted">В исходном и новом интервале нет карточек с нераспознанным временем, преподавателем или аудиторией в этом снимке. Внешняя доступность всё равно не подтверждена.</p>';
+ return '<details open><summary>Что необходимо уточнить: '+rows.length+' карточек</summary><p>Это неопределённые записи в исходном или новом интервале. Они не доказывают конфликт, но требуют сверки до переноса.</p><div class="scroll"><table><tr><th>Группа</th><th>Время</th><th>Дисциплина</th><th>Исходная метка преподавателя</th><th>Исходная аудитория</th><th>Неясность</th></tr>'+rows.map(c=>'<tr><td><button data-original29="'+esc(c.group)+'" data-date29="'+esc(c.date)+'">'+esc(c.group)+'</button></td><td>'+esc(c.time?clock26(c.start)+"–"+clock26(c.end):"Неизвестно")+'</td><td>'+esc(c.subject)+'</td><td>'+esc(c.teacherName||"—")+'</td><td>'+esc(c.roomLabel||"—")+'</td><td>'+esc([!c.time?"время":"",!c.teacher?"преподаватель":"",!c.room?"аудитория":""].filter(Boolean).join(", "))+'</td></tr>').join("")+'</table></div></details>';
+}
 let joint30={plans:null,checked:null,choice:"windows",error:""};
 function prepareJoint30(ready,data){joint30.plans=null;joint30.checked=null;joint30.error="";try{joint30.plans=jointPlans30(ready,data);joint30.checked=ready.checked}catch(e){joint30.error=e.message}}
 function selectedJoint30(){return joint30.plans?.find(p=>p.id===joint30.choice)||joint30.plans?.[0]}
