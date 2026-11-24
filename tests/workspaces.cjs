@@ -288,3 +288,24 @@ for(const mode of ["streams","teachers","subgroups"]){
  assert.match(html,/reviewDetail31/);assert.match(html,/reviewImport31/);assert.match(html,/Покрытие возможной занятости/);assert.equal(ids.length,new Set(ids).size);
 }
 console.log("Evidence registry:",JSON.stringify({totals:reg31.totals,levels:reg31.levels,aliases:reg31.aliasKinds,occupancy:reg31.occupancy.counts}));
+
+const api32=new Function(read("diagnostics-25.js")+"\n"+read("academic-weeks-32.js")+"\n"+read("personal-schedule-23.js")+"\nreturn {weekAggregate32,weekEvidence32,personalWeeks23,monday32,labelType32};")();
+const weeks32=api32.weekAggregate32(manifest,files,cat);
+assert.equal(weeks32.cycle,"verified-alternation");
+assert.deepEqual(weeks32.periods.map(p=>[p.monday,p.end,p.status,p.evidence.upper,p.evidence.lower,p.totals.cards,p.totals.activeDays,p.totals.windows,p.totals.longDays]),[
+ ["2026-11-23","2026-11-29","upper",83,0,1313,402,44,185],
+ ["2026-11-30","2026-12-06","lower",0,83,1286,402,48,162]
+]);
+assert.equal(weeks32.periods.reduce((n,p)=>n+p.totals.cards,0),2599);
+assert.equal(weeks32.periods.reduce((n,p)=>n+p.totals.windows,0),92);
+assert.ok(files.every(f=>api32.personalWeeks23(f).map(w=>w.weekType).join(",")==="upper,lower"));
+const both32={sections:[{dates:["2026-11-23"]}],comparisons:[{calendar:{date:"2026-11-23",weekLabel:"Неделя: Обе"}}]};
+assert.equal(api32.weekEvidence32(both32)[0].status,"unknown");
+const conflict32={...both32,comparisons:[...both32.comparisons,{calendar:{date:"2026-11-23",weekLabel:"Неделя: Верхняя"}},{calendar:{date:"2026-11-24",weekLabel:"Неделя: Нижняя"}}]};
+assert.equal(api32.weekEvidence32(conflict32)[0].status,"conflict");
+const wrong32={...both32,weekEvidence:{"2026-11-23":[1]},comparisons:[{calendar:{date:"2026-11-23",weekLabel:"Неделя: Верхняя"}}]};
+assert.equal(api32.weekEvidence32(wrong32)[0].status,"conflict");
+assert.equal(api32.monday32("2027-01-01"),"2026-12-28");
+assert.throws(()=>api32.monday32("2026-02-30"));
+assert.throws(()=>api32.weekAggregate32(manifest,files.slice(1),cat));
+console.log("Academic cycle:",JSON.stringify(weeks32.periods.map(p=>({start:p.monday,type:p.status,evidence:p.evidence,cards:p.totals.cards,windows:p.totals.windows}))));
