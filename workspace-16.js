@@ -27,12 +27,13 @@ function renderWorkspace16(){
 function activate16(id,scroll=false){
  let w=workspace16(id);if(id!==w.id)opened16.add(id);
  tab=id;render();
- if(w.id==="group07"&&!group07.data&&group07.status!=="loading")loadGroup07();
+ // Reopening a workspace must also load its previously expanded children.
+ if(visible16("group07")&&!group07.data&&group07.status!=="loading")loadGroup07();
  if(["home12","space12"].includes(w.id)&&!visual12.baseline&&!visual12.loading)loadVisual12();
- if(id==="programs10"&&!programs10.data&&!programs10.loading)loadPrograms10();
- if(id==="calendar11"&&!calendar11.data&&!calendar11.loading)load11();
- if(id==="survey15"&&!survey15.baseline&&!survey15.loading)loadSurvey15();
- if(id==="baseline09"&&!baselineState09.data&&!baselineState09.loading)loadBaseline09();
+ if(visible16("programs10")&&!programs10.data&&!programs10.loading)loadPrograms10();
+ if(visible16("calendar11")&&!calendar11.data&&!calendar11.loading)load11();
+ if(visible16("survey15")&&!survey15.baseline&&!survey15.loading)loadSurvey15();
+ if(visible16("baseline09")&&!baselineState09.data&&!baselineState09.loading)loadBaseline09();
  if(scroll&&id!==w.id){let node=$("tool16-"+id);if(node&&node.scrollIntoView)node.scrollIntoView({block:"start"})}
 }
 function bindWorkspace16(){
