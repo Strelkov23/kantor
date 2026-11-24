@@ -1,0 +1,571 @@
+{
+  "version": "0.8",
+  "scope": "Очные бакалавриат и специалитет, 83 группы",
+  "counts": {
+    "ordinary": 1345,
+    "named-room": 112,
+    "parallel": 160,
+    "incomplete": 166,
+    "sport": 126,
+    "subgroup": 12,
+    "elective": 96,
+    "recovered": 9
+  },
+  "notes": "Структурный разбор не подтверждает фактические ресурсы или участников. Все записи требуют решения о допуске. Оригинальные строки сохранены.",
+  "conflicts": [
+    {
+      "id": "conflict-1",
+      "key": [
+        0,
+        4,
+        3,
+        "room:02-206"
+      ],
+      "events": [
+        {
+          "id": "E194",
+          "week": 0,
+          "day": 4,
+          "period": 3,
+          "groups": [
+            "ДЭ 17-26"
+          ],
+          "sourceIds": [
+            "C1P3-119"
+          ],
+          "type": "пр",
+          "title": "История России",
+          "teacher": "МИРОНЮК С.А.",
+          "room": "02-206",
+          "building": "02",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C1P3-119",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149829_ieiu-1.pdf",
+              "page": 3,
+              "raw": "пр.История России\nМИРОНЮК С.А. 02-206",
+              "sourceHash": "6729b01b2392ba85fb6aeaaf7df680c37a832fb7979598e8b26c3922e73b5984"
+            }
+          ]
+        },
+        {
+          "id": "E1133",
+          "week": 0,
+          "day": 4,
+          "period": 3,
+          "groups": [
+            "Д-Э 408"
+          ],
+          "sourceIds": [
+            "C4P2-140"
+          ],
+          "type": "лек",
+          "title": "Лабораторный практикум по разработке индикаторов экономической безопасности",
+          "teacher": "РАХАЕВА В.В.",
+          "room": "02-206",
+          "building": "02",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P2-140",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 2,
+              "raw": "лек.Лабораторный практикум по разработке индикаторов\nэкономической безопасности\nРАХАЕВА В.В.02-206",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-2",
+      "key": [
+        0,
+        2,
+        4,
+        "room:02-318"
+      ],
+      "events": [
+        {
+          "id": "E575",
+          "week": 0,
+          "day": 2,
+          "period": 4,
+          "groups": [
+            "ДЭ 10-24",
+            "ДЭ 11-24"
+          ],
+          "sourceIds": [
+            "C3P1-92",
+            "C3P1-93"
+          ],
+          "type": "лек",
+          "title": "Финансы, денежное обращение и кредит",
+          "teacher": "ХЕЖЕВ А.М.",
+          "room": "02-318",
+          "building": "02",
+          "status": "possible-flow",
+          "evidence": [
+            {
+              "id": "C3P1-92",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 1,
+              "raw": "лек.Финансы, денежное обращение и\nкредит ХЕЖЕВ А.М. 02-318",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            },
+            {
+              "id": "C3P1-93",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 1,
+              "raw": "лек.Финансы, денежное обращение и\nкредит ХЕЖЕВ А.М. 02-318",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        },
+        {
+          "id": "E1250",
+          "week": 0,
+          "day": 2,
+          "period": 4,
+          "groups": [
+            "Д-Э 508",
+            "Д-Э 509"
+          ],
+          "sourceIds": [
+            "C5P1-13",
+            "C5P1-14"
+          ],
+          "type": "лек",
+          "title": "Контроль качества аудита",
+          "teacher": "ХОРУЖИЙ Л.И.",
+          "room": "02-318",
+          "building": "02",
+          "status": "possible-flow",
+          "evidence": [
+            {
+              "id": "C5P1-13",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149886_ieiu-5.pdf",
+              "page": 1,
+              "raw": "лек.Контроль качества аудита\nХОРУЖИЙ Л.И. 02-318",
+              "sourceHash": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9"
+            },
+            {
+              "id": "C5P1-14",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149886_ieiu-5.pdf",
+              "page": 1,
+              "raw": "лек.Контроль качества аудита\nХОРУЖИЙ Л.И. 02-318",
+              "sourceHash": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-3",
+      "key": [
+        1,
+        1,
+        3,
+        "room:01-512"
+      ],
+      "events": [
+        {
+          "id": "E669",
+          "week": 1,
+          "day": 1,
+          "period": 3,
+          "groups": [
+            "ДЭ 03-24"
+          ],
+          "sourceIds": [
+            "C3P2-54"
+          ],
+          "type": "пр",
+          "title": "Бизнес-менеджмент",
+          "teacher": "КОШЕЛЕВ В.М.",
+          "room": "01-512",
+          "building": "01",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C3P2-54",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 2,
+              "raw": "пр.Бизнес-менеджмент\nКОШЕЛЕВ В.М. 01-512",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        },
+        {
+          "id": "E1057",
+          "week": 1,
+          "day": 1,
+          "period": 3,
+          "groups": [
+            "Д-Э 408"
+          ],
+          "sourceIds": [
+            "C4P2-59"
+          ],
+          "type": "лек",
+          "title": "Государственная и муниципальная служба",
+          "teacher": "ЖУКЕВИЧ Г.В.",
+          "room": "01-512",
+          "building": "01",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P2-59",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 2,
+              "raw": "лек.Государственная и муниципальная\nслужба ЖУКЕВИЧ Г.В. 01-512",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-4",
+      "key": [
+        0,
+        0,
+        1,
+        "teacher:ХРАМОВ Д.Э."
+      ],
+      "events": [
+        {
+          "id": "E799",
+          "week": 0,
+          "day": 0,
+          "period": 1,
+          "groups": [
+            "ДЭ 23-24"
+          ],
+          "sourceIds": [
+            "C3P4-7"
+          ],
+          "type": "лек",
+          "title": "Администрирование операционных систем",
+          "teacher": "ХРАМОВ Д.Э.",
+          "room": "15-202",
+          "building": "15",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C3P4-7",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 4,
+              "raw": "лек.Администрирование операционных\nсистем ХРАМОВ Д.Э. 15-202",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        },
+        {
+          "id": "E800",
+          "week": 0,
+          "day": 0,
+          "period": 1,
+          "groups": [
+            "ДЭ 24-24"
+          ],
+          "sourceIds": [
+            "C3P4-8"
+          ],
+          "type": "лек",
+          "title": "Администрирование операционных систем",
+          "teacher": "ХРАМОВ Д.Э.",
+          "room": "17-103",
+          "building": "17",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C3P4-8",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 4,
+              "raw": "лек.Администрирование операционных\nсистем ХРАМОВ Д.Э. 17-103",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-5",
+      "key": [
+        1,
+        0,
+        1,
+        "teacher:ХРАМОВ Д.Э."
+      ],
+      "events": [
+        {
+          "id": "E802",
+          "week": 1,
+          "day": 0,
+          "period": 1,
+          "groups": [
+            "ДЭ 23-24"
+          ],
+          "sourceIds": [
+            "C3P4-10"
+          ],
+          "type": "лек",
+          "title": "Фронтенд и бэкенд разработка",
+          "teacher": "ХРАМОВ Д.Э.",
+          "room": "15-202",
+          "building": "15",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C3P4-10",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 4,
+              "raw": "лек.Фронтенд и бэкенд разработка\nХРАМОВ Д.Э. 15-202",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        },
+        {
+          "id": "E803",
+          "week": 1,
+          "day": 0,
+          "period": 1,
+          "groups": [
+            "ДЭ 24-24"
+          ],
+          "sourceIds": [
+            "C3P4-11"
+          ],
+          "type": "лек",
+          "title": "Фронтенд и бэкенд разработка",
+          "teacher": "ХРАМОВ Д.Э.",
+          "room": "03-101",
+          "building": "03",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C3P4-11",
+              "source": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+              "page": 4,
+              "raw": "лек.Фронтенд и бэкенд разработка\nХРАМОВ Д.Э. 03-101",
+              "sourceHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-6",
+      "key": [
+        0,
+        0,
+        3,
+        "teacher:БЫКОВ Д.В."
+      ],
+      "events": [
+        {
+          "id": "E1022",
+          "week": 0,
+          "day": 0,
+          "period": 3,
+          "groups": [
+            "Д-Э 406"
+          ],
+          "sourceIds": [
+            "C4P2-24"
+          ],
+          "type": "пр",
+          "title": "Методы искусственного интеллекта",
+          "teacher": "БЫКОВ Д.В.",
+          "room": "02-302",
+          "building": "02",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P2-24",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 2,
+              "raw": "пр.Методы искусственного интеллекта\nБЫКОВ Д.В. 02-302",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        },
+        {
+          "id": "E1146",
+          "week": 0,
+          "day": 0,
+          "period": 3,
+          "groups": [
+            "Д-Э 411"
+          ],
+          "sourceIds": [
+            "C4P3-19"
+          ],
+          "type": "пр",
+          "title": "Методы искусственного интеллекта",
+          "teacher": "БЫКОВ Д.В.",
+          "room": "01-213",
+          "building": "01",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P3-19",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 3,
+              "raw": "пр.Методы искусственного интеллекта\nБЫКОВ Д.В. 01-213",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    },
+    {
+      "id": "conflict-7",
+      "key": [
+        1,
+        0,
+        3,
+        "teacher:БЫКОВ Д.В."
+      ],
+      "events": [
+        {
+          "id": "E1023",
+          "week": 1,
+          "day": 0,
+          "period": 3,
+          "groups": [
+            "Д-Э 406"
+          ],
+          "sourceIds": [
+            "C4P2-24"
+          ],
+          "type": "пр",
+          "title": "Методы искусственного интеллекта",
+          "teacher": "БЫКОВ Д.В.",
+          "room": "02-302",
+          "building": "02",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P2-24",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 2,
+              "raw": "пр.Методы искусственного интеллекта\nБЫКОВ Д.В. 02-302",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        },
+        {
+          "id": "E1147",
+          "week": 1,
+          "day": 0,
+          "period": 3,
+          "groups": [
+            "Д-Э 411"
+          ],
+          "sourceIds": [
+            "C4P3-19"
+          ],
+          "type": "пр",
+          "title": "Методы искусственного интеллекта",
+          "teacher": "БЫКОВ Д.В.",
+          "room": "01-213",
+          "building": "01",
+          "status": "unverified",
+          "evidence": [
+            {
+              "id": "C4P3-19",
+              "source": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+              "page": 3,
+              "raw": "пр.Методы искусственного интеллекта\nБЫКОВ Д.В. 01-213",
+              "sourceHash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+            }
+          ]
+        }
+      ],
+      "status": "source-supported-potential",
+      "required": "Сверить назначение, формат занятия, подгруппы и оперативные изменения; не исправлять автоматически."
+    }
+  ],
+  "possibleFlows": 182,
+  "courses": [
+    {
+      "course": 1,
+      "hash": "6729b01b2392ba85fb6aeaaf7df680c37a832fb7979598e8b26c3922e73b5984",
+      "count": 467,
+      "counts": {
+        "ordinary": 323,
+        "named-room": 42,
+        "parallel": 49,
+        "incomplete": 11,
+        "sport": 40,
+        "subgroup": 2
+      }
+    },
+    {
+      "course": 2,
+      "hash": "3e4599eb26ddc938d84154a91be5bbf383d95de0c9e83f53b78b6ee1424218b3",
+      "count": 568,
+      "counts": {
+        "ordinary": 285,
+        "sport": 44,
+        "elective": 14,
+        "incomplete": 79,
+        "parallel": 82,
+        "named-room": 50,
+        "recovered": 8,
+        "subgroup": 6
+      }
+    },
+    {
+      "course": 3,
+      "hash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09",
+      "count": 528,
+      "counts": {
+        "sport": 42,
+        "ordinary": 367,
+        "elective": 39,
+        "incomplete": 41,
+        "parallel": 17,
+        "named-room": 19,
+        "recovered": 1,
+        "subgroup": 2
+      }
+    },
+    {
+      "course": 4,
+      "hash": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f",
+      "count": 424,
+      "counts": {
+        "ordinary": 331,
+        "named-room": 1,
+        "elective": 43,
+        "incomplete": 35,
+        "parallel": 12,
+        "subgroup": 2
+      }
+    },
+    {
+      "course": 5,
+      "hash": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9",
+      "count": 39,
+      "counts": {
+        "ordinary": 39
+      }
+    }
+  ]
+}
