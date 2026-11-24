@@ -1,0 +1,2686 @@
+{
+  "version": "0.11",
+  "checked": "2026-11-24T13:36:07.374408+00:00",
+  "scope": "83 full-time undergraduate/specialist groups, IEAIC only",
+  "status": "review-only",
+  "groups": [
+    {
+      "group": "Д-Э 401",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1064",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "initials-match": 29,
+        "not-evaluable": 2
+      },
+      "rooms": {
+        "exact": 29,
+        "not-evaluable": 2
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1064.json"
+    },
+    {
+      "group": "Д-Э 403",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1153",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "initials-match": 23,
+        "not-evaluable": 3,
+        "needs-review": 2
+      },
+      "rooms": {
+        "exact": 25,
+        "not-evaluable": 3
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1153.json"
+    },
+    {
+      "group": "Д-Э 406",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1130",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 35
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "initials-match": 16,
+        "not-evaluable": 16,
+        "needs-review": 3
+      },
+      "rooms": {
+        "exact": 19,
+        "not-evaluable": 16
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1130.json"
+    },
+    {
+      "group": "Д-Э 407",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1056",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 22,
+        "not-evaluable": 4,
+        "needs-review": 4
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 4
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1056.json"
+    },
+    {
+      "group": "Д-Э 408",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1220",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "not-evaluable": 7,
+        "initials-match": 23
+      },
+      "rooms": {
+        "not-evaluable": 7,
+        "exact": 23
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1220.json"
+    },
+    {
+      "group": "Д-Э 409",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1420",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 20,
+        "not-evaluable": 7,
+        "needs-review": 3
+      },
+      "rooms": {
+        "exact": 23,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1420.json"
+    },
+    {
+      "group": "Д-Э 410",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1326",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 22,
+        "not-evaluable": 6,
+        "needs-review": 2
+      },
+      "rooms": {
+        "exact": 24,
+        "not-evaluable": 6
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1326.json"
+    },
+    {
+      "group": "Д-Э 411",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1297",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 16,
+        "needs-review": 3,
+        "not-evaluable": 14
+      },
+      "rooms": {
+        "exact": 19,
+        "not-evaluable": 14
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1297.json"
+    },
+    {
+      "group": "Д-Э 412",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1186",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "initials-match": 25,
+        "not-evaluable": 3
+      },
+      "rooms": {
+        "exact": 25,
+        "not-evaluable": 3
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1186.json"
+    },
+    {
+      "group": "Д-Э 413",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1055",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27
+      },
+      "timing": {
+        "standard": 27
+      },
+      "teachers": {
+        "initials-match": 13,
+        "needs-review": 7,
+        "not-evaluable": 7
+      },
+      "rooms": {
+        "exact": 20,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 27,
+      "file": "1055.json"
+    },
+    {
+      "group": "Д-Э 415",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1174",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "initials-match": 25,
+        "not-evaluable": 3
+      },
+      "rooms": {
+        "exact": 25,
+        "not-evaluable": 3
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1174.json"
+    },
+    {
+      "group": "Д-Э 416",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1378",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "not-evaluable": 3,
+        "initials-match": 26
+      },
+      "rooms": {
+        "not-evaluable": 3,
+        "exact": 26
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1378.json"
+    },
+    {
+      "group": "Д-Э 417",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1227",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 13,
+        "initials-match": 18,
+        "needs-review": 2
+      },
+      "rooms": {
+        "not-evaluable": 13,
+        "exact": 20
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1227.json"
+    },
+    {
+      "group": "Д-Э 418",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1149",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 3,
+        "initials-match": 25
+      },
+      "rooms": {
+        "not-evaluable": 3,
+        "exact": 25
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1149.json"
+    },
+    {
+      "group": "Д-Э 419",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1021",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "initials-match": 23,
+        "not-evaluable": 8
+      },
+      "rooms": {
+        "exact": 23,
+        "not-evaluable": 8
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1021.json"
+    },
+    {
+      "group": "Д-Э 441",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1490",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 10,
+        "initials-match": 18,
+        "needs-review": 5
+      },
+      "rooms": {
+        "not-evaluable": 10,
+        "exact": 21,
+        "needs-review": 2
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1490.json"
+    },
+    {
+      "group": "Д-Э 442",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1491",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "calendar-only-or-ambiguous": 4
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "initials-match": 24,
+        "not-evaluable": 6,
+        "needs-review": 2
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 6
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1491.json"
+    },
+    {
+      "group": "Д-Э 443",
+      "course": 4,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1489",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "not-evaluable": 2,
+        "initials-match": 27
+      },
+      "rooms": {
+        "not-evaluable": 2,
+        "exact": 27
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1489.json"
+    },
+    {
+      "group": "Д-Э 508",
+      "course": 5,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1302",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27
+      },
+      "timing": {
+        "standard": 27
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 1
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 1
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 27,
+      "file": "1302.json"
+    },
+    {
+      "group": "Д-Э 509",
+      "course": 5,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1377",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27
+      },
+      "timing": {
+        "standard": 27
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 1
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 1
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 27,
+      "file": "1377.json"
+    },
+    {
+      "group": "ДЭ 01-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1097",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "calendar-only-or-ambiguous": 2
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 14,
+        "initials-match": 19
+      },
+      "rooms": {
+        "not-evaluable": 14,
+        "exact": 19
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1097.json"
+    },
+    {
+      "group": "ДЭ 01-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1008",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 16,
+        "not-evaluable": 14,
+        "needs-review": 3
+      },
+      "rooms": {
+        "exact": 19,
+        "not-evaluable": 14
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1008.json"
+    },
+    {
+      "group": "ДЭ 01-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1781",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "not-evaluable": 10,
+        "initials-match": 19
+      },
+      "rooms": {
+        "not-evaluable": 10,
+        "exact": 19
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1781.json"
+    },
+    {
+      "group": "ДЭ 02-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1336",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 6,
+        "text-and-room-match": 29,
+        "calendar-only-or-ambiguous": 2
+      },
+      "timing": {
+        "standard": 37
+      },
+      "teachers": {
+        "not-evaluable": 13,
+        "initials-match": 22,
+        "needs-review": 2
+      },
+      "rooms": {
+        "not-evaluable": 13,
+        "exact": 22,
+        "needs-review": 2
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 37,
+      "file": "1336.json"
+    },
+    {
+      "group": "ДЭ 02-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1073",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 14,
+        "not-evaluable": 16,
+        "needs-review": 3
+      },
+      "rooms": {
+        "exact": 17,
+        "not-evaluable": 16
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1073.json"
+    },
+    {
+      "group": "ДЭ 02-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1775",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 6,
+        "text-and-room-match": 29
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 14,
+        "initials-match": 21
+      },
+      "rooms": {
+        "not-evaluable": 14,
+        "exact": 21
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1775.json"
+    },
+    {
+      "group": "ДЭ 03-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1298",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 12,
+        "initials-match": 19
+      },
+      "rooms": {
+        "not-evaluable": 12,
+        "exact": 19
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1298.json"
+    },
+    {
+      "group": "ДЭ 03-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1128",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 25,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "not-evaluable": 11,
+        "initials-match": 17,
+        "needs-review": 1
+      },
+      "rooms": {
+        "not-evaluable": 11,
+        "exact": 18
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1128.json"
+    },
+    {
+      "group": "ДЭ 03-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1779",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 3
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 10,
+        "initials-match": 21
+      },
+      "rooms": {
+        "not-evaluable": 11,
+        "exact": 20
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1779.json"
+    },
+    {
+      "group": "ДЭ 04-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1210",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 13,
+        "initials-match": 22
+      },
+      "rooms": {
+        "not-evaluable": 13,
+        "exact": 22
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1210.json"
+    },
+    {
+      "group": "ДЭ 04-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1340",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 17,
+        "not-evaluable": 15,
+        "needs-review": 1
+      },
+      "rooms": {
+        "exact": 18,
+        "not-evaluable": 15
+      },
+      "notSeen": 1,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1340.json"
+    },
+    {
+      "group": "ДЭ 05-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1436",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 4,
+        "text-and-room-match": 31
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 6,
+        "initials-match": 26,
+        "needs-review": 3
+      },
+      "rooms": {
+        "not-evaluable": 6,
+        "exact": 29
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1436.json"
+    },
+    {
+      "group": "ДЭ 05-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1181",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 37
+      },
+      "teachers": {
+        "not-evaluable": 18,
+        "initials-match": 16,
+        "needs-review": 3
+      },
+      "rooms": {
+        "not-evaluable": 20,
+        "exact": 17
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 37,
+      "file": "1181.json"
+    },
+    {
+      "group": "ДЭ 05-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1646",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 22,
+        "not-evaluable": 8
+      },
+      "rooms": {
+        "exact": 22,
+        "not-evaluable": 8
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1646.json"
+    },
+    {
+      "group": "ДЭ 06-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1144",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 4,
+        "text-and-room-match": 27,
+        "calendar-only-or-ambiguous": 1
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "not-evaluable": 10,
+        "initials-match": 22
+      },
+      "rooms": {
+        "not-evaluable": 10,
+        "exact": 22
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1144.json"
+    },
+    {
+      "group": "ДЭ 06-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1027",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 35
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "initials-match": 18,
+        "not-evaluable": 13,
+        "needs-review": 4
+      },
+      "rooms": {
+        "exact": 22,
+        "not-evaluable": 13
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1027.json"
+    },
+    {
+      "group": "ДЭ 06-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1785",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30,
+        "needs-review": 2,
+        "calendar-only-or-ambiguous": 1
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 11,
+        "initials-match": 22
+      },
+      "rooms": {
+        "not-evaluable": 11,
+        "exact": 22
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1785.json"
+    },
+    {
+      "group": "ДЭ 07-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1059",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "needs-review": 4,
+        "calendar-only-or-ambiguous": 1
+      },
+      "timing": {
+        "standard": 36
+      },
+      "teachers": {
+        "initials-match": 22,
+        "not-evaluable": 14
+      },
+      "rooms": {
+        "exact": 22,
+        "not-evaluable": 14
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 36,
+      "file": "1059.json"
+    },
+    {
+      "group": "ДЭ 07-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1262",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 35
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 18,
+        "initials-match": 17
+      },
+      "rooms": {
+        "not-evaluable": 18,
+        "exact": 17
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1262.json"
+    },
+    {
+      "group": "ДЭ 08-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1012",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 24,
+        "initials-match": 9
+      },
+      "rooms": {
+        "not-evaluable": 24,
+        "exact": 9
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1012.json"
+    },
+    {
+      "group": "ДЭ 08-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1397",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 35
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "initials-match": 19,
+        "not-evaluable": 16
+      },
+      "rooms": {
+        "exact": 19,
+        "not-evaluable": 16
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1397.json"
+    },
+    {
+      "group": "ДЭ 08-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1778",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "initials-match": 16,
+        "not-evaluable": 15
+      },
+      "rooms": {
+        "exact": 16,
+        "not-evaluable": 15
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1778.json"
+    },
+    {
+      "group": "ДЭ 09-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1402",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 35
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 16,
+        "initials-match": 19
+      },
+      "rooms": {
+        "not-evaluable": 16,
+        "exact": 19
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1402.json"
+    },
+    {
+      "group": "ДЭ 09-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1783",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "initials-match": 16,
+        "not-evaluable": 13
+      },
+      "rooms": {
+        "exact": 16,
+        "not-evaluable": 13
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1783.json"
+    },
+    {
+      "group": "ДЭ 10-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1094",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 5,
+        "initials-match": 28
+      },
+      "rooms": {
+        "not-evaluable": 5,
+        "exact": 28
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1094.json"
+    },
+    {
+      "group": "ДЭ 10-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1057",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 7
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1057.json"
+    },
+    {
+      "group": "ДЭ 10-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1784",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 26,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 26,
+        "nonstandard": 1
+      },
+      "teachers": {
+        "initials-match": 16,
+        "not-evaluable": 9,
+        "needs-review": 2
+      },
+      "rooms": {
+        "exact": 18,
+        "not-evaluable": 9
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 27,
+      "file": "1784.json"
+    },
+    {
+      "group": "ДЭ 11-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1373",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 4,
+        "text-and-room-match": 29,
+        "calendar-only-or-ambiguous": 2
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 7,
+        "initials-match": 28
+      },
+      "rooms": {
+        "not-evaluable": 7,
+        "exact": 28
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1373.json"
+    },
+    {
+      "group": "ДЭ 11-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1023",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 7
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1023.json"
+    },
+    {
+      "group": "ДЭ 11-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1787",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 26
+      },
+      "timing": {
+        "standard": 26
+      },
+      "teachers": {
+        "needs-review": 2,
+        "not-evaluable": 9,
+        "initials-match": 15
+      },
+      "rooms": {
+        "exact": 17,
+        "not-evaluable": 9
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 26,
+      "file": "1787.json"
+    },
+    {
+      "group": "ДЭ 12-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1209",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33,
+        "needs-review": 3
+      },
+      "timing": {
+        "standard": 36
+      },
+      "teachers": {
+        "not-evaluable": 13,
+        "initials-match": 22,
+        "needs-review": 1
+      },
+      "rooms": {
+        "not-evaluable": 14,
+        "exact": 22
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 36,
+      "file": "1209.json"
+    },
+    {
+      "group": "ДЭ 12-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1426",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 7
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1426.json"
+    },
+    {
+      "group": "ДЭ 12-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1782",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 13,
+        "initials-match": 13,
+        "needs-review": 2
+      },
+      "rooms": {
+        "not-evaluable": 13,
+        "exact": 15
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1782.json"
+    },
+    {
+      "group": "ДЭ 13-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1295",
+      "status": "extracted",
+      "counts": {
+        "needs-review": 4,
+        "text-and-room-match": 27
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 22,
+        "initials-match": 9
+      },
+      "rooms": {
+        "not-evaluable": 22,
+        "exact": 9
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1295.json"
+    },
+    {
+      "group": "ДЭ 13-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1001",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 35
+      },
+      "teachers": {
+        "not-evaluable": 18,
+        "initials-match": 16,
+        "needs-review": 1
+      },
+      "rooms": {
+        "not-evaluable": 18,
+        "exact": 17
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 35,
+      "file": "1001.json"
+    },
+    {
+      "group": "ДЭ 13-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1780",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "initials-match": 20,
+        "not-evaluable": 9
+      },
+      "rooms": {
+        "exact": 20,
+        "not-evaluable": 9
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1780.json"
+    },
+    {
+      "group": "ДЭ 15-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1003",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 18,
+        "not-evaluable": 12
+      },
+      "rooms": {
+        "exact": 18,
+        "not-evaluable": 12
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1003.json"
+    },
+    {
+      "group": "ДЭ 15-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1221",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 31,
+        "nonstandard": 2
+      },
+      "teachers": {
+        "not-evaluable": 28,
+        "initials-match": 5
+      },
+      "rooms": {
+        "not-evaluable": 28,
+        "exact": 5
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1221.json"
+    },
+    {
+      "group": "ДЭ 15-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1671",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 12,
+        "initials-match": 16
+      },
+      "rooms": {
+        "not-evaluable": 12,
+        "exact": 16
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1671.json"
+    },
+    {
+      "group": "ДЭ 16-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1347",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 20,
+        "not-evaluable": 10
+      },
+      "rooms": {
+        "exact": 20,
+        "not-evaluable": 10
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1347.json"
+    },
+    {
+      "group": "ДЭ 16-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1112",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 28,
+        "initials-match": 5
+      },
+      "rooms": {
+        "not-evaluable": 28,
+        "exact": 5
+      },
+      "notSeen": 1,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1112.json"
+    },
+    {
+      "group": "ДЭ 16-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1789",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 12,
+        "initials-match": 16
+      },
+      "rooms": {
+        "not-evaluable": 12,
+        "exact": 16
+      },
+      "notSeen": 4,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1789.json"
+    },
+    {
+      "group": "ДЭ 17-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1214",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 21,
+        "not-evaluable": 12
+      },
+      "rooms": {
+        "exact": 21,
+        "not-evaluable": 12
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1214.json"
+    },
+    {
+      "group": "ДЭ 17-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1265",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 29,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 28,
+        "initials-match": 5
+      },
+      "rooms": {
+        "not-evaluable": 28,
+        "exact": 5
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1265.json"
+    },
+    {
+      "group": "ДЭ 17-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1768",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "not-evaluable": 16,
+        "initials-match": 16
+      },
+      "rooms": {
+        "not-evaluable": 16,
+        "exact": 16
+      },
+      "notSeen": 1,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1768.json"
+    },
+    {
+      "group": "ДЭ 18-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1423",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 33
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "initials-match": 26,
+        "not-evaluable": 7
+      },
+      "rooms": {
+        "exact": 26,
+        "not-evaluable": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1423.json"
+    },
+    {
+      "group": "ДЭ 18-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1018",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 32
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "not-evaluable": 26,
+        "initials-match": 5,
+        "needs-review": 1
+      },
+      "rooms": {
+        "not-evaluable": 26,
+        "exact": 6
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1018.json"
+    },
+    {
+      "group": "ДЭ 20-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1765",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "initials-match": 12,
+        "not-evaluable": 16
+      },
+      "rooms": {
+        "exact": 12,
+        "not-evaluable": 16
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1765.json"
+    },
+    {
+      "group": "ДЭ 21-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1353",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 31,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 33
+      },
+      "teachers": {
+        "not-evaluable": 16,
+        "initials-match": 17
+      },
+      "rooms": {
+        "not-evaluable": 16,
+        "exact": 17
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 33,
+      "file": "1353.json"
+    },
+    {
+      "group": "ДЭ 21-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1102",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 26,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "not-evaluable": 23,
+        "initials-match": 7
+      },
+      "rooms": {
+        "not-evaluable": 23,
+        "exact": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1102.json"
+    },
+    {
+      "group": "ДЭ 21-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1643",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 16,
+        "initials-match": 12
+      },
+      "rooms": {
+        "not-evaluable": 16,
+        "exact": 12
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1643.json"
+    },
+    {
+      "group": "ДЭ 22-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1366",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 18,
+        "initials-match": 13
+      },
+      "rooms": {
+        "not-evaluable": 18,
+        "exact": 13
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1366.json"
+    },
+    {
+      "group": "ДЭ 22-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1106",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 30,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 24,
+        "initials-match": 7
+      },
+      "rooms": {
+        "not-evaluable": 24,
+        "exact": 7
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1106.json"
+    },
+    {
+      "group": "ДЭ 22-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1680",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 29
+      },
+      "teachers": {
+        "initials-match": 12,
+        "not-evaluable": 17
+      },
+      "rooms": {
+        "exact": 12,
+        "not-evaluable": 17
+      },
+      "notSeen": 5,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 29,
+      "file": "1680.json"
+    },
+    {
+      "group": "ДЭ 23-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1200",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 32
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "not-evaluable": 12,
+        "initials-match": 20
+      },
+      "rooms": {
+        "not-evaluable": 12,
+        "exact": 20
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1200.json"
+    },
+    {
+      "group": "ДЭ 23-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1786",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 1
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "initials-match": 12,
+        "not-evaluable": 16
+      },
+      "rooms": {
+        "exact": 12,
+        "not-evaluable": 16
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1786.json"
+    },
+    {
+      "group": "ДЭ 24-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1126",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 32
+      },
+      "timing": {
+        "standard": 32
+      },
+      "teachers": {
+        "not-evaluable": 11,
+        "initials-match": 21
+      },
+      "rooms": {
+        "not-evaluable": 11,
+        "exact": 21
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 32,
+      "file": "1126.json"
+    },
+    {
+      "group": "ДЭ 24-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1170",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 28,
+        "nonstandard": 2
+      },
+      "teachers": {
+        "not-evaluable": 20,
+        "initials-match": 10
+      },
+      "rooms": {
+        "not-evaluable": 20,
+        "exact": 10
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1170.json"
+    },
+    {
+      "group": "ДЭ 24-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1656",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 14,
+        "not-evaluable": 16
+      },
+      "rooms": {
+        "exact": 14,
+        "not-evaluable": 16
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1656.json"
+    },
+    {
+      "group": "ДЭ 25-24",
+      "course": 3,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1255",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 27,
+        "needs-review": 4
+      },
+      "timing": {
+        "standard": 31
+      },
+      "teachers": {
+        "not-evaluable": 18,
+        "initials-match": 13
+      },
+      "rooms": {
+        "not-evaluable": 18,
+        "exact": 13
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 31,
+      "file": "1255.json"
+    },
+    {
+      "group": "ДЭ 25-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1218",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 25,
+        "needs-review": 5
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 10,
+        "not-evaluable": 20
+      },
+      "rooms": {
+        "exact": 10,
+        "not-evaluable": 20
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1218.json"
+    },
+    {
+      "group": "ДЭ 25-26",
+      "course": 1,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1788",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 26,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 28
+      },
+      "teachers": {
+        "not-evaluable": 14,
+        "initials-match": 14
+      },
+      "rooms": {
+        "not-evaluable": 14,
+        "exact": 14
+      },
+      "notSeen": 2,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 28,
+      "file": "1788.json"
+    },
+    {
+      "group": "ДЭ 27-25",
+      "course": 2,
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1356",
+      "status": "extracted",
+      "counts": {
+        "text-and-room-match": 28,
+        "needs-review": 2
+      },
+      "timing": {
+        "standard": 30
+      },
+      "teachers": {
+        "initials-match": 10,
+        "not-evaluable": 20
+      },
+      "rooms": {
+        "exact": 10,
+        "not-evaluable": 20
+      },
+      "notSeen": 0,
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "cards": 30,
+      "file": "1356.json"
+    }
+  ],
+  "totals": {
+    "groups": 83,
+    "failed": 0,
+    "cards": 2599,
+    "notSeen": 54,
+    "counts": {
+      "text-and-room-match": 2458,
+      "needs-review": 128,
+      "calendar-only-or-ambiguous": 13
+    },
+    "timing": {
+      "standard": 2594,
+      "nonstandard": 5
+    },
+    "teachers": {
+      "initials-match": 1500,
+      "not-evaluable": 1037,
+      "needs-review": 62
+    },
+    "rooms": {
+      "exact": 1554,
+      "not-evaluable": 1041,
+      "needs-review": 4
+    }
+  },
+  "complete": true
+}
