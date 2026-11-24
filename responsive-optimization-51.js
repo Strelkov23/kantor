@@ -25,7 +25,7 @@ function startJob51(s){
 }
 function renderProgress51(){
  if(!multi39.running)return "";
- return '<div class="progressBox51"><label id="progressLabel51" for="progressBar51" role="status" aria-live="polite">'+esc(job51.label)+(job51.stage?" · этап "+job51.stage+" из 7":"")+'</label><progress id="progressBar51" max="8" value="'+job51.stage+'"></progress><p class="muted">Это этапы, а не проценты времени: длительность каждого различается. Можно отменить расчёт без изменения исходного расписания.</p><button id="cancelJob51">Отменить расчёт</button></div>';
+ return '<div class="progressBox51"><label id="progressLabel51" for="progressBar51" role="status" aria-live="polite">'+esc(job51.label)+(job51.stage?" · этап "+job51.stage+" из 7":"")+'</label><progress id="progressBar51" max="7" value="'+job51.stage+'"></progress><p class="muted">Это этапы, а не проценты времени: длительность каждого различается. Можно отменить расчёт без изменения исходного расписания.</p><button id="cancelJob51">Отменить расчёт</button></div>';
 }
 const metrics51=[
  ["groupCross","Меньше переходов групп",r=>r.groupCross,"переходов"],
