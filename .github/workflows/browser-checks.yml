@@ -14,7 +14,7 @@ permissions:
 jobs:
   chromium:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,10 +49,10 @@ jobs:
             const browser = await chromium.launch();
             const findings = [];
             try {
-              for (const [name,viewport] of Object.entries({ desktop:{width:1440,height:900}, mobile:{width:390,height:844} })) {
-                const context = await browser.newContext({viewport, isMobile:name==='mobile', hasTouch:name==='mobile'});
+              for (const [name,viewport] of Object.entries({ desktop:{width:1440,height:900}, mobile:{width:390,height:844}, narrow:{width:320,height:720} })) {
+                const context = await browser.newContext({viewport, isMobile:name!=='desktop', hasTouch:name!=='desktop'});
                 const page = await context.newPage();
-                const errors = [], failedLocal = [];
+                const errors = [], failedLocal = []; page.setDefaultTimeout(10000);
                 page.on('pageerror', e => errors.push(e.message));
                 page.on('response', r => { if(r.url().startsWith(base) && r.status()>=400 && !r.url().endsWith('favicon.ico')) failedLocal.push(r.status()+' '+r.url()); });
                 page.on('requestfailed', r => { if(r.url().startsWith(base) && r.failure()?.errorText!=='net::ERR_ABORTED') failedLocal.push(r.url()+' '+r.failure()?.errorText); });
@@ -76,7 +76,13 @@ jobs:
                     await page.screenshot({path:'browser-report/'+name+'-'+id+'.png',fullPage:true});
                     const dom = await page.evaluate(() => {
                       const ids = Array.from(document.querySelectorAll('[id]'), n => n.id);
-                      return {duplicates:ids.filter((v,i)=>ids.indexOf(v)!==i), overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth)};
+                      const overflow = Math.max(0,document.documentElement.scrollWidth-innerWidth);
+                      const escaped = Array.from(document.querySelectorAll('main *')).filter(n=>{
+                        if(n.closest('.scroll') || !n.getClientRects().length) return false;
+                        const r=n.getBoundingClientRect();
+                        return r.width>0 && (r.right>innerWidth+4 || r.left< -4);
+                      }).slice(0,20).map(n=>({tag:n.tagName,id:n.id,cls:String(n.getAttribute('class')||'').slice(0,120)}));
+                      return {duplicates:ids.filter((v,i)=>ids.indexOf(v)!==i), overflow, escaped};
                     });
                     findings.push({viewport:name,page:id,...dom});
                     assert.deepEqual(dom.duplicates,[]);
@@ -95,7 +101,7 @@ jobs:
               await browser.close();
             }
             console.log(JSON.stringify(findings,null,2));
-            if(findings.some(x=>x.error||x.duplicates?.length||x.pageErrors?.length||x.failedLocal?.length||x.overflow>4)) process.exitCode=1;
+            if(findings.some(x=>x.error||x.duplicates?.length||x.pageErrors?.length||x.failedLocal?.length||x.overflow>4||x.escaped?.length)) process.exitCode=1;
           })().catch(e=>{console.error(e);process.exitCode=1});
           NODE
       - name: Upload screenshots and diagnostic report
