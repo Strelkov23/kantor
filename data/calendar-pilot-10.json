@@ -1,0 +1,2213 @@
+{
+  "version": "0.10",
+  "checked": "2026-11-24T13:31:58.696067+00:00",
+  "scope": "three institute groups; current and next week only",
+  "status": "review-only",
+  "groups": [
+    {
+      "group": "ДЭ 10-26",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1784",
+      "status": "extracted",
+      "course": 1,
+      "pdfSource": "https://www.timacad.ru/uploads/files/20261016/1792149829_ieiu-1.pdf",
+      "pdfHash": "6729b01b2392ba85fb6aeaaf7df680c37a832fb7979598e8b26c3922e73b5984",
+      "sections": [
+        {
+          "id": "groupScheduleCurrentWeekAccordion",
+          "dates": [
+            "2026-11-23",
+            "2026-11-24",
+            "2026-11-25",
+            "2026-11-26",
+            "2026-11-27"
+          ]
+        },
+        {
+          "id": "groupScheduleNextWeekAccordion",
+          "dates": [
+            "2026-11-30",
+            "2026-12-01",
+            "2026-12-02",
+            "2026-12-03",
+            "2026-12-04"
+          ]
+        }
+      ],
+      "counts": {
+        "text-and-room-match": 26,
+        "needs-review": 1
+      },
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "comparisons": [
+        {
+          "calendar": {
+            "date": "2026-11-23",
+            "day": 0,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Основы российской государственности",
+            "teachers": "Позднякова Анастасия Сергеевна",
+            "rooms": "01-411",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-7",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Основы российской государственности\nПОЗДНЯКОВА А.С. 01-411",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-23",
+            "day": 0,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Иностранный язык",
+            "teachers": "Кирсанова Мария Михайловна; \n                                                            \n                                                                Пахоменкова Олеся Михайловна",
+            "rooms": "12-112; \n                                                            \n                                                                12-222",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-15",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Иностранный язык\nКИРСАНОВА М.М. 12-112\nПАХОМЕНКОВА О.М. 12-222",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Введение в профессионально-педагогическую деятельность",
+            "teachers": "Волкова Анастасия Никитична",
+            "rooms": "27-310",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-19",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Введение в профессионально-педагогическую\nдеятельность ВОЛКОВА А.Н. 27-310",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Информатика",
+            "teachers": "Болышов Даниил Владимирович",
+            "rooms": "12-315",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-25",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Информатика\nБОЛЫШОВ Д.В. 12-315",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Введение в профессионально-педагогическую деятельность",
+            "teachers": "Волкова Анастасия Никитична",
+            "rooms": "27-317",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-31",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Введение в профессионально-педагогическую\nдеятельность ВОЛКОВА А.Н. 27-317",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Цветкова Инга Валерьевна; \n                                                            \n                                                                Преподаватель не назначен",
+            "rooms": "СК; \n                                                            \n                                                                СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-38",
+          "pdfPage": 1,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Информатика",
+            "teachers": "Болышов Даниил Владимирович",
+            "rooms": "12-316",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-43",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Информатика\nБОЛЫШОВ Д.В. 12-316",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Возрастная физиология и психофизиология",
+            "teachers": "Коваленок Татьяна Петровна",
+            "rooms": "27-215",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-48",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Возрастная физиология и\nпсихофизиология\nКОВАЛЕНОК Т.П. 27-215",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "История России",
+            "teachers": "Оришев Александр Борисович",
+            "rooms": "01-407",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-62",
+          "pdfPage": 1,
+          "pdfRaw": "лек.История России\nОРИШЕВ А.Б. 01-407",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Математика",
+            "teachers": "Вахрушева Инна Алексеевна",
+            "rooms": "03-102",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-67",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Математика\nВАХРУШЕВА И.А. 03-102",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Математика",
+            "teachers": "Вахрушева Инна Алексеевна",
+            "rooms": "12-114",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-77",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Математика\nВАХРУШЕВА И.А. 12-114",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Русский язык и деловые коммуникации",
+            "teachers": "Петровская Наталья Алексеевна",
+            "rooms": "01-407",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-85",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Русский язык и деловые коммуникации\nДЕМИЧЕВА Н.А. 01-407",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Информатика",
+            "teachers": "НАЗИМОВ А.И.",
+            "rooms": "01-416",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-94",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Информатика\nНАЗИМОВ А.И. 01-416",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:30",
+            "subject": "Базовая физическая культура / Базовые виды спорта",
+            "teachers": "Цветкова Инга Валерьевна",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "needs-review",
+          "pdfId": "C1P1-103",
+          "pdfPage": 1,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": false,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Преподаватель не назначен",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-103",
+          "pdfPage": 1,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-30",
+            "day": 0,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Русский язык и деловые коммуникации",
+            "teachers": "Петровская Наталья Алексеевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-12",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Русский язык и деловые коммуникации\nДЕМИЧЕВА Н.А. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-30",
+            "day": 0,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Иностранный язык",
+            "teachers": "Кирсанова Мария Михайловна; \n                                                            \n                                                                Пахоменкова Олеся Михайловна",
+            "rooms": "12-112; \n                                                            \n                                                                12-222",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-15",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Иностранный язык\nКИРСАНОВА М.М. 12-112\nПАХОМЕНКОВА О.М. 12-222",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Возрастная физиология и психофизиология",
+            "teachers": "Коваленок Татьяна Петровна",
+            "rooms": "27-310",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-22",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Возрастная физиология и психофизиология\nКОВАЛЕНОК Т.П. 27-310",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Информатика",
+            "teachers": "Болышов Даниил Владимирович",
+            "rooms": "12-315",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-25",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Информатика\nБОЛЫШОВ Д.В. 12-315",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "История России",
+            "teachers": "Оришев Александр Борисович",
+            "rooms": "01-404",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-36",
+          "pdfPage": 1,
+          "pdfRaw": "пр.История России\nОРИШЕВ А.Б. 01-404",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Иностранный язык",
+            "teachers": "Кирсанова Мария Михайловна; \n                                                            \n                                                                Пахоменкова Олеся Михайловна",
+            "rooms": "12-112; \n                                                            \n                                                                12-222",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-45",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Иностранный язык КИРСАНОВА М.М.\n12-112 ПАХОМЕНКОВА О.М. 12-222",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Возрастная физиология и психофизиология",
+            "teachers": "Коваленок Татьяна Петровна",
+            "rooms": "27-215",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-48",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Возрастная физиология и\nпсихофизиология\nКОВАЛЕНОК Т.П. 27-215",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "История России",
+            "teachers": "Оришев Александр Борисович",
+            "rooms": "01-407",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-62",
+          "pdfPage": 1,
+          "pdfRaw": "лек.История России\nОРИШЕВ А.Б. 01-407",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Основы российской государственности",
+            "teachers": "Позднякова Анастасия Сергеевна",
+            "rooms": "01-407",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-72",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Основы российской государственности\nПОЗДНЯКОВА А.С. 01-407",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Математика",
+            "teachers": "Вахрушева Инна Алексеевна",
+            "rooms": "12-114",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-77",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Математика\nВАХРУШЕВА И.А. 12-114",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Математика",
+            "teachers": "Вахрушева Инна Алексеевна",
+            "rooms": "12-Планетарий 1",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-90",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Математика\nВАХРУШЕВА И.А. 12-Планетарий1",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Информатика",
+            "teachers": "НАЗИМОВ А.И.",
+            "rooms": "12-Планетарий 1",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C1P1-99",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Информатика\nНАЗИМОВ А.И. 12-Планетарий1",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        }
+      ],
+      "pdfNotSeen": [
+        {
+          "weekStart": "2026-11-30",
+          "id": "C1P1-38",
+          "page": 1,
+          "day": 1,
+          "period": 3,
+          "raw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "status": "not-seen-in-calendar-snapshot"
+        },
+        {
+          "weekStart": "2026-11-30",
+          "id": "C1P1-103",
+          "page": 1,
+          "day": 4,
+          "period": 2,
+          "raw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "status": "not-seen-in-calendar-snapshot"
+        }
+      ]
+    },
+    {
+      "group": "ДЭ 23-24",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1200",
+      "status": "extracted",
+      "course": 3,
+      "pdfSource": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+      "pdfHash": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09",
+      "sections": [
+        {
+          "id": "groupScheduleCurrentWeekAccordion",
+          "dates": [
+            "2026-11-23",
+            "2026-11-24",
+            "2026-11-25",
+            "2026-11-26",
+            "2026-11-27"
+          ]
+        },
+        {
+          "id": "groupScheduleNextWeekAccordion",
+          "dates": [
+            "2026-11-30",
+            "2026-12-01",
+            "2026-12-02",
+            "2026-12-03",
+            "2026-12-04"
+          ]
+        }
+      ],
+      "counts": {
+        "text-and-room-match": 32
+      },
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "comparisons": [
+        {
+          "calendar": {
+            "date": "2026-11-23",
+            "day": 0,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Инфокоммуникационные системы и сети",
+            "teachers": "Водяницкий Георгий Андреевич",
+            "rooms": "09-ХД",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-3",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Инфокоммуникационные системы и\nсети\nВОДЯНИЦКИЙ Г.А. 09-ХД",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-23",
+            "day": 0,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Администрирование операционных систем",
+            "teachers": "Храмов Дмитрий Эдуардович",
+            "rooms": "15-202",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-7",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Администрирование операционных\nсистем ХРАМОВ Д.Э. 15-202",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-23",
+            "day": 0,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Инфокоммуникационные системы и сети",
+            "teachers": "Невзоров Александр Сергеевич",
+            "rooms": "02-106",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-15",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Инфокоммуникационные системы и сети\nНЕВЗОРОВ А.С. 02-106",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Куретков Максим Андреевич",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-43",
+          "pdfPage": 4,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Администрирование операционных систем",
+            "teachers": "Невзоров Александр Сергеевич",
+            "rooms": "01-402",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-47",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Администрирование операционных\nсистем НЕВЗОРОВ А.С. 01-402",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-24",
+            "day": 1,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Фронтенд и бэкенд разработка",
+            "teachers": "Храмов Дмитрий Эдуардович",
+            "rooms": "01-214",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-49",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Фронтенд и бэкенд разработка\nХРАМОВ Д.Э. 01-214",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Методы и средства проектирования информационных систем и технологий",
+            "teachers": "Бодур Айсу Мустафаевна",
+            "rooms": "01-212",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-52",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Методы и средства проектирования информационных\nсистем и технологий БОДУР А.М. 01-212",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Методы и средства проектирования информационных систем и технологий",
+            "teachers": "Калитвин Владимир Анатольевич",
+            "rooms": "23-25",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-58",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Методы и средства проектирования информационных\nсистем и технологий КАЛИТВИН В.А. 23-25",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Моделирование информационных систем",
+            "teachers": "САЛЬНИКОВ С.Г.",
+            "rooms": "09-ХД",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-67",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Моделирование информационных\nсистем САЛЬНИКОВ С.Г. 09-ХД",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Технологии хранения и управления данными в АПК",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "12-316",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-93",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Технологии хранения и управления\nданными в АПК ТИТОВ А.Д. 12-316",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Компьютерная графика",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "01-203",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-102",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Компьютерная графика\nТИТОВ А.Д. 01-203",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Моделирование информационных систем",
+            "teachers": "Бодур Айсу Мустафаевна",
+            "rooms": "01-203",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-107",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Моделирование информационных\nсистем\nБОДУР А.М. 01-203",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Технологии хранения и управления данными в АПК",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "29-206",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-114",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Технологии хранения и управления\nданными в АПК ТИТОВ А.Д. 29-206",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Куретков Максим Андреевич",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-122",
+          "pdfPage": 4,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Компьютерная графика",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "03-101",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-126",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Компьютерная графика\nТИТОВ А.Д. 03-101",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Программная инженерия",
+            "teachers": "Невзоров Александр Сергеевич; \n                                                            \n                                                                Фирсова Елена Витальевна",
+            "rooms": "01-212; \n                                                            \n                                                                01-212",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-130",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Программная инженерия\nНЕВЗОРОВ А.С. 01-212\nФИРСОВА Е.В.",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-30",
+            "day": 0,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Инфокоммуникационные системы и сети",
+            "teachers": "Водяницкий Георгий Андреевич",
+            "rooms": "09-ХД",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-3",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Инфокоммуникационные системы и\nсети\nВОДЯНИЦКИЙ Г.А. 09-ХД",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-30",
+            "day": 0,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Фронтенд и бэкенд разработка",
+            "teachers": "Храмов Дмитрий Эдуардович",
+            "rooms": "15-202",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-10",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Фронтенд и бэкенд разработка\nХРАМОВ Д.Э. 15-202",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-30",
+            "day": 0,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Инфокоммуникационные системы и сети",
+            "teachers": "Невзоров Александр Сергеевич",
+            "rooms": "02-302",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-19",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Инфокоммуникационные системы и сети\nНЕВЗОРОВ А.С. 02-302",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Фронтенд и бэкенд разработка",
+            "teachers": "Храмов Дмитрий Эдуардович",
+            "rooms": "01-213",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-30",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Фронтенд и бэкенд разработка\nХРАМОВ Д.Э. 01-213",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Технологии хранения и управления данными в АПК",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "01-216",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-38",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Технологии хранения и управления данными в АПК\nТИТОВ А.Д. 01-216",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-01",
+            "day": 1,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Куретков Максим Андреевич",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-43",
+          "pdfPage": 4,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Методы и средства проектирования информационных систем и технологий",
+            "teachers": "Калитвин Владимир Анатольевич",
+            "rooms": "23-40",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-62",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Методы и средства проектирования информационных\nсистем и технологий КАЛИТВИН В.А. 23-40",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Методы и средства проектирования информационных систем и технологий",
+            "teachers": "Бодур Айсу Мустафаевна",
+            "rooms": "01-216",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-72",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Методы и средства проектирования информационных\nсистем и технологий БОДУР А.М. 01-216",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Программная инженерия",
+            "teachers": "Храмов Дмитрий Эдуардович",
+            "rooms": "29-224",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-88",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Программная инженерия\nХРАМОВ Д.Э. 29-224",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Администрирование операционных систем",
+            "teachers": "Невзоров Александр Сергеевич",
+            "rooms": "02-302",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-99",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Администрирование операционных\nсистем НЕВЗОРОВ А.С. 02-302",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Компьютерная графика",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "01-203",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-102",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Компьютерная графика\nТИТОВ А.Д. 01-203",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Моделирование информационных систем",
+            "teachers": "Бодур Айсу Мустафаевна",
+            "rooms": "01-203",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-107",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Моделирование информационных\nсистем\nБОДУР А.М. 01-203",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Технологии хранения и управления данными в АПК",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "03-102",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-119",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Технологии хранения и управления\nданными в АПК ТИТОВ А.Д. 03-102",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "КпоВ: Базовые виды спорта / КпоВ: Базовая физическая культура",
+            "teachers": "Куретков Максим Андреевич",
+            "rooms": "СК",
+            "type": "",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-122",
+          "pdfPage": 4,
+          "pdfRaw": "КпоВ: Базовые виды спорта / КпоВ:\nБазовая физическая культура\nСК",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Компьютерная графика",
+            "teachers": "Титов Артем Денисович",
+            "rooms": "03-101",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-126",
+          "pdfPage": 4,
+          "pdfRaw": "лек.Компьютерная графика\nТИТОВ А.Д. 03-101",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Программная инженерия",
+            "teachers": "Невзоров Александр Сергеевич; \n                                                            \n                                                                Фирсова Елена Витальевна",
+            "rooms": "01-212; \n                                                            \n                                                                01-212",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C3P4-130",
+          "pdfPage": 4,
+          "pdfRaw": "пр.Программная инженерия\nНЕВЗОРОВ А.С. 01-212\nФИРСОВА Е.В.",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        }
+      ],
+      "pdfNotSeen": []
+    },
+    {
+      "group": "Д-Э 508",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1302",
+      "status": "extracted",
+      "course": 5,
+      "pdfSource": "https://www.timacad.ru/uploads/files/20261016/1792149886_ieiu-5.pdf",
+      "pdfHash": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9",
+      "sections": [
+        {
+          "id": "groupScheduleCurrentWeekAccordion",
+          "dates": [
+            "2026-11-25",
+            "2026-11-26",
+            "2026-11-27"
+          ]
+        },
+        {
+          "id": "groupScheduleNextWeekAccordion",
+          "dates": [
+            "2026-12-02",
+            "2026-12-03",
+            "2026-12-04"
+          ]
+        }
+      ],
+      "counts": {
+        "text-and-room-match": 27
+      },
+      "weekEvidence": {
+        "2026-11-23": [
+          0
+        ],
+        "2026-11-30": [
+          1
+        ]
+      },
+      "comparisons": [
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Контроль качества аудита",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-219",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-4",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Контроль качества аудита\nПУГАЕВА Я.Н. 02-219",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Комплаенс",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "03-101",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-7",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Комплаенс\nМАТОРИНА Т.А. 03-101",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Внутренний аудит обеспечения экономической безопасности в малых формах хозяйствования в АПК",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-11",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Внутренний аудит обеспечения\nэкономической безопасности в малых\nформах хозяйствования в АПК\nПУГАЕВА Я.Н. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-25",
+            "day": 2,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Контроль качества аудита",
+            "teachers": "ХОРУЖИЙ Л.И.",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-13",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Контроль качества аудита\nХОРУЖИЙ Л.И. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Анализ социально-экономического развития территорий",
+            "teachers": "Эрдниев Эрдни Сергеевич",
+            "rooms": "02-206",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-17",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Анализ социально-экономического\nразвития территорий\nЭРДНИЕВ Э.С. 02-206",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Аудит",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-19",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Аудит\nПУГАЕВА Я.Н. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Внутренний аудит обеспечения экономической безопасности в малых формах хозяйствования в АПК",
+            "teachers": "Эрдниев Эрдни Сергеевич",
+            "rooms": "02-219",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-23",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Внутренний аудит обеспечения\nэкономической безопасности в малых\nформах хозяйствования в АПК\nЭРДНИЕВ Э.С. 02-219",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Расследование экономических преступлений",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-25",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Расследование экономических\nпреступлений\nМАТОРИНА Т.А. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-26",
+            "day": 3,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Финансовый мониторинг",
+            "teachers": "Драганов Сергей Александрович",
+            "rooms": "02-322",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-27",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Финансовый мониторинг\nДРАГАНОВ С.А. 02-322",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Аудит",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Практика",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-30",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Аудит\nПУГАЕВА Я.Н. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Финансовый мониторинг",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Верхняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Верхняя"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-34",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Финансовый мониторинг\nМАТОРИНА Т.А. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Комплаенс",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-38",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Комплаенс\nМАТОРИНА Т.А. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-11-27",
+            "day": 4,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Расследование экономических преступлений",
+            "teachers": "Запоточная Мария Николаевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleCurrentWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-39",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Расследование экономических\nпреступлений\nЗАПОТОЧНАЯ М.Н. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Контроль качества аудита",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-219",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-4",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Контроль качества аудита\nПУГАЕВА Я.Н. 02-219",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Комплаенс",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-9",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Комплаенс\nМАТОРИНА Т.А. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Внутренний аудит обеспечения экономической безопасности в малых формах хозяйствования в АПК",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-11",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Внутренний аудит обеспечения\nэкономической безопасности в малых\nформах хозяйствования в АПК\nПУГАЕВА Я.Н. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-02",
+            "day": 2,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Анализ социально-экономического развития территорий",
+            "teachers": "Рахаева Виктория Владимировна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-15",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Анализ социально-экономического развития\nтерриторий РАХАЕВА В.В. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Анализ социально-экономического развития территорий",
+            "teachers": "Эрдниев Эрдни Сергеевич",
+            "rooms": "02-206",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-17",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Анализ социально-экономического\nразвития территорий\nЭРДНИЕВ Э.С. 02-206",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Аудит",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-101",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-21",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Аудит\nПУГАЕВА Я.Н. 02-101",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Внутренний аудит обеспечения экономической безопасности в малых формах хозяйствования в АПК",
+            "teachers": "Эрдниев Эрдни Сергеевич",
+            "rooms": "02-219",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-23",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Внутренний аудит обеспечения\nэкономической безопасности в малых\nформах хозяйствования в АПК\nЭРДНИЕВ Э.С. 02-219",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Расследование экономических преступлений",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Лекция",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-25",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Расследование экономических\nпреступлений\nМАТОРИНА Т.А. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-03",
+            "day": 3,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Финансовый мониторинг",
+            "teachers": "Драганов Сергей Александрович",
+            "rooms": "02-322",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-27",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Финансовый мониторинг\nДРАГАНОВ С.А. 02-322",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 0,
+            "time": "09:00-10:35",
+            "subject": "Контроль качества аудита",
+            "teachers": "Гупалова Татьяна Николаевна",
+            "rooms": "02-318",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-28",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Контроль качества аудита\nГУПАЛОВА Т.Н. 02-318",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 1,
+            "time": "10:55-12:30",
+            "subject": "Аудит",
+            "teachers": "Пугаева Ярослава Николаевна",
+            "rooms": "02-321",
+            "type": "Практика",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Практика",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-32",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Аудит\nПУГАЕВА Я.Н. 02-321",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 2,
+            "time": "13:00-14:35",
+            "subject": "Финансовый мониторинг",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "03-101",
+            "type": "Лекция",
+            "weekLabel": "Неделя: Нижняя",
+            "tags": [
+              "Лекция",
+              "Неделя: Нижняя"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-36",
+          "pdfPage": 1,
+          "pdfRaw": "лек.Финансовый мониторинг\nМАТОРИНА Т.А. 03-101",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 3,
+            "time": "14:55-16:30",
+            "subject": "Комплаенс",
+            "teachers": "Маторина Татьяна Анатольевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-38",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Комплаенс\nМАТОРИНА Т.А. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        },
+        {
+          "calendar": {
+            "date": "2026-12-04",
+            "day": 4,
+            "period": 4,
+            "time": "16:50-18:25",
+            "subject": "Расследование экономических преступлений",
+            "teachers": "Запоточная Мария Николаевна",
+            "rooms": "02-208",
+            "type": "Практика",
+            "weekLabel": "Неделя: Обе",
+            "tags": [
+              "Практика",
+              "Неделя: Обе"
+            ],
+            "section": "groupScheduleNextWeekAccordion"
+          },
+          "status": "text-and-room-match",
+          "pdfId": "C5P1-39",
+          "pdfPage": 1,
+          "pdfRaw": "пр.Расследование экономических\nпреступлений\nЗАПОТОЧНАЯ М.Н. 02-208",
+          "subjectTextMatch": true,
+          "roomTextMatch": true
+        }
+      ],
+      "pdfNotSeen": []
+    }
+  ]
+}
