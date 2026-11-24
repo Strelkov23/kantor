@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install beautifulsoup4==4.13.4
+      - name: Offline publication gate tests
+        run: python ingest/test_calendar_publication.py
       - name: Collect in isolation (83 public pages)
         run: python ingest/compare_institute_calendar.py --out "$RUNNER_TEMP/kantor-calendar" --require-complete
       - name: Validate and package
