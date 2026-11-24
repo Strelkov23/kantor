@@ -13,7 +13,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1064"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1064",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Корпоративный учет и финансовый менеджмент в цифровой экономике"
     },
     {
       "group": "Д-Э 403",
@@ -23,7 +26,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1153"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1153",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика предприятий и организаций"
     },
     {
       "group": "Д-Э 406",
@@ -33,7 +39,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1130"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1130",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Большие данные и машинное обучение"
     },
     {
       "group": "Д-Э 407",
@@ -43,7 +52,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1056"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1056",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "ИТ-решения для бизнеса"
     },
     {
       "group": "Д-Э 408",
@@ -53,7 +65,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1220"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1220",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "Д-Э 409",
@@ -63,7 +78,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1420"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1420",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "ИТ-решения для бизнеса"
     },
     {
       "group": "Д-Э 410",
@@ -73,7 +91,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1326"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1326",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "Д-Э 411",
@@ -83,7 +104,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1297"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1297",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и интеллектуальный анализ данных"
     },
     {
       "group": "Д-Э 412",
@@ -93,7 +117,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1186"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1186",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "Д-Э 413",
@@ -103,7 +130,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1055"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1055",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "43.03.02 Туризм",
+      "specialization_name": "Туризм и индустрия гостеприимства"
     },
     {
       "group": "Д-Э 415",
@@ -113,7 +143,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1174"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1174",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "Д-Э 416",
@@ -123,7 +156,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1378"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1378",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "Д-Э 417",
@@ -133,7 +169,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1227"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1227",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Системная аналитика"
     },
     {
       "group": "Д-Э 418",
@@ -143,7 +182,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1149"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1149",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Информационные системы и технологии"
     },
     {
       "group": "Д-Э 419",
@@ -153,7 +195,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1021"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1021",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Управление бизнесом"
     },
     {
       "group": "Д-Э 441",
@@ -163,7 +208,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1490"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1490",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и интеллектуальный анализ данных"
     },
     {
       "group": "Д-Э 442",
@@ -173,7 +221,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1491"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1491",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "Д-Э 443",
@@ -183,7 +234,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1489"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1489",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "Д-Э 508",
@@ -193,7 +247,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1302"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1302",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "Д-Э 509",
@@ -203,7 +260,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1377"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1377",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 01-24",
@@ -213,7 +273,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1097"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1097",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Бизнес-архитектура, учет и финансы"
     },
     {
       "group": "ДЭ 01-25",
@@ -223,7 +286,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1008"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1008",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Бизнес-архитектура, учет и финансы"
     },
     {
       "group": "ДЭ 01-26",
@@ -233,7 +299,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1781"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1781",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Бизнес-архитектура, учет и финансы"
     },
     {
       "group": "ДЭ 02-24",
@@ -243,7 +312,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1336"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1336",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика цифрового предприятия"
     },
     {
       "group": "ДЭ 02-25",
@@ -253,7 +325,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1073"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1073",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика цифрового предприятия"
     },
     {
       "group": "ДЭ 02-26",
@@ -263,7 +338,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1775"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1775",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика цифрового предприятия"
     },
     {
       "group": "ДЭ 03-24",
@@ -273,7 +351,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1298"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1298",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Бизнес-логистика и маркетинг"
     },
     {
       "group": "ДЭ 03-25",
@@ -283,7 +364,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1128"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1128",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Бизнес-логистика и маркетинг"
     },
     {
       "group": "ДЭ 03-26",
@@ -293,7 +377,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1779"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1779",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Бизнес-логистика и маркетинг"
     },
     {
       "group": "ДЭ 04-24",
@@ -303,7 +390,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1210"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1210",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Управление бизнесом"
     },
     {
       "group": "ДЭ 04-25",
@@ -313,7 +403,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1340"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1340",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.02 Менеджмент",
+      "specialization_name": "Управление бизнесом"
     },
     {
       "group": "ДЭ 05-24",
@@ -323,7 +416,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1436"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1436",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.04 Государственное и муниципальное управление",
+      "specialization_name": "Муниципальное управление"
     },
     {
       "group": "ДЭ 05-25",
@@ -333,7 +429,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1181"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1181",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Бизнес-архитектура, учет и финансы"
     },
     {
       "group": "ДЭ 05-26",
@@ -343,7 +442,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1646"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1646",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 06-24",
@@ -353,7 +455,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1144"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1144",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 06-25",
@@ -363,7 +468,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1027"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1027",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 06-26",
@@ -373,7 +481,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1785"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1785",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 07-24",
@@ -383,7 +494,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Специалитет",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1059"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1059",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.05.01 Экономическая безопасность",
+      "specialization_name": "Экономико-правовое обеспечение экономической безопасности"
     },
     {
       "group": "ДЭ 07-25",
@@ -393,7 +507,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1262"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1262",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 08-24",
@@ -403,7 +520,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1012"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1012",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 08-25",
@@ -413,7 +533,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1397"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1397",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 08-26",
@@ -423,7 +546,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1778"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1778",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 09-25",
@@ -433,7 +559,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1402"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1402",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 09-26",
@@ -443,7 +572,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1783"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1783",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 10-24",
@@ -453,7 +585,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1094"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1094",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 10-25",
@@ -463,7 +598,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1057"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1057",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 10-26",
@@ -473,7 +611,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1784"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1784",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 11-24",
@@ -483,7 +624,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1373"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1373",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 11-25",
@@ -493,7 +637,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1023"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1023",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 11-26",
@@ -503,7 +650,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1787"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1787",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Экономика и управление"
     },
     {
       "group": "ДЭ 12-24",
@@ -513,7 +663,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1209"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1209",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Информационные системы и технологии"
     },
     {
       "group": "ДЭ 12-25",
@@ -523,7 +676,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1426"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1426",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Информационные системы и технологии"
     },
     {
       "group": "ДЭ 12-26",
@@ -533,7 +689,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1782"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1782",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "44.03.04 Профессиональное обучение (по отраслям)",
+      "specialization_name": "Информационные системы и технологии"
     },
     {
       "group": "ДЭ 13-24",
@@ -543,7 +702,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1295"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1295",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "42.03.01 Реклама и связи с общественностью",
+      "specialization_name": "Реклама и медиакоммуникации"
     },
     {
       "group": "ДЭ 13-25",
@@ -553,7 +715,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1001"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1001",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика цифрового предприятия"
     },
     {
       "group": "ДЭ 13-26",
@@ -563,7 +728,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1780"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1780",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "38.03.01 Экономика",
+      "specialization_name": "Экономика цифрового предприятия"
     },
     {
       "group": "ДЭ 15-24",
@@ -573,7 +741,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1003"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1003",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 15-25",
@@ -583,7 +754,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1221"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1221",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 15-26",
@@ -593,7 +767,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1671"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1671",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 16-24",
@@ -603,7 +780,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1347"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1347",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 16-25",
@@ -613,7 +793,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1112"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1112",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 16-26",
@@ -623,7 +806,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1789"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1789",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Системы искусственного интеллекта"
     },
     {
       "group": "ДЭ 17-24",
@@ -633,7 +819,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1214"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1214",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Инжиниринг цифровых бизнес-экосистем"
     },
     {
       "group": "ДЭ 17-25",
@@ -643,7 +832,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1265"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1265",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Программные решения для бизнеса"
     },
     {
       "group": "ДЭ 17-26",
@@ -653,7 +845,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1768"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1768",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Программные решения для бизнеса"
     },
     {
       "group": "ДЭ 18-24",
@@ -663,7 +858,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1423"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1423",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Инжиниринг цифровых бизнес-экосистем"
     },
     {
       "group": "ДЭ 18-25",
@@ -673,7 +871,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1018"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1018",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.03 Прикладная информатика",
+      "specialization_name": "Программные решения для бизнеса"
     },
     {
       "group": "ДЭ 20-26",
@@ -683,7 +884,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1765"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1765",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Большие данные и машинное обучение"
     },
     {
       "group": "ДЭ 21-24",
@@ -693,7 +897,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1353"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1353",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Большие данные и машинное обучение"
     },
     {
       "group": "ДЭ 21-25",
@@ -703,7 +910,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1102"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1102",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Большие данные и машинное обучение"
     },
     {
       "group": "ДЭ 21-26",
@@ -713,7 +923,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1643"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1643",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и технологии искусственного интеллекта"
     },
     {
       "group": "ДЭ 22-24",
@@ -723,7 +936,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1366"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1366",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и интеллектуальный анализ данных"
     },
     {
       "group": "ДЭ 22-25",
@@ -733,7 +949,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1106"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1106",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и технологии искусственного интеллекта"
     },
     {
       "group": "ДЭ 22-26",
@@ -743,7 +962,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1680"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1680",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Компьютерные науки и технологии искусственного интеллекта"
     },
     {
       "group": "ДЭ 23-24",
@@ -753,7 +975,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1200"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1200",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 23-26",
@@ -763,7 +988,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1786"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1786",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 24-24",
@@ -773,7 +1001,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1126"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1126",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 24-25",
@@ -783,7 +1014,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1170"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1170",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 24-26",
@@ -793,7 +1027,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1656"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1656",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 25-24",
@@ -803,7 +1040,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1255"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1255",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Системная аналитика"
     },
     {
       "group": "ДЭ 25-25",
@@ -813,7 +1053,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1218"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1218",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 25-26",
@@ -823,7 +1066,10 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1788"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1788",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Фуллстек разработка"
     },
     {
       "group": "ДЭ 27-25",
@@ -833,7 +1079,11 @@
       "department_id": 22,
       "study_form": "Очная",
       "education_level": "Бакалавриат",
-      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1356"
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1356",
+      "department_name": "Институт экономики и управления АПК",
+      "specialty_name": "09.03.02 Информационные системы и технологии",
+      "specialization_name": "Системная аналитика и разработка программного обеспечения"
     }
-  ]
+  ],
+  "metadataRun": "https://github.com/Strelkov23/kantor/actions/runs/45404013290"
 }
