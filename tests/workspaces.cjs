@@ -255,3 +255,36 @@ assert.equal(both30.length,2);
 assert.equal(api30.auditJoint30(rr30,both30,ss30.results).ok,false);
 assert.ok(api30.jointPlans30(rr30,ss30).every(p=>p.moves.length<=2&&api30.auditJoint30(rr30,p.moves,ss30.results).ok));
 console.log("Joint packages and analytical report:",JSON.stringify({ready:ready30.totals,attempts:screen30.attempts,plans:plans30.map(p=>({id:p.id,moves:p.moves.length,windows:p.windows,minutes:p.spanMinutes,unresolved:p.unresolvedMoves})),teachers:reportFixture30.teachers,rooms:reportFixture30.rooms}));
+
+const src31=["diagnostics-25.js","rooms-18.js","resource-diagnostics-26.js","evidence-register-31.js"].map(read).join("\n");
+const api31=new Function("instituteCatalog","esc","calendarStatus27",src31+"\nreturn {reviewRegistry31,decision31,importDecisions31,possibleConflict31,prepareReview31,review31,renderReview31};")(cat,x=>String(x??""),()=> "Historical fixture");
+const reg31=api31.reviewRegistry31(manifest,files,cat);
+assert.deepEqual(reg31.totals,{cards:2599,streams:272,streamCards:871,multiGroupStreams:272,teacherLabels:23,teacherReviewCards:247,uniqueAliasLabels:0,uniqueAliasCards:0,subgroupCards:366,multiTeacherCards:329,multiRoomCards:180,specialGroupCards:36});
+assert.deepEqual(reg31.levels["calendar-and-pdf-resources"],{sets:156,cards:461});
+assert.deepEqual(reg31.occupancy.counts,{cards:2599,teacherAny:2396,teacherAll:2352,roomAny:2126,roomAll:2123,bothAll:1980,multiTeacherAll:281,multiRoomAll:177});
+assert.throws(()=>api31.reviewRegistry31(manifest,files.slice(1),cat));
+const decisionFixture31=api31.decision31(reg31.streams[0].id,"supported","Synthetic test",reg31,"streams");
+assert.equal(api31.importDecisions31({version:"0.31",checked:reg31.checked,decisions:[decisionFixture31]},reg31)[decisionFixture31.id].evidence,"Synthetic test");
+for(const envelope of [{version:"0.31",checked:"wrong",decisions:[decisionFixture31]},{version:"0.31",checked:reg31.checked,decisions:[decisionFixture31,decisionFixture31]},{version:"0.31",checked:reg31.checked,decisions:[{...decisionFixture31,candidate:"changed"}]}])assert.throws(()=>api31.importDecisions31(envelope,reg31));
+assert.throws(()=>api31.decision31(reg31.streams[0].id,"supported","",reg31,"streams"));
+assert.throws(()=>api31.decision31(reg31.teacherRows.find(x=>x.kind==="missing").id,"supported","Test",reg31,"teachers"));
+const groups31=manifest.groups.map(x=>({...x,cards:0})),files31=groups31.map(x=>({group:x.group,course:x.course,checked:manifest.checked,comparisons:[]}));
+const mk31=(teachers,rooms,start=540)=>({calendar:{date:"2026-11-24",subject:"Тест",type:"Лекция",teachers,rooms,time:"09:00-10:35"},timing:{start,end:start+95},status:"needs-review"});
+files31[0].comparisons=[mk31("Иванов Иван Иванович; Петров Пётр Петрович","02-101; 02-102"),mk31("Иванов И.И.","02-101",655),mk31("Иванов Игорь Иванович","03-101",780),mk31("Петров П.П.","02-102",895)];groups31[0].cards=4;
+files31[1].comparisons=[mk31("Петров Пётр Петрович","02-102")];groups31[1].cards=1;
+const fixture31=api31.reviewRegistry31({...manifest,groups:groups31,totals:{cards:5}},files31,cat);
+const unique31=fixture31.teacherRows.find(x=>x.kind==="unique-candidate"),multiple31=fixture31.teacherRows.find(x=>x.kind==="multiple-candidates");
+assert.equal(unique31.candidates[0],"Петров Пётр Петрович");
+assert.equal(multiple31.candidates.length,2);
+assert.equal(api31.decision31(unique31.id,"supported","Synthetic test",fixture31,"teachers").candidate,"Петров Пётр Петрович");
+assert.throws(()=>api31.decision31(multiple31.id,"supported","Synthetic test",fixture31,"teachers"));
+const entries31=fixture31.occupancy.entries;
+assert.deepEqual(api31.possibleConflict31(entries31[0],entries31[4]).sort(),["room","teacher"]);
+assert.deepEqual(api31.possibleConflict31(entries31[0],entries31[1]),[]);
+api31.prepareReview31({manifest,source:"frozen"},files);
+for(const mode of ["streams","teachers","subgroups"]){
+ const state=api31.review31;state.mode=mode;state.selected=(mode==="streams"?reg31.streams:mode==="teachers"?reg31.teacherRows:reg31.subgroups)[0].id;
+ const html=api31.renderReview31(),ids=[...html.matchAll(/\sid="([^"]+)"/g)].map(x=>x[1]);
+ assert.match(html,/reviewDetail31/);assert.match(html,/reviewImport31/);assert.match(html,/Покрытие возможной занятости/);assert.equal(ids.length,new Set(ids).size);
+}
+console.log("Evidence registry:",JSON.stringify({totals:reg31.totals,levels:reg31.levels,aliases:reg31.aliasKinds,occupancy:reg31.occupancy.counts}));
