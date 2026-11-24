@@ -50,7 +50,7 @@ let disciplines28={data:null,group:"",filter:"",mode:"all",sort:"cards"};
 function renderDisciplines28(){
  const s=disciplines28,d=s.data;
  let html='<section class="panel"><h2>Распределение дисциплин</h2><p>Проверяем, как занятия по одному предмету распределены во времени: лекции и практики, повторения в один день, соседние дни и пересекающиеся интервалы. Это диагностика, а не оценка соблюдения учебной программы.</p>';
- if(!d)return html+'<p class="muted">Загрузите календарный снимок.</p><button class="primary" id="loadDiscipline28" '+(diag25.loading?"disabled":"")+'>Загрузить данные</button></section>';
+ if(!d)return html+'<p class="muted">'+esc(s.error||"Загрузите календарный снимок.")+'</p><button class="primary" id="loadDiscipline28" '+(diag25.loading?"disabled":"")+'>Загрузить данные</button></section>';
  let g=d.groups.find(g=>g.group===s.group)||d.groups[0];const t=d.totals;
  const metric=(n,v)=>'<div class="metric"><small>'+esc(n)+'</small><strong>'+esc(v)+'</strong></div>';
  let rows=g.subjects.filter(r=>subjectKey28(r.subject).includes(subjectKey28(s.filter))&&(s.mode==="all"||s.mode==="practice-first"&&r.sequence==="practice-first"||s.mode==="concentration"&&r.sameDay>0||s.mode==="overlap"&&r.overlap>0)).slice().sort((a,b)=>b[s.sort]-a[s.sort]||a.subject.localeCompare(b.subject,"ru"));
