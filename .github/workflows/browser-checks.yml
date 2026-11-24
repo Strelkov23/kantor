@@ -71,6 +71,11 @@ jobs:
                       if(await head.getAttribute('aria-expanded')!=='true') await head.click();
                       await page.locator('#tool16-'+tool+' .foldbody16').waitFor();
                     }
+                    if(id==='space12') {
+                      await page.locator('#loadRooms18').click();
+                      await page.locator('#roomTemplate18').waitFor({timeout:30000});
+                      assert.ok(await page.locator('#roomExport18').isVisible());
+                    }
                     // Wait for local fetches without requiring external services.
                     await page.waitForLoadState('networkidle');
                     await page.screenshot({path:'browser-report/'+name+'-'+id+'.png',fullPage:true});
