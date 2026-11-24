@@ -49,6 +49,47 @@ jobs:
             const browser = await chromium.launch();
             const findings = [];
             try {
+              // Live bundle / IndexedDB fallback contract, without contacting the university.
+              const manifest=JSON.parse(fs.readFileSync('data/calendar-11/manifest.json','utf8'));
+              const files=manifest.groups.map(g=>JSON.parse(fs.readFileSync('data/calendar-11/'+g.file,'utf8')));
+              const fixture={version:'0.27',manifest,files,period:{start:'2026-11-23',end:'2026-12-06'}};
+              const liveContext=await browser.newContext();
+              try {
+                const live=await liveContext.newPage();
+                let responseMode='valid';
+                await live.route('**/*',route=>{
+                  const url=route.request().url();
+                  if(url.startsWith(base))return route.continue();
+                  if(url==='https://raw.githubusercontent.com/Strelkov23/kantor/main/data/current/calendar.json'){
+                    if(responseMode==='offline')return route.abort();
+                    const body=responseMode==='invalid'?{...fixture,period:{start:'2026-01-01',end:'2026-01-14'}}:fixture;
+                    return route.fulfill({status:200,contentType:'application/json',headers:{'access-control-allow-origin':'*'},body:JSON.stringify(body)});
+                  }
+                  return route.abort();
+                });
+                await live.goto(base,{waitUntil:'domcontentloaded'});
+                const online=await live.evaluate(async b=>{
+                  const s=await calendarSnapshot27(true);
+                  const saved=await writeCache51(b);
+                  return {source:s.source,checked:s.manifest.checked,groups:s.files?.size,saved,warning:s.warning||''};
+                },fixture);
+                assert.deepEqual(online,{source:'current',checked:manifest.checked,groups:83,saved:true,warning:''});
+                responseMode='invalid';
+                const invalid=await live.evaluate(async()=>{
+                  const s=await calendarSnapshot27(true);
+                  return {source:s.source,checked:s.manifest.checked,warning:!!s.warning};
+                });
+                assert.deepEqual(invalid,{source:'current',checked:manifest.checked,warning:true});
+                responseMode='offline';
+                await live.reload({waitUntil:'domcontentloaded'});
+                const offline=await live.evaluate(async()=>{
+                  const s=await calendarSnapshot27(true);
+                  return {source:s.source,checked:s.manifest.checked,cached:!!s.cached,warning:!!s.warning,groups:s.files?.size};
+                });
+                assert.deepEqual(offline,{source:'current',checked:manifest.checked,cached:true,warning:true,groups:83});
+                findings.push({test:'live bundle and offline cache',passed:true});
+              } catch(e) {findings.push({test:'live bundle and offline cache',error:String(e)})}
+              finally {await liveContext.close()}
               for (const [name,viewport] of Object.entries({ desktop:{width:1440,height:900}, mobile:{width:390,height:844}, narrow:{width:320,height:720} })) {
                 const context = await browser.newContext({viewport, isMobile:name!=='desktop', hasTouch:name!=='desktop'});
                 const page = await context.newPage();
