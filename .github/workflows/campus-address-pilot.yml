@@ -1,5 +1,8 @@
 name: KANTOR limited campus address pilot
 on:
+  push:
+    paths:
+      - '.github/workflows/campus-address-pilot.yml'
   workflow_dispatch:
 permissions:
   contents: read
