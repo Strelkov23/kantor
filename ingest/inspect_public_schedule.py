@@ -61,7 +61,7 @@ def main():
                 values=[str(v) for k,v in row.items() if k.startswith("group") and isinstance(v,(str,int))]
                 found={target[norm(v)] for v in values if norm(v) in target}
                 for g in found:
-                    matched.append({"group":g,**{k:v for k,v in row.items() if k in ("group_id","group_name","group_label","department_id","department_label","course_label","study_form","education_level","specialty_label","specialization_label")}})
+                    matched.append({"group":g,**{k:v for k,v in row.items() if k in ("group_id","group_name","group_label","department_id","department_label","department_name","course_label","study_form","education_level","specialty_label","specialty_name","specialization_label","specialization_name")}})
             report["matchedGroups"]=matched
             report["matchedGroupCount"]=len({r["group"] for r in matched})
         report["sampleTargetOptions"]=[o for o in p.options if any(any(norm(v).startswith(k) for k in target) for v in o.values())][:5]
