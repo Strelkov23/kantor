@@ -61,7 +61,7 @@ async function loadDiag25(){
   const snap=await calendarSnapshot27(true),m=snap.manifest;
   if(m.complete!==true||m.groups.length!==83||m.groups.some(g=>!/^\d+\.json$/.test(g.file)))throw Error("Полный календарный снимок не опубликован");
   const files=await calendarFiles27(snap);
-  s.data=aggregateDiag25(m,files,instituteCatalog);s.snapshot=snap;
+  s.data=aggregateDiag25(m,files,instituteCatalog);s.snapshot=snap;prepareReview31(snap,files);
   try{disciplines28.data=disciplineAggregate28(m,files,instituteCatalog);disciplines28.error=""}catch(e){disciplines28.data=null;disciplines28.error=e.message}
   try{resourceDiag26.data=resourceAggregate26(m,files,instituteCatalog);resourceDiag26.error=""}catch(e){resourceDiag26.error=e.message;resourceDiag26.data=null}
  }catch(e){s.error=e.message}
