@@ -350,3 +350,27 @@ console.log("Interday screening:",JSON.stringify({attempts:result33.attempts,mov
 
 const resourceReviewFixture33=api33.resourceReview33(ctx33,screen30);
 assert.deepEqual(resourceReviewFixture33.map(x=>[x.group,x.previousUnclear,x.remainingUnclear,x.explicitHits.length]),[["ДЭ 16-26",33,28,0],["Д-Э 441",47,33,0]]);
+
+
+ // Interactive campus pilot: all 16 directional selections, including missing and same-building routes.
+const mapPilot53=new Function("p","w","esc",read("spatial-current-28.js")+
+  `\nmap53.points=p;map53.walk=w;
+ const a=mapGeometry53(p,w),all=[];
+ for(const from of a.points)for(const to of a.points){
+ map53.from=from.buildingCode;map53.to=to.buildingCode;
+ all.push({from:map53.from,to:map53.to,html:renderMap53()});
+ }
+ return {a,all};`)(inputs.points,inputs.walk,String);
+assert.equal(mapPilot53.a.points.length,4);
+assert.equal(mapPilot53.a.routes.length,6);
+assert.equal(mapPilot53.all.length,16);
+for(const r of mapPilot53.a.routes)for(const c of r.geometry){
+ const [x,y]=mapPilot53.a.project(...c);
+ assert.ok(Number.isFinite(x)&&Number.isFinite(y)&&x>=0&&x<=640&&y>=0&&y<=370);
+}
+for(const v of mapPilot53.all){
+ assert.ok(v.html.includes("<svg"));
+ assert.equal(v.html.includes("<polyline"),mapPilot53.a.routes.some(r=>r.from===v.from&&r.to===v.to));
+ if(v.from===v.to)assert.ok(v.html.includes("Не рассчитывается"));
+}
+console.log("Interactive campus: 4 points, 6 directions, 16 combinations");
