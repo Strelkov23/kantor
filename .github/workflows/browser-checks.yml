@@ -105,6 +105,10 @@ jobs:
                         await page.locator('#moveDetail29').waitFor();
                       }
                       await page.locator('#course29').selectOption('all');
+                      await page.locator('#runInterday33').click();
+                      await page.locator('#interExport33').waitFor({timeout:30000});
+                      await page.locator('#interWeek33').selectOption('lower');
+                      await page.locator('#interStrict33').check();
                       await page.locator('#jointChoice30').waitFor({timeout:30000});
                       await page.locator('#jointChoice30').selectOption('strict');
                       assert.ok(await page.locator('#jointPanel30').isVisible());
