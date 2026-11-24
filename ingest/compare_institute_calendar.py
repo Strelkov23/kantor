@@ -5,6 +5,30 @@ from datetime import datetime,date,timedelta,timezone
 from pathlib import Path
 from compare_calendar import extract,compare,normalized_text
 from check_group_pages import read
+from urllib.error import HTTPError, URLError
+from http.client import RemoteDisconnected, IncompleteRead
+
+def read_with_retry(url, reader=read, pause=time.sleep):
+    """Bounded retries for transient transport failures only; no partial data."""
+    for attempt in range(3):
+        try:
+            return reader(url)
+        except HTTPError as exc:
+            if exc.code not in (408, 429, 500, 502, 503, 504) or attempt==2:
+                raise
+            delay=2**(attempt+1)
+            hint=exc.headers.get("Retry-After") if exc.headers else None
+            if hint:
+                # Do not ignore longer server-requested cooldowns.
+                try: delay=max(delay,int(hint))
+                except ValueError: raise exc
+                if delay>60: raise
+        except (URLError, TimeoutError, ConnectionError, RemoteDisconnected, IncompleteRead):
+            if attempt==2: raise
+            delay=2**(attempt+1)
+        print("RETRY",url,attempt+1,"in",delay,"s",flush=True)
+        pause(delay)
+
 ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/"data/calendar-11"
 STARTS=(540,655,780,895,1010)
@@ -63,7 +87,7 @@ def main():
             # Strictly use the public selector URL, not arbitrary stored addresses.
             expected_url="https://eg.timacad.ru/schedule/groups/?academic_year=2026&group="+str(g["group_id"])
             if g["url"]!=expected_url:raise ValueError("unexpected public URL")
-            html=read(expected_url);records,sections=extract(html,g)
+            html=read_with_retry(expected_url);records,sections=extract(html,g)
             if not records:raise ValueError("no lesson cards")
             comp=enrich(compare(records,source,g,sections),source)
             cards=comp["comparisons"]
