@@ -1,40 +1,27 @@
 name: KANTOR institute calendar review
 on:
-  push:
-    paths:
-      - 'ingest/compare_institute_calendar.py'
-      - '.github/workflows/institute-calendar.yml'
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 concurrency:
-  group: institute-calendar-review
+  group: kantor-calendar-refresh
   cancel-in-progress: false
 jobs:
   compare:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install beautifulsoup4
-      - run: python ingest/compare_institute_calendar.py
+      - run: pip install beautifulsoup4==4.13.4
+      - name: Collect review snapshot without changing frozen data
+        run: python ingest/compare_institute_calendar.py --out "$RUNNER_TEMP/kantor-review" --require-complete
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: institute-calendar-review
-          path: data/calendar-11/
+          path: ${{ runner.temp }}/kantor-review/
+          if-no-files-found: warn
           retention-days: 14
-      - name: Publish only a complete review snapshot
-        if: github.ref == 'refs/heads/main'
-        run: |
-          python -c 'import json; assert json.load(open("data/calendar-11/manifest.json"))["complete"], "Partial snapshot retained only in artifact"'
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/calendar-11/
-          if ! git diff --cached --quiet; then
-            git commit -m "Preserve institute-wide public calendar review snapshot"
-            git pull --rebase origin main
-            git push origin HEAD:main
-          fi
