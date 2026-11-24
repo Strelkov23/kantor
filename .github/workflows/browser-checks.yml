@@ -74,6 +74,18 @@ jobs:
                     if(id==='space12') {
                       await page.locator("#campusRefresh28").waitFor();
                       await page.locator("#tool16-space12 .source23").waitFor({timeout:30000});
+                      await page.locator('#mapLoad53').click();
+                      await page.locator('#mapFrom53').waitFor({timeout:30000});
+                      assert.equal(await page.locator('#mapFrom53 option').count(),4);
+                      await page.locator('#mapFrom53').selectOption('12');
+                      await page.locator('#mapTo53').selectOption('01');
+                      const pilotMap = page.locator('svg[aria-label^="Схема взаимного расположения"]');
+                      assert.equal(await pilotMap.locator('polyline').count(),1);
+                      await page.locator('#mapReverse53').click();
+                      assert.equal(await page.locator('#mapFrom53').inputValue(),'01');
+                      await page.locator('#mapTo53').selectOption('01');
+                      assert.equal(await pilotMap.locator('polyline').count(),0);
+                      assert.ok(await page.getByText('Выбран один корпус.',{exact:false}).isVisible());
                       await page.locator('#loadRooms18').click();
                       await page.locator('#roomTemplate18').waitFor({timeout:30000});
                       assert.ok(await page.locator('#roomExport18').isVisible());
@@ -94,6 +106,7 @@ jobs:
                       await page.locator('#personalDay23').selectOption('all');
                     }
                     if(id==='scenarios') {
+                      await page.locator('[data-guide45="manual"]').click();
                       await page.locator('#runOpportunities29').click();
                       await page.locator('#export29').waitFor({timeout:30000});
                       await page.locator('[data-view29="readiness"]').click();
@@ -113,6 +126,7 @@ jobs:
                       await page.locator('#jointChoice30').selectOption('strict');
                       assert.ok(await page.locator('#jointPanel30').isVisible());
                       await page.locator('#jointChoice30').selectOption('windows');
+                      await page.locator('[data-guide45="research"]').click();
                       await page.locator('#reportHTML30').waitFor();
                       await page.getByText('Открыть аналитическую записку',{exact:true}).click();
                       assert.ok(await page.getByText('Аналитическая записка: организация учебного процесса',{exact:true}).isVisible());
