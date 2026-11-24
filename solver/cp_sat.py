@@ -157,6 +157,16 @@ def validate(data):
             block_keys.add(key)
     errors=resource_errors(data)
     require(not errors,"; ".join(errors[:20]))
+    if catalog_path.exists():
+        buildings=set(cat["buildings"])
+        require(all(l["building"] in buildings for l in data["lessons"]), "Unknown lesson building")
+        require(all(b["building"] in buildings for b in data["blocked"]), "Unknown external building")
+        for l in data["lessons"]:
+            if flexible(l):
+                require(all(data["resourceEvidence"]["rooms"][rid]["building"] in buildings for rid in l["allowedRooms"]),l["id"]+": unknown candidate building")
+    if any(flexible(l) for l in data["lessons"]):
+        require(sum(len(room_options(data,l)) for l in data["lessons"])<=100000,
+                "Flexible model exceeds 100000 room-slot alternatives; restrict the candidate sets")
     return data
 
 def audit(data, chosen, weights):
