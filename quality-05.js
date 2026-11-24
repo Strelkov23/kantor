@@ -31,7 +31,7 @@ function readExact05(data,out){
   for(const l of out.lessons){
     let o=old.get(l?.id);if(!o||ids.has(l.id)){errors.push("Неизвестное или повторное занятие: "+String(l?.id));continue}
     ids.set(l.id,l);if(!o.allowedSlots.includes(l.slot)){errors.push("Недопустимый интервал: "+l.id);continue}
-    for(const k of ["title","room","building","groups","units","teachers","allowedSlots","durationMinutes"])if(JSON.stringify(o[k])!==JSON.stringify(l[k]))errors.push("Изменён ресурс или ограничение: "+l.id+" / "+k);
+    for(const k of ["title","room","building","groups","units","teachers","allowedSlots","durationMinutes","requiredEquipment"])if(JSON.stringify(o[k])!==JSON.stringify(l[k]))errors.push("Изменён ресурс или ограничение: "+l.id+" / "+k);
     m[5]+=Number(l.slot!==o.slot);m[7]+=Number(Math.floor(l.slot/5)!==Math.floor(o.slot/5));
     for(const r of resources04(o))add(r,l.slot,o,false);
   }
