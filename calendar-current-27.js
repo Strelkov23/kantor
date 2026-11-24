@@ -1,13 +1,33 @@
 /* 0.27: latest public bundle or clearly labeled frozen research fallback. */
 const currentCalendarUrl27="https://raw.githubusercontent.com/Strelkov23/kantor/main/data/current/calendar.json";
 let currentCalendar27=null,currentPending27=null;
+function validatePeriod54(period,checked){
+ const datePattern=/^\d{4}-\d{2}-\d{2}$/;
+ const day=v=>{if(typeof v!=="string"||!datePattern.test(v))throw Error("Неверная календарная дата");const n=Date.parse(v+"T00:00:00Z");if(!Number.isFinite(n)||new Date(n).toISOString().slice(0,10)!==v)throw Error("Неверная календарная дата");return n};
+ const start=day(period?.start),end=day(period?.end),ms=86400000;
+ const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date(checked));
+ const val=k=>parts.find(x=>x.type===k)?.value;
+ const today=day(val("year")+"-"+val("month")+"-"+val("day"));
+ if(new Date(start).getUTCDay()!==1||end-start!==13*ms||today<start||today>=start+7*ms)throw Error("Период не соответствует дате сбора");
+ return {start,end,day,ms};
+}
 function validateBundle27(b,catalog){
  const m=b?.manifest,fs=b?.files,expected=new Map(catalog.groups.map(g=>[g.id,g.course]));
  if(b?.version!=="0.27"||m?.version!=="0.11"||m.complete!==true||!Array.isArray(m.groups)||m.groups.length!==83||expected.size!==83||!Array.isArray(fs)||fs.length!==83||new Set(m.groups.map(g=>g.group)).size!==83||!Number.isFinite(Date.parse(m.checked))||Date.parse(m.checked)>Date.now()+300000)throw Error("Неполный или неверный снимок");
+ const p=validatePeriod54(b.period,m.checked);
  let total=0;const map=new Map();
  for(let i=0;i<83;i++){
    const g=m.groups[i],f=fs[i];
    if(expected.get(g.group)!==g.course||g.status!=="extracted"||!/^\d+\.json$/.test(g.file)||f.group!==g.group||f.course!==g.course||f.checked!==m.checked||f.url!==g.url||!Array.isArray(f.comparisons)||f.comparisons.length!==g.cards||!g.cards||map.has(g.file))throw Error("Несогласованный снимок группы");
+   const sectionIds=["groupScheduleCurrentWeekAccordion","groupScheduleNextWeekAccordion"];
+   if(!Array.isArray(f.sections)||f.sections.length!==2)throw Error("Нет двух календарных недель");
+   const days=new Map();
+   for(let j=0;j<2;j++){
+    const section=f.sections[j],lo=p.start+j*7*p.ms;
+    if(section.id!==sectionIds[j]||!Array.isArray(section.dates)||!section.dates.length||new Set(section.dates).size!==section.dates.length||section.dates.some(d=>{const n=p.day(d);return n<lo||n>=lo+7*p.ms}))throw Error("Даты раздела не соответствуют календарной неделе");
+    days.set(section.id,new Set(section.dates));
+   }
+   for(const row of f.comparisons){const q=row?.calendar;if(!q||!days.get(q.section)?.has(q.date)||typeof q.subject!=="string"||!q.subject.trim()||typeof q.time!=="string"||!q.time.trim())throw Error("Карточка вне календарного раздела или без обязательных полей")}
    total+=g.cards;map.set(g.file,f);
  }
  if(total!==m.totals.cards||m.totals.groups!==83||m.totals.failed!==0)throw Error("Не совпадают итоги календаря");
