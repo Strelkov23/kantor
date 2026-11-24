@@ -70,3 +70,21 @@ assert.equal(routeCalc(inputs.spatial,inputs.points,inputs.walk,{"12|01":inconsi
 const corrupted=JSON.parse(JSON.stringify(inputs.spatial));corrupted.strict.routes[0].count++;
 assert.throws(()=>routeCalc(corrupted,inputs.points,inputs.walk,{},settings22));
 console.log("Route analysis:",JSON.stringify(routeReport.totals));
+
+const pilotComparison=new Function(source+`
+pilotWalk="5";pilotBuffer=5;pilotExample24=true;iter03=1000;
+pilotRuns=[solve03(profiles03[0],2026)];pilotChoice=0;
+const r=pilotRuns[0];
+if(!r.arr||r.audit.length)throw Error("No feasible synthetic-route pilot");
+const c=comparisonMetrics24(fifthPilot.records,r.arr);
+const html=renderComparison24();
+return {before:c.base,after:c.next,changed:c.changes.length,count:r.arr.length,
+  audit:r.audit,html,expectedMoves:r.metrics[5]};
+`)();
+assert.equal(pilotComparison.count,41);
+assert.deepEqual(pilotComparison.audit,[]);
+assert.equal(pilotComparison.changed,pilotComparison.expectedMoves);
+assert.match(pilotComparison.html,/Действующий PDF/);
+assert.match(pilotComparison.html,/Предложение/);
+assert.match(pilotComparison.html,/Условный пример, не измерение/);
+console.log("Pilot comparison:",JSON.stringify({before:pilotComparison.before,after:pilotComparison.after,changed:pilotComparison.changed}));
