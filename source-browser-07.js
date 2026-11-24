@@ -35,7 +35,7 @@ async function load07(){
   if(d.course!==course||!Array.isArray(d.pages)||d.pages.length!==[4,4,4,3,1][course-1]||typeof d.sha256!=="string")throw Error("Неполный или некорректный снимок");
   if(token!==pending07)return;src07.data=d;src07.status="ready";if(!d.pages.some(p=>p.page===src07.page))src07.page=1;
  }catch(e){if(token!==pending07)return;src07.status="error";src07.error=e.message}
- if(tab==="source07")render()
+ if(visible16("source07"))render()
 }
 function bind07(){
  on("course07","change",e=>{src07.course=+e.target.value;src07.page=1;src07.data=null;src07.status="idle";load07()});
