@@ -31,6 +31,41 @@ class TestSolver(unittest.TestCase):
         with self.assertRaises(ValueError): solve(d)
     def test_audit_missing(self):
         self.assertTrue(audit(example(),{"L1":0},PROFILES["balanced"])["errors"])
+    def test_short_duration_opens_route(self):
+        d=example()
+        a,b=d["lessons"]
+        a["allowedSlots"]=[0]
+        b["slot"]=1; b["allowedSlots"]=[1]
+        d["routes"]["02|03"]=17
+        self.assertEqual(solve(d,seconds=20)["status"],"INFEASIBLE")
+        a["durationMinutes"]=90
+        r=solve(d,seconds=20)
+        self.assertEqual(r["status"],"OPTIMAL")
+        self.assertFalse(r["audit"]["errors"])
+        self.assertEqual(r["lessons"][0]["durationMinutes"],90)
+    def test_long_room_overlap_across_slots(self):
+        d=example()
+        a,b=d["lessons"]
+        a["allowedSlots"]=[0]; a["durationMinutes"]=120
+        b.update(slot=1,allowedSlots=[1],groups=["Д-Э 509"],units=["b"],
+                 teachers=["U"],room=a["room"],building=a["building"])
+        self.assertTrue(audit(d,{"L1":0,"L2":1},PROFILES["balanced"])["errors"])
+        self.assertEqual(solve(d,seconds=20)["status"],"INFEASIBLE")
+        a["durationMinutes"]=115
+        self.assertEqual(solve(d,seconds=20)["status"],"OPTIMAL")
+    def test_external_duration_room_overlap(self):
+        d=example()
+        d["lessons"][0]["slot"]=1
+        d["lessons"][0]["allowedSlots"]=[1]
+        d["blocked"]=[{"slot":0,"resources":["r:02-101"],"room":"02-101",
+                       "building":"02","durationMinutes":120}]
+        self.assertEqual(solve(d,seconds=20)["status"],"INFEASIBLE")
+        d["blocked"][0]["durationMinutes"]=115
+        self.assertEqual(solve(d,seconds=20)["status"],"OPTIMAL")
+    def test_invalid_duration(self):
+        for value in (0,241,90.5,True,None,"90"):
+            d=example();d["lessons"][0]["durationMinutes"]=value
+            with self.assertRaises(ValueError): solve(d)
     def test_institute_pilot(self):
         import json
         from pathlib import Path
