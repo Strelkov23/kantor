@@ -1,0 +1,61 @@
+{
+  "checked": "2026-11-24T14:22:56.167386+00:00",
+  "status": "external candidate points, not verified entrances",
+  "officialAddressSource": "https://www.timacad.ru/sveden/common/",
+  "license": "OpenStreetMap contributors, ODbL; https://www.openstreetmap.org/copyright",
+  "candidates": [
+    {
+      "type": "way",
+      "id": 32791585,
+      "address": "4",
+      "street": "Лиственничная аллея",
+      "name": "2-й корпус",
+      "building": "university",
+      "lat": 55.8337843,
+      "lon": 37.5562652,
+      "kind": "object bounding-box center (not entrance)",
+      "source": "https://www.openstreetmap.org/way/32791585",
+      "buildingCode": "02"
+    },
+    {
+      "type": "way",
+      "id": 32791588,
+      "address": "4А",
+      "street": "Лиственничная аллея",
+      "name": "1-й корпус",
+      "building": "university",
+      "lat": 55.832326,
+      "lon": 37.5573129,
+      "kind": "object bounding-box center (not entrance)",
+      "source": "https://www.openstreetmap.org/way/32791588",
+      "buildingCode": "01"
+    },
+    {
+      "type": "way",
+      "id": 32791722,
+      "address": "2",
+      "street": "Лиственничная аллея",
+      "name": "12-й корпус (планетарий)",
+      "building": "university",
+      "lat": 55.8331884,
+      "lon": 37.5544844,
+      "kind": "object bounding-box center (not entrance)",
+      "source": "https://www.openstreetmap.org/way/32791722",
+      "buildingCode": "12"
+    },
+    {
+      "type": "way",
+      "id": 32791874,
+      "address": "3",
+      "street": "Лиственничная аллея",
+      "name": "3-й корпус",
+      "building": "university",
+      "lat": 55.8341526,
+      "lon": 37.5533543,
+      "kind": "object bounding-box center (not entrance)",
+      "source": "https://www.openstreetmap.org/way/32791874",
+      "buildingCode": "03"
+    }
+  ],
+  "run": "https://github.com/Strelkov23/kantor/actions/runs/45413303605"
+}
