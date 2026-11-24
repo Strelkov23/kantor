@@ -133,3 +133,11 @@ files26[1].comparisons=[sample26,{...sample26,calendar:{...sample26.calendar,sub
 const fixture26=resourceApi26.resourceAggregate26({...manifest,groups:groups26,totals:{cards:3}},files26,cat);
 for(const k of ["teachers","rooms"]){const r=fixture26[k][0];assert.equal(r.cards,3);assert.equal(r.signatures,2);assert.equal(r.mergedCards,1);assert.equal(r.minutes,120);assert.equal(r.pairs,1);}
 console.log("Observed resources:",JSON.stringify({coverage:observed26.coverage,unknown:observed26.unknown,teachers:observed26.teachers.length,rooms:observed26.rooms.length}));
+
+const bundleApi27=new Function(read("calendar-current-27.js")+"\nreturn {validateBundle27};")();
+const bundle27={version:"0.27",manifest,files};
+assert.equal(bundleApi27.validateBundle27(bundle27,cat).files.size,83);
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:files.slice(1)},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,manifest:{...manifest,complete:false}},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,manifest:{...manifest,totals:{...manifest.totals,cards:2600}}},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:[{...files[0],checked:"invalid"},...files.slice(1)]},cat));
