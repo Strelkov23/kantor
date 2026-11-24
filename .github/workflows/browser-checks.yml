@@ -172,6 +172,20 @@ jobs:
                       await page.getByText('Открыть аналитическую записку',{exact:true}).click();
                       assert.ok(await page.getByText('Аналитическая записка: организация учебного процесса',{exact:true}).isVisible());
                       await page.getByText('Открыть аналитическую записку',{exact:true}).click();
+                      // Test the main guided optimizer, not only its legacy screening tools.
+                      if(name==='desktop'){
+                        await page.locator('#guideCourse45').selectOption('5');
+                        await page.locator('#guideLimit45').selectOption('5');
+                        await page.locator('#includeSwaps47').uncheck();
+                        await page.locator('#guideRun45').click();
+                        await page.locator('#guideResults45').waitFor({timeout:180000});
+                        assert.equal(await page.locator('[data-pick45]').count(),4);
+                        await page.locator('#chartMetric51').selectOption('windows');
+                        await page.locator('[data-pick45="1"]').click();
+                        assert.equal(await page.locator('[data-pick45="1"]').getAttribute('aria-pressed'),'true');
+                        assert.ok(await page.locator('#guideExport45').isVisible());
+                        findings.push({test:'guided four-model optimizer',passed:true});
+                      }
 
                     }
                     if(id==='baseline09') {
