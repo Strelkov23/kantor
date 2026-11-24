@@ -114,10 +114,35 @@ function interday33(ctx){
  for(const x of moves){const r=verifyInterday33(ctx,ctx.byId.get(x.id),x.newDate,x.newStart);if(!r.move||JSON.stringify(r.move)!==JSON.stringify(x))throw Error("Повторная проверка не пройдена")}
  return {checked:ctx.ready.checked,attempts,reasons,moves};
 }
-let inter33={data:null,error:"",context:null,source:null,week:"all",course:"all",strict:false,selected:"",running:false,token:0};
+// Supplement the earlier same-day audit with explicit components of multi-label cards.
+function resourceReview33(ctx,screen){
+ if(ctx.ready.checked!==screen.checked)throw Error("Разные снимки");
+ return screen.results.map(x=>{
+  const q=ctx.byId.get(x.id);
+  if(!q||!q.eligible||!auditMove29(ctx.ready.cards,x))throw Error("Неверный исходный перенос");
+  const next={...q,start:x.newStart,end:x.newEnd},o=ctx.occ.get(q.id),moved={...o,start:x.newStart,end:x.newEnd};
+  const hits=[],unclear=[];
+  for(const v of ctx.dateCards.get(q.date)||[]){
+   if(v.id===q.id)continue;
+   const e=ctx.occ.get(v.id),original=!v.time||overlap29(v,q),target=!v.time||overlap29(v,next);
+   if(!original&&!target)continue;
+   const types=[...new Set([...(original?possibleConflict31(e,o):[]),...(target?possibleConflict31(e,moved):[])])];
+   if(types.length)hits.push({id:v.id,group:v.group,subject:v.subject,time:v.time?clock26(v.start)+"–"+clock26(v.end):"Неизвестно",teachers:v.teacherName,rooms:v.roomLabel,types,original,target});
+   if(!e.valid||!e.teacherComplete||!e.roomComplete)unclear.push(v.id);
+  }
+  return {id:x.id,group:x.group,date:x.date,subject:x.subject,oldStart:x.oldStart,newStart:x.newStart,previousUnclear:x.unresolved,remainingUnclear:unclear.length,explicitHits:hits,status:hits.length?"blocked":"no-explicit-match"};
+ });
+}
+function renderResourceReview33(){
+ const s=inter33;
+ if(!s.context||!s.resourceReview)return "";
+ const rows=s.resourceReview;
+ return '<section class="panel"><h2>Уточнённая проверка прежних переносов</h2><p>Все явно перечисленные преподаватели и аудитории, включая составные записи, проверяются как возможные ограничения. Отсутствие явного совпадения не означает подтверждённую доступность.</p><div class="scroll"><table><tr><th>Группа и дата</th><th>Перенос</th><th>Неясные карточки: прежний → уточнённый учёт</th><th>Дополнительные совпадения</th><th>Результат</th></tr>'+rows.map(x=>'<tr><td>'+esc(x.group+" · "+x.date)+'</td><td>'+esc(x.subject+" · "+clock26(x.oldStart)+" → "+clock26(x.newStart))+'</td><td>'+x.previousUnclear+' → '+x.remainingUnclear+'</td><td>'+x.explicitHits.length+'</td><td>'+esc(x.status==="blocked"?"Исключён при строгом учёте":"Нет явного дополнительного совпадения")+'</td></tr>').join("")+'</table></div>'+rows.flatMap(x=>x.explicitHits.map(h=>'<p>'+esc(x.group+" · "+h.group+" · "+h.subject+" · "+h.time+" · "+h.teachers+" · "+h.rooms+" · "+h.types.map(t=>t==="teacher"?"преподаватель":"аудитория").join(", "))+'</p>')).join("")+'<p class="muted">Прежние пакеты сохраняются как результаты прежней методики. Дополнительная проверка не утверждает расписание; неоднозначные внешние назначения и состав подгрупп остаются неизвестными.</p></section>';
+}
+let inter33={data:null,error:"",context:null,source:null,week:"all",course:"all",strict:false,selected:"",running:false,token:0,resourceReview:null};
 function prepareInterday33(snap,files){
- const s=inter33;s.token++;s.running=false;s.data=null;s.context=null;s.error="";s.selected="";s.source=snap;
- try{s.context=context33(opportunities29.readiness,review31.data,week32.data,files,snap.manifest)}catch(e){s.error=e.message}
+ const s=inter33;s.token++;s.running=false;s.data=null;s.context=null;s.error="";s.selected="";s.source=snap;s.resourceReview=null;
+ try{s.context=context33(opportunities29.readiness,review31.data,week32.data,files,snap.manifest);s.resourceReview=resourceReview33(s.context,opportunities29.data)}catch(e){s.error=e.message}
 }
 function rows33(){const s=inter33;return (s.data?.moves||[]).filter(x=>(s.week==="all"||x.weekType===s.week)&&(s.course==="all"||x.course===+s.course)&&(!s.strict||!x.unresolved))}
 function keyMove33(x){return x.id+"|"+x.newDate+"|"+x.newStart}
