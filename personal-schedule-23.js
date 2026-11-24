@@ -17,7 +17,7 @@ function personalRows23(detail,week,day){
  let dates=new Set(week.dates);
  return detail.comparisons.filter(x=>dates.has(x.calendar.date)&&(day==="all"||x.calendar.date===day)).sort((a,b)=>a.calendar.date.localeCompare(b.calendar.date)||(a.timing.start??1440)-(b.timing.start??1440));
 }
-async function loadPersonal23(group=personal23.group){
+async function loadPersonal23(group=personal23.group,targetDate=null){
  let s=personal23,t=++personalToken23;homeChoice23=null;s.group=group;s.detail=null;s.error="";s.week="";s.day="all";s.loading=!!group;
  try{if(group)localStorage.setItem("kantor.group.v1",group);else localStorage.removeItem("kantor.group.v1")}catch(e){}
  render();if(!group)return;
@@ -31,7 +31,8 @@ async function loadPersonal23(group=personal23.group){
   if(d.group!==group||d.checked!==m.checked||!Array.isArray(d.comparisons)||d.comparisons.length!==g.cards)throw Error("Версии данных не совпадают");
   s.manifest=m;s.detail=d;
   let weeks=personalWeeks23(d),today=new Date().toLocaleDateString("sv-SE",{timeZone:"Europe/Moscow"});
-  s.week=(weeks.find(w=>w.dates.includes(today))||weeks[0])?.id||"";
+  let chosen=weeks.find(w=>targetDate&&w.dates.includes(targetDate))||weeks.find(w=>w.dates.includes(today))||weeks[0];
+  s.week=chosen?.id||"";s.day=chosen?.dates.includes(targetDate)?targetDate:"all";
  }catch(e){if(t!==personalToken23)return;s.error=e.message}
  if(t===personalToken23){s.loading=false;if(visible16("group07"))render()}
 }
