@@ -13,19 +13,43 @@ function validateBundle27(b,catalog){
  if(total!==m.totals.cards||m.totals.groups!==83||m.totals.failed!==0)throw Error("Не совпадают итоги календаря");
  return {manifest:m,files:map,source:"current",period:b.period};
 }
+
+/* Last validated live bundle survives reload when browser storage is available. */
+const snapshotCache51="kantor-calendar-validated-v051";
+function cacheDb51(){
+ return new Promise((resolve,reject)=>{
+  if(typeof indexedDB==="undefined"){reject(Error("Нет IndexedDB"));return}
+  const req=indexedDB.open(snapshotCache51,1);
+  req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains("snapshots"))req.result.createObjectStore("snapshots")};
+  req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);req.onblocked=()=>reject(Error("Хранилище заблокировано"));
+ });
+}
+async function readCache51(){
+ let db;try{db=await cacheDb51();return await new Promise((resolve,reject)=>{const tx=db.transaction("snapshots","readonly"),r=tx.objectStore("snapshots").get("latest");r.onsuccess=()=>resolve(r.result||null);r.onerror=()=>reject(r.error);tx.onabort=()=>reject(tx.error)})}catch(e){return null}finally{db?.close()}
+}
+async function writeCache51(bundle){
+ let db;try{db=await cacheDb51();await new Promise((resolve,reject)=>{const tx=db.transaction("snapshots","readwrite"),store=tx.objectStore("snapshots"),r=store.get("latest");r.onsuccess=()=>{if(!r.result||Date.parse(r.result.manifest.checked)<=Date.parse(bundle.manifest.checked))store.put(bundle,"latest")};tx.oncomplete=()=>resolve();tx.onabort=()=>reject(tx.error);tx.onerror=()=>reject(tx.error)});return true}catch(e){return false}finally{db?.close()}
+}
+function newestSnapshot51(...values){return values.filter(Boolean).sort((a,b)=>Date.parse(b.manifest.checked)-Date.parse(a.manifest.checked))[0]||null}
+
 async function calendarSnapshot27(force=false){
  if(currentPending27)return currentPending27;
  if(currentCalendar27&&!force)return currentCalendar27;
  currentPending27=(async()=>{
-   let reason="";const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);
+   let reason="",cached=null;const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),10000);
+   // A storage failure must not prevent online retrieval. Bound waiting for the cache.
+   const cachePromise=Promise.race([readCache51(),new Promise(resolve=>setTimeout(()=>resolve(null),1200))]).then(raw=>{try{if(raw)cached={...validateBundle27(raw,instituteCatalog),cached:true};return cached}catch(e){return null}});
    try{
       const res=await fetch(currentCalendarUrl27,{cache:"no-store",signal:controller.signal});
       if(!res.ok)throw Error("HTTP "+res.status);
-      const snap=validateBundle27(await res.json(),instituteCatalog);
-      if(currentCalendar27?.source==="current"&&Date.parse(snap.manifest.checked)<Date.parse(currentCalendar27.manifest.checked))throw Error("Получена более старая версия");
-      currentCalendar27=snap;return snap;
+      const raw=await res.json(),snap=validateBundle27(raw,instituteCatalog);await cachePromise;
+      const best=newestSnapshot51(snap,currentCalendar27,cached);
+      if(best!==snap){currentCalendar27={...best,warning:"Сервер вернул более старый снимок; сохранена более новая проверенная версия."};return currentCalendar27}
+      currentCalendar27=snap;void writeCache51(raw);return snap;
    }catch(e){reason="Последнее обновление недоступно."}finally{clearTimeout(timer)}
-   if(currentCalendar27){currentCalendar27={...currentCalendar27,warning:reason};return currentCalendar27}
+   await cachePromise;
+   const best=newestSnapshot51(currentCalendar27,cached);
+   if(best){currentCalendar27={...best,warning:reason};return currentCalendar27}
    const m=await getJson08("data/calendar-11/manifest.json");
    if(m.complete!==true||m.groups.length!==83)throw Error("Резервный снимок неполон");
    currentCalendar27={manifest:m,files:null,source:"frozen",warning:reason};return currentCalendar27;
@@ -73,5 +97,5 @@ async function calendarFiles27(snap){
 function calendarStatus27(snap){
  if(!snap)return "Снимок ещё не загружен.";
  const age=(Date.now()-Date.parse(snap.manifest.checked))/3600000,old=age>36;
- return (snap.source==="current"?"Последний полученный автоматический снимок":"Резервный исторический снимок")+" · "+snap.manifest.checked.slice(0,10)+" (UTC). "+(old?"Снимок старше 36 часов. ":"")+(snap.warning||"")+" Оперативные изменения проверяйте в журнале вуза.";
+ return (snap.source==="current"?(snap.cached?"Последний проверенный снимок из памяти устройства":"Последний полученный автоматический снимок"):"Резервный исторический снимок")+" · "+new Date(snap.manifest.checked).toLocaleString("ru-RU",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"})+" (МСК). "+(old?"Снимок старше 36 часов. ":"")+(snap.warning||"")+" Оперативные изменения проверяйте в журнале вуза.";
 }
