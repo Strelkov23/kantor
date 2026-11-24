@@ -111,3 +111,25 @@ assert.equal(duplicateDay25.span,335);
 assert.equal(diagnosticApi.dayMetrics25([card25(540,635),card25(null,null)],"test").usable,false);
 assert.throws(()=>diagnosticApi.aggregateDiag25(manifest,files.slice(1),cat));
 console.log("Calendar diagnostics:",JSON.stringify(diagnostic.totals));
+
+const resourceApi26=new Function(read("diagnostics-25.js")+"\n"+read("rooms-18.js")+"\n"+read("resource-diagnostics-26.js")+"\nreturn {resourceAggregate26,teacherClass26};")();
+const observed26=resourceApi26.resourceAggregate26(manifest,files,cat);
+assert.equal(observed26.total,2599);
+for(const kind of ["teachers","rooms"]){
+ const records=observed26[kind];
+ assert.ok(records.length>0);
+ assert.equal(observed26.coverage[kind]+Object.values(observed26.unknown[kind]).reduce((s,n)=>s+n,0),2599);
+ assert.equal(records.reduce((s,r)=>s+r.cards,0),observed26.coverage[kind]);
+ assert.ok(records.every(r=>r.cards===r.signatures+r.mergedCards&&r.minutes<=r.span&&r.pairs>=r.examples.length));
+}
+assert.equal(resourceApi26.teacherClass26("Иванов И.И.").reason,"unresolved");
+assert.equal(resourceApi26.teacherClass26("Преподаватель не назначен").reason,"unresolved");
+assert.equal(resourceApi26.teacherClass26("Иванов Иван Иванович; Петров Петр Петрович").reason,"multiple");
+const groups26=manifest.groups.map(g=>({...g,cards:0}));
+const files26=groups26.map(g=>({checked:manifest.checked,group:g.group,comparisons:[]}));
+const sample26={calendar:{date:"2026-11-24",subject:"Тест A",type:"Лекция",teachers:"Иванов Иван Иванович",rooms:"02-101"},timing:{start:540,end:635}};
+files26[0].comparisons=[sample26];groups26[0].cards=1;
+files26[1].comparisons=[sample26,{...sample26,calendar:{...sample26.calendar,subject:"Тест B"},timing:{start:600,end:660}}];groups26[1].cards=2;
+const fixture26=resourceApi26.resourceAggregate26({...manifest,groups:groups26,totals:{cards:3}},files26,cat);
+for(const k of ["teachers","rooms"]){const r=fixture26[k][0];assert.equal(r.cards,3);assert.equal(r.signatures,2);assert.equal(r.mergedCards,1);assert.equal(r.minutes,120);assert.equal(r.pairs,1);}
+console.log("Observed resources:",JSON.stringify({coverage:observed26.coverage,unknown:observed26.unknown,teachers:observed26.teachers.length,rooms:observed26.rooms.length}));
