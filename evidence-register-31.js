@@ -60,7 +60,39 @@ function reviewRegistry31(m,files,catalog){
  const levels={};for(const r of streams){if(!levels[r.level])levels[r.level]={sets:0,cards:0};levels[r.level].sets++;levels[r.level].cards+=r.cards}
  const aliasKinds={};for(const r of teacherRows)aliasKinds[r.kind]=(aliasKinds[r.kind]||0)+1;
  if(totals.streamCards>totals.cards||totals.teacherReviewCards>totals.cards||totals.subgroupCards>totals.cards||streams.some(s=>s.cardIds.some(id=>!byId.has(id))))throw Error("Нарушен баланс реестра");
- return {checked:m.checked,totals,levels,aliasKinds,streams,teacherRows,subgroups,byId};
+ const registry={checked:m.checked,totals,levels,aliasKinds,streams,teacherRows,subgroups,byId};registry.occupancy=occupancyEvidence31(registry,catalog);return registry;
+}
+/* Conservative possible-occupancy envelopes: explicit component labels only.
+ * No teacher-room pairing and no assertion of unique people behind initials. */
+function occupancyEvidence31(registry,catalog){
+ const counts={cards:registry.totals.cards,teacherAny:0,teacherAll:0,roomAny:0,roomAll:0,bothAll:0,multiTeacherAll:0,multiRoomAll:0};
+ const entries=[];
+ for(const q of registry.byId.values()){
+  const knownTeachers=q.teacherTokens.filter(p=>teacherClass26(p).id).map(p=>teacherClass26(p).id);
+  const unknownTeachers=q.teacherTokens.filter(p=>!teacherClass26(p).id);
+  const knownRooms=q.roomTokens.map(p=>roomClass18(p,catalog.buildings).room).filter(Boolean).map(label31);
+  const unknownRooms=q.roomTokens.filter(p=>!roomClass18(p,catalog.buildings).room);
+  const ta=q.teacherTokens.length>0&&!unknownTeachers.length,ra=q.roomTokens.length>0&&!unknownRooms.length;
+  if(knownTeachers.length)counts.teacherAny++;if(ta)counts.teacherAll++;
+  if(knownRooms.length)counts.roomAny++;if(ra)counts.roomAll++;
+  if(ta&&ra)counts.bothAll++;
+  if(ta&&q.teacherTokens.length>1)counts.multiTeacherAll++;
+  if(ra&&q.roomTokens.length>1)counts.multiRoomAll++;
+  entries.push({id:q.id,group:q.group,date:q.date,start:q.start,end:q.end,valid:q.valid,knownTeachers:[...new Set(knownTeachers)],knownRooms:[...new Set(knownRooms)],unknownTeachers,unknownRooms,teacherComplete:ta,roomComplete:ra});
+ }
+ if(entries.length!==counts.cards||counts.bothAll>Math.min(counts.teacherAll,counts.roomAll)||counts.teacherAll>counts.teacherAny||counts.roomAll>counts.roomAny)throw Error("Нарушен баланс покрытия");
+ return {counts,entries};
+}
+function possibleConflict31(a,b){
+ if(a.id===b.id||a.date!==b.date)return [];
+ if(a.valid&&b.valid&&!(a.start<b.end&&b.start<a.end))return [];
+ const result=[];
+ for(const k of ["knownTeachers","knownRooms"])if(a[k].some(x=>b[k].includes(x)))result.push(k==="knownTeachers"?"teacher":"room");
+ return result;
+}
+function renderOccupancy31(d){
+ const t=d.occupancy.counts,m=(n,v)=>'<div class="metric"><small>'+esc(n)+'</small><strong>'+v+' / '+t.cards+'</strong></div>';
+ return '<details><summary>Покрытие возможной занятости по явным компонентам</summary><p>Если карточка содержит несколько ФИО или аудиторий, каждое явное обозначение можно считать возможным ограничением. Нельзя связывать преподавателя с конкретной аудиторией по порядку списка, считать неизвестные элементы свободными или утверждать, что все перечисленные ресурсы заняты одновременно.</p><div class="grid">'+m("Хотя бы одно полное ФИО",t.teacherAny)+m("Все перечисленные ФИО полные",t.teacherAll)+m("Хотя бы один номер аудитории",t.roomAny)+m("Все номера однозначны",t.roomAll)+m("Все перечисленные метки ресурсов распознаны",t.bothAll)+'</div><p>Дополнительно выделено карточек с несколькими полными ФИО: '+t.multiTeacherAll+'; с несколькими однозначными аудиториями: '+t.multiRoomAll+'. Это резерв данных для консервативной модели занятости, а не допуск к переносу.</p></details>';
 }
 const levels31={"calendar-and-pdf-resources":"Календарь + ФИО и аудитория PDF","calendar-and-pdf-text":"Календарь + текст PDF","calendar-only":"Совпадение календаря","ambiguous-resources":"Неоднозначные ресурсы","repeat-within-group":"Повтор внутри группы"};
 const kinds31={"unique-candidate":"Один кандидат в снимке","multiple-candidates":"Несколько кандидатов","no-candidate":"Нет полного ФИО в снимке","missing":"Не назначен / отсутствует","other":"Другой формат"};
@@ -88,7 +120,7 @@ function renderReview31(){
  let html='<section class="panel"><h2>Потоки, подгруппы и идентификация ресурсов</h2><p>Реестр доказательности. Совпадение календарных назначений не устанавливает состав потока; одинаковые инициалы не устанавливают личность. Несколько преподавателей и аудиторий в одной карточке не означают подтверждённую связь между ними.</p><div class="row"><button id="reviewLoad31" class="primary" '+(s.loading?"disabled":"")+'>'+(s.loading?"Расчёт…":d?"Обновить реестр":"Построить реестр")+'</button><button data-tab="scenarios">Перейти к проверке переносов</button></div><p role="status">'+esc(s.error)+'</p>';
  if(!d)return html+'</section>';
  const t=d.totals,metric=(n,v)=>'<div class="metric"><small>'+esc(n)+'</small><strong>'+v+'</strong></div>';
- html+='<div class="source23">'+esc(calendarStatus27(s.snapshot))+'</div><div class="grid">'+metric("Повторяющиеся сигнатуры",t.streams)+metric("Карточки повторов",t.streamCards)+metric("Карточки с неясной меткой преподавателя",t.teacherReviewCards)+metric("Карточки с признаками подгрупп",t.subgroupCards)+'</div><div class="row">'+[["streams","Потоки"],["teachers","Имена преподавателей"],["subgroups","Признаки подгрупп"]].map(([v,n])=>'<button data-review-mode31="'+v+'" aria-pressed="'+(v===s.mode)+'" class="'+(v===s.mode?"primary":"")+'">'+n+'</button>').join("")+'</div>';
+ html+='<div class="source23">'+esc(calendarStatus27(s.snapshot))+'</div><div class="grid">'+metric("Повторяющиеся сигнатуры",t.streams)+metric("Карточки повторов",t.streamCards)+metric("Карточки с неясной меткой преподавателя",t.teacherReviewCards)+metric("Карточки с признаками подгрупп",t.subgroupCards)+'</div>'+renderOccupancy31(d)+'<div class="row">'+[["streams","Потоки"],["teachers","Имена преподавателей"],["subgroups","Признаки подгрупп"]].map(([v,n])=>'<button data-review-mode31="'+v+'" aria-pressed="'+(v===s.mode)+'" class="'+(v===s.mode?"primary":"")+'">'+n+'</button>').join("")+'</div>';
  const opts=s.mode==="streams"?levels31:s.mode==="teachers"?kinds31:{"multiple-teachers":"Несколько преподавателей","multiple-rooms":"Несколько аудиторий","special-group":"Специальная группа"};
  const rows=rows31(),sel=rows.find(x=>x.id===s.selected),status=x=>s.decisions[x.id]?.status==="supported"?"Поддержано пользователем":s.decisions[x.id]?.status==="rejected"?"Отклонено пользователем":"Не проверено";
  html+='<div class="row"><label>Поиск<input id="reviewFilter31" value="'+esc(s.filter)+'"></label><label>Признак<select id="reviewKind31"><option value="all">Все</option>'+Object.entries(opts).map(([v,n])=>'<option value="'+v+'" '+(s.kind===v?"selected":"")+'>'+esc(n)+'</option>').join("")+'</select></label><button id="reviewExport31">JSON всего реестра</button><button id="reviewCSV31">CSV таблицы</button></div><p>Показано '+Math.min(rows.length,150)+' из '+rows.length+'; CSV содержит весь отфильтрованный набор; JSON — полный реестр. Решения пользователя: '+Object.keys(s.decisions).length+' (только в текущем сеансе, не передаются решателю).</p>';
@@ -114,6 +146,6 @@ function bindReview31(){
  document.querySelectorAll("[data-review-select31]").forEach(b=>b.onclick=()=>{s.selected=b.dataset.reviewSelect31;render();$("reviewDetail31")?.scrollIntoView?.({block:"start"})});
  document.querySelectorAll("[data-review-group31]").forEach(b=>b.onclick=()=>{tab="group07";loadPersonal23(b.dataset.reviewGroup31,b.dataset.reviewDate31)});
  on("decisionSave31","click",()=>{try{const x=decision31(s.selected,$("decisionStatus31").value,$("decisionEvidence31").value,s.data,s.mode);s.decisions[x.id]=x;render();$("decisionMessage31").textContent="Отметка сохранена для экспорта."}catch(e){$("decisionMessage31").textContent=e.message}});
- on("reviewExport31","click",()=>{const d=s.data;if(!d)return;download("kantor-evidence-register.json",JSON.stringify({version:"0.31",checked:d.checked,status:"review-only",totals:d.totals,levels:d.levels,aliasKinds:d.aliasKinds,streams:d.streams,teacherRows:d.teacherRows,subgroups:d.subgroups,sourceCards:[...d.byId.values()],decisions:Object.values(s.decisions)},null,2),"application/json")});
+ on("reviewExport31","click",()=>{const d=s.data;if(!d)return;download("kantor-evidence-register.json",JSON.stringify({version:"0.31",checked:d.checked,status:"review-only",totals:d.totals,levels:d.levels,aliasKinds:d.aliasKinds,streams:d.streams,teacherRows:d.teacherRows,subgroups:d.subgroups,occupancy:d.occupancy,sourceCards:[...d.byId.values()],decisions:Object.values(s.decisions)},null,2),"application/json")});
  on("reviewCSV31","click",()=>{const cols=s.mode==="streams"?["date","time","subject","teachers","rooms","groups","cards","level"]:s.mode==="teachers"?["label","count","kind","candidates","groups"]:["group","date","time","subject","teachers","rooms","signals"],rows=rows31();download("kantor-"+s.mode+"-review.csv","\ufeff"+[[...cols,"reviewStatus","evidence","snapshot"],...rows.map(x=>[...cols.map(k=>Array.isArray(x[k])?x[k].join("; "):x[k]),s.decisions[x.id]?.status||"unreviewed",s.decisions[x.id]?.evidence||"",s.data.checked])].map(r=>r.map(v=>csv(String(v??"").replace(/^[=+\-@\t\r]/,"'$&"))).join(";")).join("\r\n"),"text/csv;charset=utf-8")});
 }
