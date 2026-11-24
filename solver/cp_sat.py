@@ -29,7 +29,7 @@ def resources(l):
 def journey(a, b, data):
     if a["room"] == b["room"]: return 0
     buf = data["bufferMinutes"]
-    if a["building"] == b["building"]: return buf
+    if a["building"] == b["building"]: return math.ceil(buf)
     x = data["routes"].get(a["building"]+"|"+b["building"])
     return None if x is None else math.ceil(x + buf)
 
@@ -76,9 +76,14 @@ def validate(data):
         require(slot_ok(l["slot"]) and isinstance(l["allowedSlots"],list) and l["slot"] in l["allowedSlots"] and all(slot_ok(s) and week(s)==week(l["slot"]) for s in l["allowedSlots"]),lid+": slots")
     if data["scope"]=="institute-day": require(seen==set(gu),"Some groups have no lessons")
     require(isinstance(data["blocked"],list),"Blocked list required")
+    block_keys=set()
     for b in data["blocked"]:
         require(slot_ok(b["slot"]) and isinstance(b["resources"],list) and bool(b["resources"]) and len(set(b["resources"]))==len(b["resources"]) and all(isinstance(r,str) and len(r)>2 and r[:2] in ("g:","t:","r:") for r in b["resources"]),"Invalid external block")
         require(all(isinstance(b[k],str) and b[k] for k in ("room","building")),"External block needs actual location")
+        for resource in b["resources"]:
+            key=(resource,b["slot"])
+            require(key not in block_keys,"Duplicate/conflicting external resource block")
+            block_keys.add(key)
     return data
 
 def audit(data, chosen, weights):
