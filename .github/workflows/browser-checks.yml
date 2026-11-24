@@ -76,6 +76,19 @@ jobs:
                       await page.locator('#roomTemplate18').waitFor({timeout:30000});
                       assert.ok(await page.locator('#roomExport18').isVisible());
                     }
+                    if(id==='group07') {
+                      await page.locator('#personalGroup23').selectOption('Д-Э 401');
+                      await page.locator('#personalWeek23').waitFor({timeout:30000});
+                      await page.locator('#personalWeek23').selectOption({index:0});
+                      assert.equal(await page.locator('.personal-lesson23').count(),15);
+                      await page.locator('#personalDay23').selectOption('2026-11-23');
+                      assert.equal(await page.locator('.personal-lesson23').count(),3);
+                      assert.ok(await page.getByText('Финансовые вычисления',{exact:true}).first().isVisible());
+                      await page.locator('#advancedToggle23').click();
+                      await page.locator('#groupId07').waitFor();
+                      await page.locator('#advancedToggle23').click();
+                      await page.locator('#personalDay23').selectOption('all');
+                    }
                     // Wait for local fetches without requiring external services.
                     await page.waitForLoadState('networkidle');
                     await page.screenshot({path:'browser-report/'+name+'-'+id+'.png',fullPage:true});
