@@ -1,0 +1,274 @@
+{
+  "status": "review_only",
+  "checked": "2026-11-24T13:10:34.615357+00:00",
+  "courses": [
+    {
+      "course": 1,
+      "url": "https://www.timacad.ru/uploads/files/20261016/1792149829_ieiu-1.pdf",
+      "expectedPages": 4,
+      "status": "extracted_unverified",
+      "sha256": "6729b01b2392ba85fb6aeaaf7df680c37a832fb7979598e8b26c3922e73b5984",
+      "actualPages": 4,
+      "words": 3545,
+      "tables": 4,
+      "pageDetails": [
+        {
+          "page": 1,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              41,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 2,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              44,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 3,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              49,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 4,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              41,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "course": 2,
+      "url": "https://www.timacad.ru/uploads/files/20261016/1792149840_ieiu-2.pdf",
+      "expectedPages": 4,
+      "status": "extracted_unverified",
+      "sha256": "3e4599eb26ddc938d84154a91be5bbf383d95de0c9e83f53b78b6ee1424218b3",
+      "actualPages": 4,
+      "words": 4465,
+      "tables": 4,
+      "pageDetails": [
+        {
+          "page": 1,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              50,
+              8
+            ]
+          ]
+        },
+        {
+          "page": 2,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              44,
+              8
+            ]
+          ]
+        },
+        {
+          "page": 3,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              46,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 4,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              45,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "course": 3,
+      "url": "https://www.timacad.ru/uploads/files/20261027/1793083289_ieiu-3.pdf",
+      "expectedPages": 4,
+      "status": "extracted_unverified",
+      "sha256": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09",
+      "actualPages": 4,
+      "words": 4203,
+      "tables": 4,
+      "pageDetails": [
+        {
+          "page": 1,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              46,
+              8
+            ]
+          ]
+        },
+        {
+          "page": 2,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              44,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 3,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              46,
+              7
+            ]
+          ]
+        },
+        {
+          "page": 4,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              46,
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "course": 4,
+      "url": "https://www.timacad.ru/uploads/files/20261016/1792149864_ieiu-4.pdf",
+      "expectedPages": 3,
+      "status": "extracted_unverified",
+      "sha256": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f",
+      "actualPages": 3,
+      "words": 3486,
+      "tables": 3,
+      "pageDetails": [
+        {
+          "page": 1,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              46,
+              8
+            ]
+          ]
+        },
+        {
+          "page": 2,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              45,
+              8
+            ]
+          ]
+        },
+        {
+          "page": 3,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              47,
+              8
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "course": 5,
+      "url": "https://www.timacad.ru/uploads/files/20261016/1792149886_ieiu-5.pdf",
+      "expectedPages": 1,
+      "status": "extracted_unverified",
+      "sha256": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9",
+      "actualPages": 1,
+      "words": 374,
+      "tables": 1,
+      "pageDetails": [
+        {
+          "page": 1,
+          "dimensions": [
+            595.2000122070312,
+            841.6799926757812
+          ],
+          "grids": [
+            [
+              34,
+              4
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
