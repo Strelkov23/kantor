@@ -63,6 +63,7 @@ async function loadDiag25(){
   let files=[];
   for(let i=0;i<m.groups.length;i+=6)files.push(...await Promise.all(m.groups.slice(i,i+6).map(g=>getJson08("data/calendar-11/"+g.file))));
   s.data=aggregateDiag25(m,files,instituteCatalog);
+  try{resourceDiag26.data=resourceAggregate26(m,files,instituteCatalog);resourceDiag26.error=""}catch(e){resourceDiag26.error=e.message;resourceDiag26.data=null}
  }catch(e){s.error=e.message}
  s.loading=false;if(visible16("baseline09"))render();
 }
