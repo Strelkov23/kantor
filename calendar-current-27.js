@@ -114,8 +114,19 @@ async function calendarFiles27(snap){
  }
  let a=[];for(let i=0;i<snap.manifest.groups.length;i+=6)a.push(...await Promise.all(snap.manifest.groups.slice(i,i+6).map(g=>calendarFile27(snap,g))));return a;
 }
-function calendarStatus27(snap){
+function calendarStatus27(snap,now=Date.now()){
  if(!snap)return "Снимок ещё не загружен.";
- const age=(Date.now()-Date.parse(snap.manifest.checked))/3600000,old=age>36;
- return (snap.source==="current"?(snap.cached?"Последний проверенный снимок из памяти устройства":"Последний полученный автоматический снимок"):"Резервный исторический снимок")+" · "+new Date(snap.manifest.checked).toLocaleString("ru-RU",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"})+" (МСК). "+(old?"Снимок старше 36 часов. ":"")+(snap.warning||"")+" Оперативные изменения проверяйте в журнале вуза.";
+ const checked=Date.parse(snap.manifest.checked),age=(now-checked)/3600000,old=age>36;
+ const fmt=new Intl.DateTimeFormat("ru-RU",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit"});
+ // Historical snapshots also have a real period, even without a bundle envelope.
+ let period=snap.period;
+ if(!period&&Number.isFinite(checked)){
+  const parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date(checked)),v=k=>parts.find(x=>x.type===k).value;
+  const d=new Date(v("year")+"-"+v("month")+"-"+v("day")+"T00:00:00Z");d.setUTCDate(d.getUTCDate()-(d.getUTCDay()+6)%7);
+  const start=d.toISOString().slice(0,10);d.setUTCDate(d.getUTCDate()+13);period={start,end:d.toISOString().slice(0,10)};
+ }
+ const isoToday=new Intl.DateTimeFormat("en-CA",{timeZone:"Europe/Moscow",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date(now));
+ const expired=period&&isoToday>period.end;
+ const dateText=s=>s.split("-").reverse().join(".");
+ return (snap.source==="current"?(snap.cached?"Последний проверенный снимок из памяти устройства":"Последний полученный автоматический снимок"):"Резервный исторический снимок")+" · "+fmt.format(new Date(checked))+" (МСК). "+(period?"Период: "+dateText(period.start)+" – "+dateText(period.end)+". ":"")+(expired?"Период расписания истёк; это архив, не текущие занятия. ":old?"Снимок старше 36 часов. ":"")+(snap.warning||"")+" Оперативные изменения проверяйте в журнале вуза.";
 }
