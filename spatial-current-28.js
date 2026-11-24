@@ -66,7 +66,7 @@ async function loadSpatial28(force=false){
 }
 
 let campusSummary28={data:null,snapshot:null,loading:false,error:""};
-function renderCampusSummary28(){
+function renderCampusSummaryBase53(){
  const s=campusSummary28,d=s.data?.strict,t=d?.totals;
  let html='<section class="panel"><div class="eyebrow23">Календарная диагностика</div><h2>Насколько удобно перемещаться между корпусами?</h2><p>Последовательные временные блоки групп, фактические интервалы между занятиями и однозначно распознанные корпуса.</p><div class="row"><button class="primary" id="campusRefresh28" '+(s.loading?"disabled":"")+'>'+(s.loading?"Расчёт…":d?"Обновить расчёт":"Рассчитать по календарю")+'</button><button data-tab="survey15">Проверить время ходьбы</button><button data-tab="campus13">Карта и подробный отчёт</button></div><p role="status">'+esc(s.error)+'</p>';
  if(!d)return html+'<p class="muted">Данные появятся после загрузки проверенного календарного снимка.</p></section>';
@@ -78,4 +78,53 @@ async function refreshCampus28(force=false){
  try{const r=await loadSpatial28(force);s.data=r.report;s.snapshot=r.snapshot}catch(e){s.error=e.message}
  s.loading=false;if(visible16("space12"))render();
 }
-function bindCampusSummary28(){on("campusRefresh28","click",()=>refreshCampus28(true))}
+
+
+/* Interactive campus pilot: local geometry, not verified entrances or navigation. */
+let map53={points:null,walk:null,loading:false,error:"",from:"12",to:"01"};
+function mapGeometry53(points,walk){
+ const valid=(x,y)=>Number.isFinite(x)&&Number.isFinite(y)&&Math.abs(x)<=180&&Math.abs(y)<=90;
+ const p=(points?.candidates||[]).filter(x=>valid(x.lon,x.lat)&&typeof x.buildingCode==="string");
+ const ids=new Set(p.map(x=>x.buildingCode));
+ if(p.length<2||ids.size!==p.length)throw Error("Некорректные точки карты");
+ const routes=(walk?.routes||[]).filter(r=>r.status==="estimated"&&ids.has(r.from)&&ids.has(r.to)&&r.from!==r.to&&Number.isFinite(r.meters)&&r.meters>0&&Number.isFinite(r.seconds)&&r.seconds>0&&Array.isArray(r.geometry)&&r.geometry.length>=2&&r.geometry.every(c=>Array.isArray(c)&&valid(c[0],c[1])));
+ const all=p.map(x=>[x.lon,x.lat]).concat(routes.flatMap(r=>r.geometry));
+ const lat0=p.reduce((s,x)=>s+x.lat,0)/p.length, k=Math.cos(lat0*Math.PI/180);
+ const xs=all.map(c=>c[0]*k),ys=all.map(c=>c[1]);
+ const xmin=Math.min(...xs),xmax=Math.max(...xs),ymin=Math.min(...ys),ymax=Math.max(...ys);
+ const scale=Math.min(550/(xmax-xmin||1),290/(ymax-ymin||1));
+ const project=(lon,lat)=>[320+(lon*k-(xmin+xmax)/2)*scale,185- (lat-(ymin+ymax)/2)*scale];
+ return {points:p,routes,project};
+}
+function renderMap53(){
+ const s=map53;
+ let html='<section class="panel"><div class="eyebrow23">Интерактивная схема · пилот</div><h2>Выберите два корпуса</h2><p>Посмотрите расчётный путь по пешеходной сети и сопоставьте его с текущим календарным расписанием. Точки — центры объектов OpenStreetMap, не входы.</p>';
+ if(!s.points||!s.walk)return html+'<button class="primary" id="mapLoad53" '+(s.loading?'disabled':'')+'>'+(s.loading?'Загрузка…':'Открыть интерактивную карту')+'</button><p role="status">'+esc(s.error)+'</p></section>';
+ let a;try{a=mapGeometry53(s.points,s.walk)}catch(e){return html+'<p role="status">'+esc(e.message)+'</p></section>'}
+ const options=selected=>a.points.map(p=>'<option value="'+esc(p.buildingCode)+'" '+(p.buildingCode===selected?'selected':'')+'>'+esc(p.buildingCode+' · '+p.name)+'</option>').join("");
+ const r=a.routes.find(x=>x.from===s.from&&x.to===s.to);
+ const current=campusSummary28.data?.strict;
+ const observation=current?.routes.find(x=>x.from===s.from&&x.to===s.to);
+ const coordinate=c=>a.project(c[0],c[1]).map(n=>n.toFixed(2)).join(",");
+ const svg='<svg viewBox="0 0 640 370" role="img" aria-label="Схема взаимного расположения четырёх корпусов и выбранного расчётного пути" style="display:block;width:100%;height:auto;max-height:420px;border:1px solid #ced8df;border-radius:12px;background:#f5f8fa"><path d="M600 55 V23 M594 30 L600 23 L606 30" stroke="#334155" stroke-width="2" fill="none"/><text x="600" y="69" text-anchor="middle" fill="#334155" font-size="13">С</text>'+ (r?'<polyline points="'+r.geometry.map(coordinate).join(" ")+'" fill="none" stroke="#087a71" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>':'')+a.points.map(p=>{const [x,y]=a.project(p.lon,p.lat);const chosen=p.buildingCode===s.from||p.buildingCode===s.to;return '<g><circle cx="'+x.toFixed(2)+'" cy="'+y.toFixed(2)+'" r="15" fill="'+(chosen?'#174f73':'#526579')+'" stroke="white" stroke-width="2"/><text x="'+x.toFixed(2)+'" y="'+(y+4).toFixed(2)+'" font-size="12" font-weight="bold" text-anchor="middle" fill="white">'+esc(p.buildingCode)+'</text></g>'}).join("")+'</svg>';
+ html+='<div class="row"><label>Откуда<select id="mapFrom53">'+options(s.from)+'</select></label><label>Куда<select id="mapTo53">'+options(s.to)+'</select></label><button id="mapReverse53">Поменять местами</button></div>'+svg+'<p class="muted">Схема ориентирована на север. Зелёная линия — геометрия сохранённой внешней оценки; точки — центры объектов. Не схема тротуаров и не навигация внутри зданий.</p>';
+ const metric=(label,v)=>'<div class="metric"><small>'+esc(label)+'</small><strong>'+esc(v)+'</strong></div>';
+ html+='<div class="grid">'+metric("Расчётная длина",r?Math.round(r.meters)+" м":"Нет оценки")+metric("Время вне зданий",r?Math.ceil(r.seconds/60)+" мин":"Нет оценки")+metric("Переходы групповых блоков",current?(observation?.count||0):"Нет снимка")+metric("Минимальный перерыв",observation?observation.minimum+" мин":"Нет наблюдений")+'</div>';
+ if(s.from===s.to)html+='<p class="notice">Выбран один корпус. Для переходов между этажами и аудиториями необходима отдельная модель; время не считается нулевым.</p>';
+ else if(!r)html+='<p class="notice">Для этого направления нет сохранённой внешней оценки. Обратный путь не подставляется автоматически.</p>';
+ else html+='<p>Время внутри зданий, ограничения доступа и погодные условия не включены. Это не подтверждение, что студент успеет на пару.</p><p><a href="'+esc(r.source)+'" target="_blank" rel="noopener">Источник расчёта маршрута (OSRM)</a></p>';
+ return html+'<p class="muted">Пилот: '+a.points.length+' корпуса, '+a.routes.length+' направлений. Геометрия: '+esc(s.walk.checked||"дата не указана")+'. Частоты и интервалы: '+esc(current?calendarStatus27(campusSummary28.snapshot):"календарь ещё не загружен")+'.</p><p><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">© OpenStreetMap contributors, ODbL</a> · <a href="https://www.timacad.ru/student-life/skhema-territorii" target="_blank" rel="noopener">Официальная схема академии</a></p></section>';
+}
+async function loadMap53(){
+ const s=map53;if(s.loading)return;s.loading=true;s.error="";render();
+ try{const [p,w]=await Promise.all([getJson08("data/osm-address-pilot-15.json"),getJson08("data/osm-walk-pilot-15.json")]);const a=mapGeometry53(p,w);if(!a.points.some(p=>p.buildingCode===s.from))s.from=a.points[0].buildingCode;if(!a.points.some(p=>p.buildingCode===s.to))s.to=a.points[1].buildingCode;s.points=p;s.walk=w}catch(e){s.error=e.message}
+ s.loading=false;if(visible16("space12"))render();
+}
+function renderCampusSummary28(){return renderCampusSummaryBase53()+renderMap53()}
+function bindCampusSummary28(){
+ on("campusRefresh28","click",()=>refreshCampus28(true));
+ on("mapLoad53","click",loadMap53);
+ on("mapFrom53","change",e=>{map53.from=e.target.value;render()});
+ on("mapTo53","change",e=>{map53.to=e.target.value;render()});
+ on("mapReverse53","click",()=>{[map53.from,map53.to]=[map53.to,map53.from];render()});
+}
