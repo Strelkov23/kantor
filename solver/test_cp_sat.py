@@ -41,6 +41,49 @@ class TestSolver(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,"room capacity"): validate(d)
         d=example();d["scope"]="institute-day"
         self.assertTrue(resource_errors(d))
+    def test_joint_room_choice(self):
+        d=with_evidence()
+        a,b=d["lessons"]
+        a["allowedSlots"]=[0]; b["slot"]=1; b["allowedSlots"]=[1]
+        b["allowedRooms"]=["03-101","02-101"]
+        d["routes"]={}
+        r=solve(d,seconds=20)
+        self.assertEqual(r["status"],"OPTIMAL")
+        self.assertEqual(r["lessons"][1]["room"],"02-101")
+        self.assertEqual(r["lessons"][1]["building"],"02")
+        self.assertEqual(r["audit"]["room_changes"],1)
+        self.assertFalse(r["audit"]["errors"])
+        # Enumerate both room choices with the independent audit.
+        scores=[]
+        for rid in b["allowedRooms"]:
+            q=audit(d,{"L1":(0,"02-101"),"L2":(1,rid)},PROFILES["balanced"])
+            if not q["errors"]: scores.append(q["score"])
+        self.assertEqual(r["objective"],min(scores))
+    def test_room_choice_respects_external_booking(self):
+        d=with_evidence();a,b=d["lessons"]
+        a["allowedSlots"]=[0]; b["slot"]=1; b["allowedSlots"]=[1]
+        b["allowedRooms"]=["03-101","02-101"]
+        d["blocked"]=[{"slot":1,"resources":["r:02-101"],"room":"02-101","building":"02"}]
+        r=solve(d,seconds=20)
+        self.assertEqual(r["status"],"OPTIMAL")
+        self.assertEqual(r["lessons"][1]["room"],"03-101")
+    def test_room_choice_availability(self):
+        d=with_evidence();a,b=d["lessons"]
+        a["allowedSlots"]=[0]; b["slot"]=1; b["allowedSlots"]=[1]
+        b["allowedRooms"]=["03-101","02-101"]
+        d["resourceEvidence"]["rooms"]["03-101"]["availableSlots"]=[2]
+        r=solve(d,seconds=20)
+        self.assertEqual(r["status"],"OPTIMAL")
+        self.assertEqual(r["lessons"][1]["room"],"02-101")
+        self.assertTrue(r["baseline"]["errors"])
+    def test_room_choice_rejects_unapproved_resources(self):
+        d=with_evidence();d["lessons"][1]["allowedRooms"]=["03-101","02-101"]
+        d["resourceEvidence"]["rooms"]["02-101"]["capacity"]=44
+        with self.assertRaisesRegex(ValueError,"room too small"): validate(d)
+        d=with_evidence();d["lessons"][1]["allowedRooms"]=["03-101","unknown"]
+        with self.assertRaisesRegex(ValueError,"missing/invalid room"): validate(d)
+        d=example();d["lessons"][1]["allowedRooms"]=["03-101","02-101"]
+        with self.assertRaisesRegex(ValueError,"resourceEvidence"): validate(d)
     def test_optimum(self):
         d=example();r=solve(d,seconds=20)
         self.assertEqual(r["status"],"OPTIMAL");self.assertEqual(len(r["lessons"]),2)
