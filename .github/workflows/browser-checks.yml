@@ -91,6 +91,19 @@ jobs:
                       await page.locator('#advancedToggle23').click();
                       await page.locator('#personalDay23').selectOption('all');
                     }
+                    if(id==='scenarios') {
+                      await page.locator('#runOpportunities29').click();
+                      await page.locator('#export29').waitFor({timeout:30000});
+                      await page.locator('[data-view29="readiness"]').click();
+                      assert.ok(await page.getByText('Что известно для расчёта?',{exact:true}).isVisible());
+                      await page.locator('#course29').selectOption('4');
+                      await page.locator('[data-view29="moves"]').click();
+                      if(await page.locator('[data-move29]').count()){
+                        await page.locator('[data-move29]').first().click();
+                        await page.locator('#moveDetail29').waitFor();
+                      }
+                      await page.locator('#course29').selectOption('all');
+                    }
                     if(id==='baseline09') {
                       await page.locator('#exportDiag25').waitFor({timeout:30000});
                       assert.equal(await page.locator('#courseDiag25 option').count(),6);
