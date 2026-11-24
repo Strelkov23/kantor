@@ -64,8 +64,8 @@ function resourceRows26(){
 }
 function clock26(n){return String(Math.floor(n/60)).padStart(2,"0")+":"+String(n%60).padStart(2,"0")}
 function renderAnalysis26(){
- const views=[["groups","Учебные группы"],["teachers","Преподаватели"],["rooms","Аудитории"],["disciplines","Дисциплины"],["evidence","Потоки и подгруппы"],["pdf","Семестровые PDF"]];
- return '<section class="panel"><h2>Анализ текущего расписания</h2><p>Выберите объект анализа. Показатели основаны на сохранённом снимке, а не на полном расписании всех подразделений вуза.</p><div class="row analysis-tabs26" aria-label="Объект анализа">'+views.map(([v,n])=>'<button type="button" data-analysis26="'+v+'" aria-pressed="'+(analysisView26===v)+'" class="'+(analysisView26===v?"primary":"")+'">'+n+'</button>').join("")+'</div></section>'+(analysisView26==="groups"?renderDiag25():analysisView26==="pdf"?renderBaseline09():analysisView26==="disciplines"?renderDisciplines28():analysisView26==="evidence"?renderReview31():renderResource26());
+ const views=[["groups","Учебные группы"],["weeks","Верхняя и нижняя недели"],["teachers","Преподаватели"],["rooms","Аудитории"],["disciplines","Дисциплины"],["evidence","Потоки и подгруппы"],["pdf","Семестровые PDF"]];
+ return '<section class="panel"><h2>Анализ текущего расписания</h2><p>Выберите объект анализа. Показатели основаны на сохранённом снимке, а не на полном расписании всех подразделений вуза.</p><div class="row analysis-tabs26" aria-label="Объект анализа">'+views.map(([v,n])=>'<button type="button" data-analysis26="'+v+'" aria-pressed="'+(analysisView26===v)+'" class="'+(analysisView26===v?"primary":"")+'">'+n+'</button>').join("")+'</div></section>'+(analysisView26==="groups"?renderDiag25():analysisView26==="pdf"?renderBaseline09():analysisView26==="disciplines"?renderDisciplines28():analysisView26==="evidence"?renderReview31():analysisView26==="weeks"?renderWeeks32():renderResource26());
 }
 function renderResource26(){
  const s=resourceDiag26,d=s.data,kind=s.mode,isTeacher=kind==="teachers",label=isTeacher?"преподаватели":"аудитории";
