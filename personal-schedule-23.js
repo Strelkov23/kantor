@@ -17,12 +17,12 @@ function personalRows23(detail,week,day){
  let dates=new Set(week.dates);
  return detail.comparisons.filter(x=>dates.has(x.calendar.date)&&(day==="all"||x.calendar.date===day)).sort((a,b)=>a.calendar.date.localeCompare(b.calendar.date)||(a.timing.start??1440)-(b.timing.start??1440));
 }
-async function loadPersonal23(group=personal23.group,targetDate=null){
+async function loadPersonal23(group=personal23.group,targetDate=null,refresh=false){
  let s=personal23,t=++personalToken23;homeChoice23=null;s.group=group;s.detail=null;s.error="";s.week="";s.day="all";s.loading=!!group;
  try{if(group)localStorage.setItem("kantor.group.v1",group);else localStorage.removeItem("kantor.group.v1")}catch(e){}
  render();if(!group)return;
  try{
-  let snap=await calendarSnapshot27(),m=snap.manifest;
+  let snap=await calendarSnapshot27(refresh),m=snap.manifest;
   if(m.complete!==true||m.groups.length!==83)throw Error("Полный календарный снимок недоступен");
   let g=m.groups.find(x=>x.group===group);
   if(!g||!/^\d+\.json$/.test(g.file))throw Error("Группа не найдена в календарном снимке");
@@ -45,7 +45,7 @@ function renderPersonal23(){
 function bindPersonal23(){
  on("advancedToggle23","click",()=>{advanced23=!advanced23;if(advanced23&&!group07.data&&group07.status!=="loading")loadGroup07();else render()});
  on("personalGroup23","change",e=>loadPersonal23(e.target.value));
- on("personalLoad23","click",()=>loadPersonal23());
+ on("personalLoad23","click",()=>loadPersonal23(personal23.group,null,true));
  on("personalWeek23","change",e=>{personal23.week=e.target.value;personal23.day="all";render()});
  on("personalDay23","change",e=>{personal23.day=e.target.value;render()});
  on("personalCSV23","click",()=>{let d=personal23.detail,w=personalWeeks23(d).find(x=>x.id===personal23.week);if(!d||!w)return;let rows=[["Группа","Дата","Время","Дисциплина","Вид","Преподаватель","Аудитория","Снимок","Источник"],...personalRows23(d,w,personal23.day).map(x=>{let c=x.calendar;return [d.group,c.date,c.time,c.subject,c.type,c.teachers,c.rooms,d.checked,d.url]})];download("kantor-personal-schedule.csv","\ufeff"+rows.map(r=>r.map(v=>csv(String(v??"").replace(/^[=+\-@\t\r]/,"'$&"))).join(";")).join("\r\n"),"text/csv;charset=utf-8")});
