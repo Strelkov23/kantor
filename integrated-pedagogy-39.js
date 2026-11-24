@@ -67,7 +67,7 @@ function pool39(ctx,screen,inter,room,config,profile){
 function audit39(ctx,selected,pool,profile,config){
  const allowed=new Map(pool.candidates.map(x=>[actionKey39(x),x])),moves=selected.map(x=>{const a=allowed.get(actionKey39(x));if(!a)throw Error("Недопустимый кандидат");return a}),cards=ctx.ready.cards,by=ctx.byId;
  for(let i=0;i<moves.length;i++)for(let j=0;j<i;j++)if(incompatible39(moves[i],moves[j],by))throw Error("Несовместимый пакет");
- for(const x of moves.filter(v=>v.swapKey)){const partners=moves.filter(v=>v.swapKey===x.swapKey);if(partners.length!==2||!partners.some(v=>v.id!==x.id&&v.newRoom===x.oldRoom&&v.oldRoom===x.newRoom))throw Error("Неполный обмен аудиториями")}
+ for(const k of new Set(moves.filter(v=>v.swapKey).map(v=>v.swapKey))){if(!validCycle48(moves.filter(v=>v.swapKey===k)))throw Error("Неполный обмен аудиториями")}
  const temporal=moves.filter(x=>x.kind!=="room");audit37(ctx,temporal,pool.temporal);
  const final=apply39(cards,moves),fBy=new Map(final.map(q=>[q.id,q])),occ=ctx.occ,changed=new Set(moves.map(x=>x.id));
  const actualOcc=q=>{const o=occ.get(q.id);return changed.has(q.id)?{...o,date:q.date,start:q.start,end:q.end,knownRooms:[q.roomKey],unknownRooms:[],roomComplete:true}:o};
@@ -112,7 +112,7 @@ function sync39(){const s=multi39;if(s.source!==inter33.context){s.source=inter3
 function invalidate39(){multi39.runs=[];multi39.active=0;multi39.msg="Настройки изменены. Выполните новый расчёт."}
 function renderMulti39(){
  const s=sync39(),ctx=s.source;
- let h='<section class="panel" id="multi39"><div class="eyebrow23">Комплексная лаборатория · 0.47</div><h2>Расписание: пространство, время и педагогика</h2><p>В едином пакете сравниваются изменения времени, дня и аудитории. Педагогические оценки вводятся для конкретной группы, а не назначаются автоматически по названиям предметов.</p>';
+ let h='<section class="panel" id="multi39"><div class="eyebrow23">Комплексная лаборатория · 0.48</div><h2>Расписание: пространство, время и педагогика</h2><p>В едином пакете сравниваются изменения времени, дня и аудитории. Педагогические оценки вводятся для конкретной группы, а не назначаются автоматически по названиям предметов.</p>';
  if(!ctx)return h+'<p>Сначала загрузите исходные данные в лаборатории расписания.</p></section>';
  const groups=ctx.ready.groups.map(g=>g.group);if(!groups.includes(s.group))s.group=groups[0]||"";
  const subjectMap=new Map(ctx.ready.cards.filter(q=>q.group===s.group&&q.subject).map(q=>[key26(q.subject),q.subject])),subjects=[...subjectMap].sort((a,b)=>a[1].localeCompare(b[1],"ru"));
@@ -139,5 +139,5 @@ function bindMulti39(){
  for(const [id,k] of [["multiStrict39","strict"],["multiPed39","pedProtect"]])on(id,"change",e=>{s[k]=e.target.checked;invalidate39();render()});
  on("runMulti39","click",()=>{if(s.running||!s.source||opportunities29.loading)return;if(!Number.isInteger(s.limit)||s.limit<1||s.limit>50){s.msg="Лимит 1–50";render();return}const ctx=s.source,token=++s.token,screen=opportunities29.data,config={strict:s.strict,week:s.week,course:s.course,limit:s.limit,pedProtect:s.pedProtect,register:JSON.parse(JSON.stringify(sync40().data)),requireRoom:sync40().requireRoom,workload:{...sync42().p},weekProtect:sync43().protect,searchNodes:searchState44.nodes,includeSwaps:atomic47.enabled};s.running=true;s.runs=[];s.msg="";render();setTimeout(()=>{if(token!==s.token||ctx!==inter33.context)return;try{s.inter=s.inter||interday33(ctx);s.room=s.room||roomAlternatives38(ctx);const pool=pool39(ctx,screen,s.inter,s.room,config,s.profile);s.runs=[["balanced","Баланс"],["space","Меньше переходов"],["ped","Педагогический приоритет"],["fair","Охват и равномерность"]].map(([k,name])=>({...solve39(ctx,pool,s.profile,config,k),name,config}));s.active=0;s.msg="Расчёт завершён."}catch(e){s.msg=e.message;s.runs=[]}finally{s.running=false;render()}},20)});
  document.querySelectorAll("[data-multi39]").forEach(el=>el.onclick=()=>{s.active=+el.dataset.multi39;render()});
- on("exportMulti39","click",()=>{if(s.runs.length)download("kantor-integrated-models.json",JSON.stringify({version:"0.47",checked:s.source.ready.checked,status:"observed-only",profile:s.profile,runs:s.runs},null,2),"application/json")});
+ on("exportMulti39","click",()=>{if(s.runs.length)download("kantor-integrated-models.json",JSON.stringify({version:"0.48",checked:s.source.ready.checked,status:"observed-only",profile:s.profile,runs:s.runs},null,2),"application/json")});
 }
