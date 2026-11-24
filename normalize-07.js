@@ -49,3 +49,43 @@ function normalizePhysical07(d,catalog){
  for(let [key,ids] of positions)if(ids.length>1)issues.push({problem:"Multiple physical cells at same group/half/slot",key:JSON.parse(key),ids});
  return {version:"0.7",course:d.course,source:d.source,sourceHash:d.sha256,status:"geometry-mapped, semantics not verified",groups:[...seenGroups],records,issues,pageStats,positionCount:positions.size};
 }
+
+function classifyPhysical07(r,catalog){
+ let raw=r.raw.trim(), flat=raw.replace(/\s+/g," "), teacherPattern=/[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+(?:\s+[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+)*\s+[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\./gu;
+ let rooms=[...flat.matchAll(/(?:^|\s|\.)((?:\d{2}[А-ЯA-Z]?)-\d{1,4}[А-Яа-яЁёA-Za-z]?)(?=$|\s|[,;])/gu)];
+ let teachers=[...flat.matchAll(teacherPattern)];
+ // A single teacher, numeric room, known building and ordinary type are necessary, not sufficient.
+ let m=flat.match(/^(лек|пр|лаб)\s*\.\s*(.+?)\s+([А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+(?:\s+[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+)*\s+[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\.)\s*(\d{2}[А-ЯA-Z]?-\d{1,4}[А-Яа-яЁёA-Za-z]?)$/u);
+ let reason="";
+ if(r.geometryStatus!=="mapped")reason="Геометрия не определена";
+ else if(/(?:\b[12]\s*п\/?г|подгрупп|[12]\s*пг|РКИ|КпоВ|ФТД|КМ:)/iu.test(flat))reason="Подгруппа, выборная дисциплина или специальная запись";
+ else if(!m||teachers.length!==1||rooms.length!==1)reason="Сложная или неоднозначная структура преподавателя/аудитории";
+ else if(!Object.hasOwn(catalog.buildings,m[4].split("-")[0]))reason="Корпус не найден в справочнике";
+ if(reason)return {...r,parseStatus:"manual",parseReason:reason,suggestion:null};
+ // Teacher pattern can greedily include uppercase words from title; reject mismatches.
+ let surname=m[3].replace(/\s+/g," ").trim(), title=m[2].trim();
+ if(!title||/[;]|(?:лек|пр|лаб)\s*\./iu.test(title))return {...r,parseStatus:"manual",parseReason:"Возможны несколько занятий",suggestion:null};
+ return {...r,parseStatus:"simple",parseReason:"Структурный кандидат; состав участников и достоверность требуют сверки",suggestion:{type:m[1],title,teacher:surname,room:m[4],building:m[4].split("-")[0]}};
+}
+function semanticReview07(normalized,catalog){
+ let records=normalized.flatMap(d=>d.records).map(r=>classifyPhysical07(r,catalog)), by=new Map(), events=[];
+ for(let r of records){
+  if(!r.suggestion)continue;
+  for(let w of r.halves){
+   let s=r.suggestion,key=JSON.stringify([w,r.day,r.period,s.type,s.title.toLocaleLowerCase("ru-RU"),s.teacher.toLocaleUpperCase("ru-RU"),s.room]);
+   if(!by.has(key))by.set(key,[]);
+   by.get(key).push({r,w});
+  }
+ }
+ for(let list of by.values()){
+  let {r,w}=list[0],s=r.suggestion,groups=[...new Set(list.flatMap(x=>x.r.groups))],sourceIds=list.map(x=>x.r.id);
+  events.push({id:"E"+(events.length+1),week:w,day:r.day,period:r.period,groups,sourceIds,...s,status:groups.length>1?"possible-flow":"unverified"});
+ }
+ // Detect conflicting structural candidates; possible shared session isn't automatically confirmed.
+ const resources=new Map(),conflicts=[];
+ for(const e of events)for(const k of ["teacher:"+e.teacher,"room:"+e.room,...e.groups.map(g=>"group:"+g)]){
+  let key=JSON.stringify([e.week,e.day,e.period,k]);if(!resources.has(key))resources.set(key,[]);resources.get(key).push(e.id);
+ }
+ for(const [key,ids] of resources)if(ids.length>1)conflicts.push({key:JSON.parse(key),ids});
+ return {records,events,conflicts};
+}
