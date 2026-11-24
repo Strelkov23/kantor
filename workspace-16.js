@@ -6,12 +6,12 @@ const workspaces16=[
  {id:"space12",section:"space",title:"Карта и переходы",description:"Ориентация в кампусе, частота переходов и доступные интервалы на одной странице.",tools:[["campus13","Официальная карта, паспорта корпусов и расчёт интервалов"]]},
  {id:"survey15",section:"space",title:"Измерение маршрутов",description:"От приоритетных направлений до журнала замеров и матрицы решателя.",tools:[["routes04","Матрица времени переходов"],["priority06","Источники и приоритеты пилота"],["campus","Справочник корпусов и пилотный переход"]]},
  {id:"scenarios",section:"opt",title:"Варианты и вычислители",description:"Посмотрите, как можно сократить окна и переходы. Пока расчёт на реальных данных ограничен двумя группами пятого курса.",tools:[["unified04","Расширенная настройка модели"],["exact05","Точный расчёт и проверка результата"]]},
- {id:"baseline09",section:"research",title:"Статистика и эксперименты",description:"Исходные показатели, исследовательские эксперименты и методика оценки.",tools:[["experiment06","Результаты вычислительных экспериментов"],["audit","Критерии и качество данных"]]},
+ {id:"baseline09",section:"research",title:"Состояние расписания",description:"Диагностика окон, нагрузки, длинных дней и других особенностей по датам; ниже — расчёт по семестровым PDF и научные инструменты.",tools:[["experiment06","Результаты вычислительных экспериментов"],["audit","Критерии и качество данных"]]},
  {id:"review08",section:"research",title:"Проверка данных",description:"Единое место для семантической проверки, исходных записей и журнала решений.",tools:[["review05","Первичный структурный разбор"],["source1","Ручная сверка первого курса"]]},
  {id:"overview",section:"demo",title:"Результаты демо",description:"Условный набор данных, не расписание академии.",tools:[["schedule","Просмотр расписания демо"],["checks","Проверка ограничений демо"]]},
  {id:"optimize",section:"demo",title:"Настройка демо",description:"Учебная настройка расчёта и импорт условной модели.",tools:[["data","Исходные данные и импорт"],["method","Методология демонстрации"]]}
 ];
-const mainSections16=[["home","Главная"],["study","Расписание"],["space","Кампус"],["opt","Улучшить расписание"],["research","Данные и проверка"],["demo","Попробовать демо"]];
+const mainSections16=[["home","Главная"],["study","Расписание"],["space","Кампус"],["opt","Улучшить расписание"],["research","Анализ расписания"],["demo","Попробовать демо"]];
 const opened16=new Set();
 function workspace16(id=tab){return workspaces16.find(w=>w.id===id||w.tools.some(t=>t[0]===id))||workspaces16[0]}
 function visible16(id){let w=workspace16();return w.id===id||w.tools.some(t=>t[0]===id)&&(opened16.has(id)||tab===id)}
@@ -34,6 +34,7 @@ function activate16(id,scroll=false){
  if(visible16("programs10")&&!programs10.data&&!programs10.loading)loadPrograms10();
  if(visible16("calendar11")&&!calendar11.data&&!calendar11.loading)load11();
  if(visible16("survey15")&&!survey15.baseline&&!survey15.loading)loadSurvey15();
+ if(visible16("baseline09")&&!diag25.data&&!diag25.loading)loadDiag25();
  if(visible16("baseline09")&&!baselineState09.data&&!baselineState09.loading)loadBaseline09();
  if(scroll&&id!==w.id){let node=$("tool16-"+id);if(node&&node.scrollIntoView)node.scrollIntoView({block:"start"})}
 }
