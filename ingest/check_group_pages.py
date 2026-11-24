@@ -4,7 +4,17 @@ import json,re,time
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urlencode
-from inspect_public_schedule import read,BASE
+from inspect_public_schedule import BASE
+from urllib.request import Request,urlopen
+from urllib.parse import urlsplit
+from datetime import datetime,timezone
+
+def read(url):
+    with urlopen(Request(url,headers={'User-Agent':'KANTOR public timetable research/0.10'}),timeout=25) as r:
+        if urlsplit(r.geturl()).hostname!='eg.timacad.ru':raise ValueError('unexpected host')
+        raw=r.read(12_000_001)
+        if len(raw)>12_000_000:raise ValueError('response too large')
+        return raw.decode('utf-8',errors='replace')
 ROOT=Path(__file__).resolve().parents[1]
 class Tables(HTMLParser):
     def __init__(self):
@@ -37,6 +47,13 @@ def main():
         url=BASE+"?"+urlencode({"academic_year":2026,"group":g["group_id"]})
         try:
             html=read(url);p=Tables();p.feed(html)
+            sections={}
+            for sid in ("groupScheduleCurrentWeekAccordion","groupScheduleNextWeekAccordion"):
+                pos=html.find('id="'+sid+'"')
+                if pos>=0:
+                    # Only bounded snippets of public lesson markup, not embedded selector data.
+                    sections[sid]=html[max(0,pos-100):pos+18000]
+            print("MARKUP",json.dumps({"group":name,"sections":sections},ensure_ascii=False))
             print("GROUP",json.dumps({"group":name,"url":url,"headings":p.headings[:12],"tables":[{"id":t["id"],"class":t["class"],"count":len(t["rows"]),"sample":t["rows"][:8]} for t in p.tables[:6]],"scheduleNodes":re.findall(r'<(?:div|section|script)[^>]*id="([^"]*(?:schedule|timetable)[^"]*)"',html,re.I)[:20]},ensure_ascii=False))
         except Exception as e:print("ERROR",name,str(e))
         time.sleep(2)
