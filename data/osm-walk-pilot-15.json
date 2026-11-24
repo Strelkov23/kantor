@@ -1,0 +1,475 @@
+{
+  "version": "0.15",
+  "checked": "2026-11-24T14:24:03.482386+00:00",
+  "status": "external pilot estimates only",
+  "sourcePoints": "data/osm-address-pilot-15.json",
+  "officialAddressSource": "https://www.timacad.ru/sveden/common/",
+  "provider": "OSRM / FOSSGIS, OpenStreetMap contributors",
+  "license": "https://www.openstreetmap.org/copyright",
+  "policy": "https://routing.openstreetmap.de/about.html",
+  "routes": [
+    {
+      "from": "12",
+      "to": "01",
+      "calendarCount": 88,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5544844,55.8331884;37.5573129,55.832326?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 407.4,
+      "seconds": 326,
+      "snapMeters": [
+        22.60531158,
+        41.96621248
+      ],
+      "geometry": [
+        [
+          37.554817,
+          55.833266
+        ],
+        [
+          37.554951,
+          55.833084
+        ],
+        [
+          37.555017,
+          55.832995
+        ],
+        [
+          37.555275,
+          55.833048
+        ],
+        [
+          37.555395,
+          55.833028
+        ],
+        [
+          37.555554,
+          55.832827
+        ],
+        [
+          37.555226,
+          55.832744
+        ],
+        [
+          37.554982,
+          55.832552
+        ],
+        [
+          37.555012,
+          55.832506
+        ],
+        [
+          37.554917,
+          55.832481
+        ],
+        [
+          37.555318,
+          55.832043
+        ],
+        [
+          37.555431,
+          55.831919
+        ],
+        [
+          37.555661,
+          55.83167
+        ],
+        [
+          37.555757,
+          55.831666
+        ],
+        [
+          37.556013,
+          55.83141
+        ],
+        [
+          37.556622,
+          55.831626
+        ],
+        [
+          37.557678,
+          55.83201
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    },
+    {
+      "from": "01",
+      "to": "02",
+      "calendarCount": 87,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5573129,55.832326;37.5562652,55.8337843?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 405.6,
+      "seconds": 324.5,
+      "snapMeters": [
+        41.96621248,
+        16.05806656
+      ],
+      "geometry": [
+        [
+          37.557678,
+          55.83201
+        ],
+        [
+          37.558322,
+          55.832244
+        ],
+        [
+          37.558434,
+          55.832259
+        ],
+        [
+          37.557874,
+          55.832769
+        ],
+        [
+          37.557663,
+          55.832931
+        ],
+        [
+          37.557373,
+          55.833013
+        ],
+        [
+          37.556715,
+          55.834007
+        ],
+        [
+          37.556519,
+          55.834263
+        ],
+        [
+          37.555805,
+          55.834118
+        ],
+        [
+          37.555894,
+          55.833963
+        ],
+        [
+          37.556021,
+          55.83374
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    },
+    {
+      "from": "02",
+      "to": "01",
+      "calendarCount": 66,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5562652,55.8337843;37.5573129,55.832326?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 405.6,
+      "seconds": 324.5,
+      "snapMeters": [
+        16.05806656,
+        41.96621248
+      ],
+      "geometry": [
+        [
+          37.556021,
+          55.83374
+        ],
+        [
+          37.555894,
+          55.833963
+        ],
+        [
+          37.555805,
+          55.834118
+        ],
+        [
+          37.556519,
+          55.834263
+        ],
+        [
+          37.556715,
+          55.834007
+        ],
+        [
+          37.557373,
+          55.833013
+        ],
+        [
+          37.557663,
+          55.832931
+        ],
+        [
+          37.557874,
+          55.832769
+        ],
+        [
+          37.558434,
+          55.832259
+        ],
+        [
+          37.558322,
+          55.832244
+        ],
+        [
+          37.557678,
+          55.83201
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    },
+    {
+      "from": "01",
+      "to": "12",
+      "calendarCount": 58,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5573129,55.832326;37.5544844,55.8331884?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 407.4,
+      "seconds": 326,
+      "snapMeters": [
+        41.96621248,
+        22.60531158
+      ],
+      "geometry": [
+        [
+          37.557678,
+          55.83201
+        ],
+        [
+          37.556622,
+          55.831626
+        ],
+        [
+          37.556013,
+          55.83141
+        ],
+        [
+          37.555757,
+          55.831666
+        ],
+        [
+          37.555661,
+          55.83167
+        ],
+        [
+          37.555431,
+          55.831919
+        ],
+        [
+          37.555318,
+          55.832043
+        ],
+        [
+          37.554917,
+          55.832481
+        ],
+        [
+          37.555012,
+          55.832506
+        ],
+        [
+          37.554982,
+          55.832552
+        ],
+        [
+          37.555226,
+          55.832744
+        ],
+        [
+          37.555554,
+          55.832827
+        ],
+        [
+          37.555395,
+          55.833028
+        ],
+        [
+          37.555275,
+          55.833048
+        ],
+        [
+          37.555017,
+          55.832995
+        ],
+        [
+          37.554951,
+          55.833084
+        ],
+        [
+          37.554817,
+          55.833266
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    },
+    {
+      "from": "03",
+      "to": "01",
+      "calendarCount": 46,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5533543,55.8341526;37.5573129,55.832326?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 622.2,
+      "seconds": 497.8,
+      "snapMeters": [
+        22.6823282,
+        41.96621248
+      ],
+      "geometry": [
+        [
+          37.553233,
+          55.834345
+        ],
+        [
+          37.553792,
+          55.834456
+        ],
+        [
+          37.554002,
+          55.834115
+        ],
+        [
+          37.553723,
+          55.834064
+        ],
+        [
+          37.55384,
+          55.833873
+        ],
+        [
+          37.553883,
+          55.833803
+        ],
+        [
+          37.553925,
+          55.833735
+        ],
+        [
+          37.554032,
+          55.833659
+        ],
+        [
+          37.55426,
+          55.833592
+        ],
+        [
+          37.554665,
+          55.833471
+        ],
+        [
+          37.554951,
+          55.833084
+        ],
+        [
+          37.555017,
+          55.832995
+        ],
+        [
+          37.555275,
+          55.833048
+        ],
+        [
+          37.555395,
+          55.833028
+        ],
+        [
+          37.555554,
+          55.832827
+        ],
+        [
+          37.555226,
+          55.832744
+        ],
+        [
+          37.554982,
+          55.832552
+        ],
+        [
+          37.555012,
+          55.832506
+        ],
+        [
+          37.554917,
+          55.832481
+        ],
+        [
+          37.555318,
+          55.832043
+        ],
+        [
+          37.555431,
+          55.831919
+        ],
+        [
+          37.555661,
+          55.83167
+        ],
+        [
+          37.555757,
+          55.831666
+        ],
+        [
+          37.556013,
+          55.83141
+        ],
+        [
+          37.556622,
+          55.831626
+        ],
+        [
+          37.557678,
+          55.83201
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    },
+    {
+      "from": "02",
+      "to": "12",
+      "calendarCount": 36,
+      "minimumGap": 20,
+      "source": "https://routing.openstreetmap.de/routed-foot/route/v1/driving/37.5562652,55.8337843;37.5544844,55.8331884?overview=full&geometries=geojson&steps=false&alternatives=false",
+      "status": "estimated",
+      "meters": 144.5,
+      "seconds": 115.5,
+      "snapMeters": [
+        16.05806656,
+        22.60531158
+      ],
+      "geometry": [
+        [
+          37.556021,
+          55.83374
+        ],
+        [
+          37.556071,
+          55.833652
+        ],
+        [
+          37.555937,
+          55.833658
+        ],
+        [
+          37.555467,
+          55.833679
+        ],
+        [
+          37.555262,
+          55.833525
+        ],
+        [
+          37.555092,
+          55.833304
+        ],
+        [
+          37.554951,
+          55.833084
+        ],
+        [
+          37.554817,
+          55.833266
+        ]
+      ],
+      "warning": "Address-center route; snapping and access are not verified; not a field measurement."
+    }
+  ],
+  "run": "https://github.com/Strelkov23/kantor/actions/runs/45413593382"
+}
