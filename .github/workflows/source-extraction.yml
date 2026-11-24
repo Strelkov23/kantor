@@ -1,0 +1,27 @@
+name: KANTOR source extraction
+on:
+  push:
+    paths:
+      - 'ingest/**'
+      - 'sources-2026.json'
+      - '.github/workflows/source-extraction.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  extract-public-sources:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r ingest/requirements.txt
+      - run: python ingest/extract_sources.py --output source-review
+      - uses: actions/upload-artifact@v4
+        with:
+          name: institute-source-review
+          path: source-review/
+          retention-days: 7
+          if-no-files-found: error
