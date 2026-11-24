@@ -1,0 +1,134 @@
+/* 0.39: combined spatial/temporal packages with explicit pedagogical profiles. */
+const pedagogyKey39=(g,s)=>JSON.stringify([g,key26(s)]);
+function pedagogy39(cards,profile){
+ const days=new Map(),out={cards:cards.length,rated:0,usableDays:0,excludedDays:0,late:0,heavyPairs:0,peak:0,links:0,repeats:0,practiceFirst:0,partialDays:0};
+ for(const q of cards){if(!days.has(q.date))days.set(q.date,[]);days.get(q.date).push(q);if(profile.ratings[pedagogyKey39(q.group,q.subject)]!==undefined)out.rated++}
+ const relations=new Set(profile.links.map(x=>JSON.stringify([x.group,x.from,x.to]))),rate=q=>profile.ratings[pedagogyKey39(q.group,q.subject)];
+ for(const list of days.values()){
+  if(list.some(q=>!q.time)||collision29(list)){out.excludedDays++;continue}
+  const a=sorted29(list),weights=a.map(rate),complete=weights.every(v=>v!==undefined);
+  out.usableDays++;if(!complete)out.partialDays++;
+  if(complete)out.peak=Math.max(out.peak,weights.reduce((s,v)=>s+v,0));
+  const seen=new Set();
+  for(let i=0;i<a.length;i++){
+   const q=a[i],v=weights[i],s=key26(q.subject);
+   if(v!==undefined&&v>=4&&q.start>=895)out.late++;
+   if(seen.has(s))out.repeats++;seen.add(s);
+   if(i&&v>=4&&weights[i-1]>=4)out.heavyPairs++;
+   if(i&&relations.has(JSON.stringify([q.group,key26(a[i-1].subject),s])))out.links++;
+  }
+ }
+ // First visible practice before first lecture is descriptive only, not a curriculum violation.
+ const subjects=new Map();
+ for(const q of cards.filter(q=>q.time)){const k=key26(q.subject);if(!subjects.has(k))subjects.set(k,[]);subjects.get(k).push(q)}
+ for(const a of subjects.values()){const order=a.slice().sort((a,b)=>a.date.localeCompare(b.date)||a.start-b.start),l=order.find(q=>key26(q.type)==="лекция"),p=order.find(q=>key26(q.type)==="практика");if(l&&p&&(p.date<l.date||p.date===l.date&&p.start<l.start))out.practiceFirst++}
+ return out;
+}
+function protectPed39(a,b){
+ return a.rated===b.rated&&a.excludedDays===b.excludedDays&&b.late<=a.late&&b.heavyPairs<=a.heavyPairs&&b.peak<=a.peak&&b.links>=a.links&&b.practiceFirst<=a.practiceFirst&&b.partialDays<=a.partialDays;
+}
+const actionKey39=x=>JSON.stringify([x.id,x.newDate,x.newStart,x.newRoom]);
+function apply39(cards,moves){
+ const by=new Map(moves.map(x=>[x.id,x]));if(by.size!==moves.length)throw Error("Повторная карточка");
+ return cards.map(q=>{const x=by.get(q.id);return x?{...q,date:x.newDate,start:x.newStart,end:x.newEnd,room:x.newRoom,roomKey:key26(x.newRoom),roomLabel:x.newRoom,building:x.newBuilding}:q});
+}
+function incompatible39(a,b,by){
+ const p=by.get(a.id),q=by.get(b.id);
+ return a.id===b.id||a.weekStart===b.weekStart&&(p.group===q.group||p.teacher===q.teacher)||a.newDate===b.newDate&&key26(a.newRoom)===key26(b.newRoom)&&a.newStart<b.newEnd&&b.newStart<a.newEnd;
+}
+function edges39(before,after){
+ const old=new Map(),stats={before:0,after:0};
+ for(const list of before){const a=sorted29(list);for(let i=1;i<a.length;i++){const p=a[i-1],q=a[i];old.set(JSON.stringify([p.id,q.id]),{from:p.building,to:q.building,gap:q.start-p.end});if(p.building&&q.building&&p.building!==q.building)stats.before++}}
+ for(const list of after){if(collision29(list))throw Error("Пересечение итогового дня");const a=sorted29(list);for(let i=1;i<a.length;i++){const p=a[i-1],q=a[i],gap=q.start-p.end,prev=old.get(JSON.stringify([p.id,q.id])),same=prev&&prev.from===p.building&&prev.to===q.building;
+  if(!p.building||!q.building||p.building!==q.building){if(!same||gap<prev.gap)throw Error("Новый или сокращённый непроверенный переход");if(p.building&&q.building)stats.after++}
+  else if((!same||gap<prev.gap)&&gap<15)throw Error("Недостаточный перерыв внутри корпуса");
+ }}
+ if(stats.after>stats.before)throw Error("Больше межкорпусных переходов");return stats;
+}
+function pool39(ctx,screen,inter,room,config,profile){
+ const t=pool37(ctx,screen,inter,config.strict,config.week,config.course).map(x=>({...x,newRoom:ctx.byId.get(x.id).room,newBuilding:ctx.byId.get(x.id).building,groupSaved:0,teacherSaved:0}));
+ if(room.checked!==ctx.ready.checked)throw Error("Разные снимки");
+ const r=room.results.filter(x=>(!config.strict||!x.unclearCards)&&(config.week==="all"||config.week===x.weekType)&&(config.course==="all"||config.course===String(x.course))).map(x=>({...x,kind:"room",oldDate:x.date,newDate:x.date,oldStart:x.start,oldEnd:x.end,newStart:x.start,newEnd:x.end,uncertainty:x.unclearCards}));
+ const candidates=[...t,...r],out=[];
+ for(const x of candidates){
+  const q=ctx.byId.get(x.id),week=ctx.ready.cards.filter(v=>v.group===q.group&&monday32(v.date)===x.weekStart),a=pedagogy39(week,profile),b=pedagogy39(apply39(week,[x]),profile);
+  if(config.pedProtect&&!protectPed39(a,b))continue;
+  const d=x.kind==="room"?{windows:0,span:0,days:0,teacher:0}:{windows:x.groupBefore.windows-x.groupAfter.windows,span:x.groupBefore.span-x.groupAfter.span,days:x.kind==="inter"?x.groupBefore.activeDays-x.groupAfter.activeDays:0,teacher:x.teacherBefore.windows-x.teacherAfter.windows};
+  out.push({...x,gains:{...d,cross:x.groupSaved||0,teacherCross:x.teacherSaved||0,ped:a.late-b.late+a.heavyPairs-b.heavyPairs+b.links-a.links},pedBefore:a,pedAfter:b});
+ }
+ return {candidates:out,excluded:candidates.length-out.length,temporal:t,room:r};
+}
+function audit39(ctx,selected,pool,profile,config){
+ const allowed=new Map(pool.candidates.map(x=>[actionKey39(x),x])),moves=selected.map(x=>{const a=allowed.get(actionKey39(x));if(!a)throw Error("Недопустимый кандидат");return a}),cards=ctx.ready.cards,by=ctx.byId;
+ for(let i=0;i<moves.length;i++)for(let j=0;j<i;j++)if(incompatible39(moves[i],moves[j],by))throw Error("Несовместимый пакет");
+ const temporal=moves.filter(x=>x.kind!=="room");audit37(ctx,temporal,pool.temporal);
+ const final=apply39(cards,moves),fBy=new Map(final.map(q=>[q.id,q])),occ=ctx.occ,changed=new Set(moves.map(x=>x.id));
+ const actualOcc=q=>{const o=occ.get(q.id);return changed.has(q.id)?{...o,date:q.date,start:q.start,end:q.end,knownRooms:[q.roomKey],unknownRooms:[],roomComplete:true}:o};
+ const occupancy=new Map(final.map(q=>[q.id,actualOcc(q)]));
+ let groupCross=0,teacherCross=0;const pedagogy=[];
+ for(const x of moves){
+  const q=by.get(x.id),next=fBy.get(x.id),o=occupancy.get(q.id);
+  if(q.group!==next.group||q.teacher!==next.teacher||q.subject!==next.subject||q.type!==next.type||next.end-next.start!==q.end-q.start||monday32(q.date)!==monday32(next.date))throw Error("Нарушена исходная карточка");
+  if(x.kind==="room"){
+   if(q.date!==next.date||q.start!==next.start||q.room===next.room)throw Error("Неверный пространственный перенос");
+   const busy=roomBusy38([...occupancy.values()].filter(e=>e.date===next.date),q.id,next.roomKey,next.start,next.end);if(busy.conflicts.length)throw Error("Конфликт целевой аудитории");
+  }
+  for(const v of final){if(v.id===q.id||v.date!==next.date)continue;const e=occupancy.get(v.id);if(possibleConflict31(e,o).length||v.group===q.group&&(!v.time||overlap29(v,next)))throw Error("Итоговый конфликт ресурсов")}
+  for(const kind of ["group","teacher"]){
+   const dates=[...new Set([q.date,next.date])],get=(arr,date)=>{const list=arr.filter(v=>v.date===date&&(kind==="group"?v.group===q.group:occ.get(v.id).knownTeachers.includes(q.teacher)));return kind==="teacher"?unique29(list):list};
+   const a=dates.map(d=>get(cards,d)),b=dates.map(d=>get(final,d));
+   if([...a,...b].some(list=>list.some(v=>!v.time||kind==="teacher"&&v.teacher!==q.teacher)||collision29(list)))throw Error("Неоднозначный затронутый день");
+   const e=edges39(a,b);if(kind==="group")groupCross+=e.before-e.after;else teacherCross+=e.before-e.after;
+   const old=scoreDays33(a),now=scoreDays33(b);if(!old||!now||now.activeDays>old.activeDays||now.windows>old.windows||now.span>old.span||now.maxSpan>old.maxSpan||now.maxBlocks>old.maxBlocks||now.lessonMinutes!==old.lessonMinutes)throw Error("Ухудшение нагрузки");
+  }
+  const select=arr=>arr.filter(v=>v.group===q.group&&monday32(v.date)===x.weekStart),a=pedagogy39(select(cards),profile),b=pedagogy39(select(final),profile);
+  if(config.pedProtect&&!protectPed39(a,b))throw Error("Ухудшение педагогического критерия");
+  pedagogy.push({group:q.group,week:x.weekStart,before:a,after:b});
+ }
+ const before=aggregateDays30(cards),after=aggregateDays30(final);
+ if(final.length!==cards.length||fBy.size!==cards.length||final.some(q=>!changed.has(q.id)&&q!==by.get(q.id)))throw Error("Нарушение состава");
+ for(const k of ["group","teacher"])if(after[k].windows>before[k].windows||after[k].span>before[k].span||after[k].lessonMinutes!==before[k].lessonMinutes||after[k].days>before[k].days||before[k].days-before[k].usableDays!==after[k].days-after[k].usableDays)throw Error("Нарушение общего баланса");
+ return {moves,before,after,groupCross,teacherCross,pedagogy,uncertain:moves.filter(x=>x.uncertainty).length};
+}
+function solve39(ctx,pool,profile,config,priority){
+ const w=priority==="space"?[8,5,2,1,2,1,2]:priority==="ped"?[3,2,3,1,2,1,10]:[4,3,5,2,4,2,3];
+ const score=x=>{const g=x.gains;return w[0]*g.cross+w[1]*g.teacherCross+w[2]*g.windows+w[3]*g.span/95+w[4]*g.days+w[5]*g.teacher+w[6]*g.ped};
+ let selected=[],rejected=0;
+ for(const x of pool.candidates.slice().sort((a,b)=>score(b)-score(a)||a.uncertainty-b.uncertainty||actionKey39(a).localeCompare(actionKey39(b)))){
+  if(selected.length>=config.limit)break;if(score(x)<=0||selected.some(y=>incompatible39(x,y,ctx.byId))){rejected++;continue}selected.push(x);
+ }
+ // Audit the full proposal, with a conservative incremental fallback.
+ let audit;try{audit=audit39(ctx,selected,pool,profile,config)}catch(e){const safe=[];for(const x of selected){try{audit39(ctx,[...safe,x],pool,profile,config);safe.push(x)}catch(err){rejected++}}audit=audit39(ctx,safe,pool,profile,config)}
+ return {...audit,rejected,considered:pool.candidates.length,pedExcluded:pool.excluded};
+}
+const multi39={source:null,room:null,inter:null,profile:{ratings:{},links:[]},group:"",week:"all",course:"all",strict:true,pedProtect:true,limit:30,runs:[],active:0,msg:"",running:false,token:0};
+function sync39(){const s=multi39;if(s.source!==inter33.context){s.source=inter33.context;s.room=null;s.inter=null;s.runs=[];s.active=0;s.msg="";s.running=false;s.token++;s.group="";s.profile={ratings:{},links:[]}}return s}
+function invalidate39(){multi39.runs=[];multi39.active=0;multi39.msg="Настройки изменены. Выполните новый расчёт."}
+function renderMulti39(){
+ const s=sync39(),ctx=s.source;
+ let h='<section class="panel" id="multi39"><div class="eyebrow23">Комплексная лаборатория · 0.39</div><h2>Расписание: пространство, время и педагогика</h2><p>В едином пакете сравниваются изменения времени, дня и аудитории. Педагогические оценки вводятся для конкретной группы, а не назначаются автоматически по названиям предметов.</p>';
+ if(!ctx)return h+'<p>Сначала загрузите исходные данные в лаборатории расписания.</p></section>';
+ const groups=ctx.ready.groups.map(g=>g.group);if(!groups.includes(s.group))s.group=groups[0]||"";
+ const subjectMap=new Map(ctx.ready.cards.filter(q=>q.group===s.group&&q.subject).map(q=>[key26(q.subject),q.subject])),subjects=[...subjectMap].sort((a,b)=>a[1].localeCompare(b[1],"ru"));
+ const select=(id,rows,v)=>'<select id="'+id+'">'+rows.map(([k,n])=>'<option value="'+esc(k)+'" '+(v===k?"selected":"")+'>'+esc(n)+'</option>').join("")+'</select>';
+ const coverage=ctx.ready.cards.filter(q=>s.profile.ratings[pedagogyKey39(q.group,q.subject)]!==undefined).length;
+ h+='<details><summary>1. Педагогический профиль · оценено '+coverage+' из '+ctx.ready.cards.length+' карточек</summary><p>Субъективная шкала сложности 1–5; 4–5 считаются повышенной нагрузкой. Позднее занятие — с 14:55. Смежность задаётся направленной парой предметов, которые желательно проводить последовательно в один день. Это предпочтения, не официальные пререквизиты.</p><label>Учебная группа'+select("pedGroup39",groups.map(g=>[g,g]),s.group)+'</label><div class="scroll"><table><tr><th>Предмет</th><th>Сложность</th></tr>'+subjects.map(([k,n])=>'<tr><td>'+esc(n)+'</td><td><select data-rating39="'+esc(k)+'"><option value="">Не оценена</option>'+[1,2,3,4,5].map(v=>'<option value="'+v+'" '+(s.profile.ratings[pedagogyKey39(s.group,k)]===v?"selected":"")+'>'+v+'</option>').join("")+'</select></td></tr>').join("")+'</table></div><h4>Желательная последовательность разных предметов</h4><div class="row"><label>Сначала'+select("pedFrom39",subjects,"")+'</label><label>Затем'+select("pedTo39",subjects,"")+'</label><button id="pedLink39">Добавить связь</button></div>'+s.profile.links.filter(x=>x.group===s.group).map(x=>'<div class="row"><span>'+esc((subjectMap.get(x.from)||x.from)+" → "+(subjectMap.get(x.to)||x.to))+'</span><button data-unlink39="'+esc(JSON.stringify([x.group,x.from,x.to]))+'">Удалить</button></div>').join("")+'<p class="muted">Профиль действует в текущем сеансе и включается в экспорт. Неоценённые предметы не получают нулевую сложность. Пиковая сумма баллов считается только для полностью оценённых непересекающихся дней.</p></details>';
+ h+='<h3>2. Параметры модели</h3><div class="row"><label>Неделя'+select("multiWeek39",[["all","Обе"],["upper","Верхняя"],["lower","Нижняя"]],s.week)+'</label><label>Курс'+select("multiCourse39",[["all","Все"],...["1","2","3","4","5"].map(x=>[x,x])],s.course)+'</label><label>Лимит изменений<input id="multiLimit39" type="number" min="1" max="50" value="'+esc(s.limit)+'"></label></div><label style="display:block"><input id="multiStrict39" type="checkbox" '+(s.strict?"checked":"")+'> Только без неясных карточек в интервалах</label><label style="display:block"><input id="multiPed39" type="checkbox" '+(s.pedProtect?"checked":"")+'> Не ухудшать измеримые педагогические критерии</label><p class="notice">Не более одного изменения на группу и преподавателя в конкретной неделе. Не подтверждены вместимость, оборудование, внешняя занятость, индивидуальные ограничения, реальные времена ходьбы и содержание тем. Не глобальный оптимум; поиск по ранее допустимым независимым вариантам.</p><button id="runMulti39" class="primary" '+(s.running||opportunities29.loading?"disabled":"")+'>'+(s.running?"Расчёт…":"Рассчитать три комплексные модели")+'</button><p role="status">'+esc(s.msg)+'</p>';
+ if(!s.runs.length)return h+'</section>';
+ const r=s.runs[s.active],sum=(key,side)=>r.pedagogy.reduce((n,p)=>n+p[side][key],0);
+ h+='<h3>3. Сравнение моделей</h3><div class="scroll"><table><tr><th>Модель</th><th>Время / день / аудитория</th><th>Устранено переходов групп / преподавателей</th><th>Окна групп</th><th>Группо-мин</th><th>С неясностью</th></tr>'+s.runs.map((x,i)=>'<tr><td><button data-multi39="'+i+'" aria-pressed="'+(s.active===i)+'">'+esc(x.name)+'</button></td><td>'+["same","inter","room"].map(k=>x.moves.filter(v=>v.kind===k).length).join(" / ")+'</td><td>'+x.groupCross+' / '+x.teacherCross+'</td><td>'+(x.before.group.windows-x.after.group.windows)+'</td><td>'+(x.before.group.span-x.after.group.span)+'</td><td>'+x.uncertain+'</td></tr>').join("")+'</table></div><p>Кандидатов: '+r.considered+'; отсеяно педагогическим фильтром: '+r.pedExcluded+'. '+(r.moves.length?"Итоговая проверка пакета пройдена.":"Нет выбранных изменений.")+'</p><h3>Педагогические показатели затронутых группо-недель</h3><div class="grid">'+[["Карточки с оценкой",sum("rated","before")+" / "+sum("cards","before")],["Поздние сложные занятия",sum("late","before")+" → "+sum("late","after")],["Соседние сложные занятия",sum("heavyPairs","before")+" → "+sum("heavyPairs","after")],["Желательные связи",sum("links","before")+" → "+sum("links","after")],["Практика раньше первой видимой лекции",sum("practiceFirst","before")+" → "+sum("practiceFirst","after")],["Неполностью оценённые пригодные дни",sum("partialDays","before")+" → "+sum("partialDays","after")]].map(([n,v])=>'<div class="metric"><small>'+n+'</small><strong>'+v+'</strong></div>').join("")+'</div><p class="muted">При нулевом охвате сложность не оценена. Практика раньше лекции в наблюдаемой неделе не доказывает нарушения программы.</p><div class="scroll"><table><tr><th>Группа</th><th>Занятие</th><th>Было</th><th>Стало</th></tr>'+r.moves.map(x=>{const q=ctx.byId.get(x.id);return '<tr><td>'+esc(x.group)+'</td><td>'+esc(x.subject)+'</td><td>'+esc(q.date+" · "+clock26(q.start)+" · "+q.room)+'</td><td>'+esc(x.newDate+" · "+clock26(x.newStart)+" · "+x.newRoom)+'</td></tr>'}).join("")+'</table></div><button id="exportMulti39">Скачать протокол JSON</button>';
+ return h+'</section>';
+}
+function bindMulti39(){
+ const s=sync39();
+ on("pedGroup39","change",e=>{s.group=e.target.value;render()});
+ document.querySelectorAll("[data-rating39]").forEach(el=>el.onchange=()=>{const k=pedagogyKey39(s.group,el.dataset.rating39);if(el.value)s.profile.ratings[k]=+el.value;else delete s.profile.ratings[k];invalidate39();render()});
+ on("pedLink39","click",()=>{const from=$("pedFrom39")?.value,to=$("pedTo39")?.value;if(!from||!to||from===to){s.msg="Выберите два разных предмета.";render();return}if(!s.profile.links.some(x=>x.group===s.group&&x.from===from&&x.to===to))s.profile.links.push({group:s.group,from,to});invalidate39();render()});
+ document.querySelectorAll("[data-unlink39]").forEach(el=>el.onclick=()=>{s.profile.links=s.profile.links.filter(x=>JSON.stringify([x.group,x.from,x.to])!==el.dataset.unlink39);invalidate39();render()});
+ for(const [id,k] of [["multiWeek39","week"],["multiCourse39","course"]])on(id,"change",e=>{s[k]=e.target.value;invalidate39();render()});
+ on("multiLimit39","change",e=>{s.limit=e.target.valueAsNumber;invalidate39();render()});
+ for(const [id,k] of [["multiStrict39","strict"],["multiPed39","pedProtect"]])on(id,"change",e=>{s[k]=e.target.checked;invalidate39();render()});
+ on("runMulti39","click",()=>{if(s.running||!s.source||opportunities29.loading)return;if(!Number.isInteger(s.limit)||s.limit<1||s.limit>50){s.msg="Лимит 1–50";render();return}const ctx=s.source,token=++s.token,screen=opportunities29.data,config={strict:s.strict,week:s.week,course:s.course,limit:s.limit,pedProtect:s.pedProtect};s.running=true;s.runs=[];s.msg="";render();setTimeout(()=>{if(token!==s.token||ctx!==inter33.context)return;try{s.inter=s.inter||interday33(ctx);s.room=s.room||roomAlternatives38(ctx);const pool=pool39(ctx,screen,s.inter,s.room,config,s.profile);s.runs=[["balanced","Баланс"],["space","Меньше переходов"],["ped","Педагогический приоритет"]].map(([k,name])=>({...solve39(ctx,pool,s.profile,config,k),name,config}));s.active=0;s.msg="Расчёт завершён."}catch(e){s.msg=e.message;s.runs=[]}finally{s.running=false;render()}},20)});
+ document.querySelectorAll("[data-multi39]").forEach(el=>el.onclick=()=>{s.active=+el.dataset.multi39;render()});
+ on("exportMulti39","click",()=>{if(s.runs.length)download("kantor-integrated-models.json",JSON.stringify({version:"0.39",checked:s.source.ready.checked,status:"observed-only",profile:s.profile,runs:s.runs},null,2),"application/json")});
+}
