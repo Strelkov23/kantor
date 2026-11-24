@@ -1,0 +1,28 @@
+name: KANTOR refined spatial review
+on:
+  push:
+    paths:
+      - 'ingest/refine_spatial.py'
+      - 'data/location-aliases-14.json'
+      - '.github/workflows/refined-spatial.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - run: python ingest/refine_spatial.py
+      - name: Preserve review report
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar-spatial-14.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish refined campus location report"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
