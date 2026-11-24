@@ -38,7 +38,36 @@ async function calendarFile27(snap,g){
  if(!d||d.checked!==snap.manifest.checked||d.group!==g.group||d.comparisons.length!==g.cards)throw Error("Версии данных не совпадают");
  return d;
 }
+/* Immutable six-part fallback. Original per-group files remain authoritative. */
+let frozenPacked30=null,frozenPackedPending30=null;
+function validatePacked30(manifest,parts){
+ if(!Array.isArray(parts)||parts.length!==6||manifest.complete!==true||manifest.groups.length!==83)throw Error("Неполный архив");
+ const expected=new Map(manifest.groups.map(g=>[g.file,g])),map=new Map();
+ for(const p of parts){
+  if(p.version!=="0.30-frozen"||p.checked!==manifest.checked||!Array.isArray(p.entries))throw Error("Неверная версия архивного пакета");
+  for(const {file,data} of p.entries){
+   const g=expected.get(file);
+   if(!g||map.has(file)||data.checked!==manifest.checked||data.group!==g.group||data.course!==g.course||data.url!==g.url||!Array.isArray(data.comparisons)||data.comparisons.length!==g.cards)throw Error("Несогласованный архив: "+file);
+   map.set(file,data);
+  }
+ }
+ if(map.size!==83||[...map.values()].reduce((n,f)=>n+f.comparisons.length,0)!==manifest.totals.cards)throw Error("Не совпадает баланс архива");
+ return map;
+}
+async function packedFrozen30(manifest){
+ if(frozenPacked30?.checked===manifest.checked)return frozenPacked30.files;
+ if(frozenPackedPending30)return frozenPackedPending30;
+ frozenPackedPending30=(async()=>{
+  const parts=await Promise.all(Array.from({length:6},(_,i)=>getJson08("data/calendar-packed-30/part-0"+(i+1)+".json")));
+  const files=validatePacked30(manifest,parts);
+  frozenPacked30={checked:manifest.checked,files};return files;
+ })();
+ try{return await frozenPackedPending30}finally{frozenPackedPending30=null}
+}
 async function calendarFiles27(snap){
+ if(snap.source==="frozen"&&!snap.files){
+  try{snap.files=await packedFrozen30(snap.manifest)}catch(e){/* Keep per-group fallback if the optional pack is unavailable. */}
+ }
  let a=[];for(let i=0;i<snap.manifest.groups.length;i+=6)a.push(...await Promise.all(snap.manifest.groups.slice(i,i+6).map(g=>calendarFile27(snap,g))));return a;
 }
 function calendarStatus27(snap){
