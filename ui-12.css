@@ -86,3 +86,22 @@ pre{max-width:100%;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
  .personal-time23{font-size:13px}
  .advanced-links23{display:grid;grid-template-columns:minmax(0,1fr)}
 }
+
+/* 0.24: clear counterfactual comparisons, explicit changes, no overflowing grid. */
+.comparison24{padding:14px;margin-top:16px;min-width:0}
+.compare-metric24{min-width:0}
+.compare-metric24 p{margin:5px 0 0;font-size:13px;font-weight:650}
+.compare-values24{display:flex;gap:8px;flex-wrap:wrap;align-items:baseline;font-variant-numeric:tabular-nums}
+.compare-values24 span{color:var(--mut);font-size:18px}
+.compare-values24 strong{font-size:26px}
+.compare-grid24{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:16px 0}
+.compare-grid24>div{min-width:0}
+.compare-day24{border:1px solid var(--line);padding:10px;border-radius:8px;background:#f5f8fa;margin-bottom:10px}
+.compare-day24 h4{font-size:14px;margin:0 0 8px}
+.compare-lesson24{display:grid;grid-template-columns:50px minmax(0,1fr);align-items:start;gap:8px;border:1px solid var(--line);background:white;border-radius:6px;padding:8px;margin:5px 0;overflow-wrap:anywhere}
+.compare-lesson24>strong{font-variant-numeric:tabular-nums;font-size:13px}
+.compare-lesson24 b,.compare-lesson24 small{display:block;line-height:1.4}
+.compare-lesson24 small{color:var(--mut)}
+.changed24{border-left:3px solid #b98a39;background:#fffaf0}
+.change-label24{color:#785918!important;font-weight:600}
+@media(max-width:760px){.compare-grid24{grid-template-columns:minmax(0,1fr)}.comparison24{padding:10px}}
