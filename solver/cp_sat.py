@@ -1,4 +1,4 @@
-"""KANTOR 0.5. CP-SAT for fixed rooms, two-week institute model.
+"""KANTOR 0.19. CP-SAT for fixed rooms and per-event duration, two-week institute model.
 Run locally: python solver/cp_sat.py input.json output.json --seconds 120
 No network or personal-data upload. Integer-weight objective distinct from UI heuristic.
 """
@@ -10,6 +10,11 @@ from pathlib import Path
 
 STARTS = (540, 655, 780, 895, 1010)
 DURATION = 95
+
+def duration(l): return l.get("durationMinutes", DURATION)
+def valid_duration(l): return type(duration(l)) is int and 1 <= duration(l) <= 240
+
+def gap_minutes(a, s, t): return STARTS[period(t)] - STARTS[period(s)] - duration(a)
 INSTITUTE = "Институт экономики и управления АПК"
 PROFILES = {
     "balanced": (8, 5, 1, 1, 3, 1, 2, 1),
@@ -74,12 +79,14 @@ def validate(data):
         require(isinstance(ts,list) and bool(ts) and len(set(ts))==len(ts) and all(isinstance(t,str) and t.strip() for t in ts),lid+": teachers")
         require(all(isinstance(l[k],str) and l[k].strip() for k in ("room","building")),lid+": room/building")
         require(slot_ok(l["slot"]) and isinstance(l["allowedSlots"],list) and l["slot"] in l["allowedSlots"] and all(slot_ok(s) and week(s)==week(l["slot"]) for s in l["allowedSlots"]),lid+": slots")
+        require(valid_duration(l),lid+": durationMinutes must be integer 1..240")
     if data["scope"]=="institute-day": require(seen==set(gu),"Some groups have no lessons")
     require(isinstance(data["blocked"],list),"Blocked list required")
     block_keys=set()
     for b in data["blocked"]:
         require(slot_ok(b["slot"]) and isinstance(b["resources"],list) and bool(b["resources"]) and len(set(b["resources"]))==len(b["resources"]) and all(isinstance(r,str) and len(r)>2 and r[:2] in ("g:","t:","r:") for r in b["resources"]),"Invalid external block")
         require(all(isinstance(b[k],str) and b[k] for k in ("room","building")),"External block needs actual location")
+        require(valid_duration(b),"External durationMinutes must be integer 1..240")
         for resource in b["resources"]:
             key=(resource,b["slot"])
             require(key not in block_keys,"Duplicate/conflicting external resource block")
@@ -101,12 +108,14 @@ def audit(data, chosen, weights):
         events.sort(key=lambda x:x[0]); own=[e for e in events if not e[2]]
         if not own: continue
         if len({e[0] for e in events})!=len(events): errors.append("Overlap: "+r+" day "+str(d))
+        for (s,a,_),(t,b,_) in zip(events,events[1:]):
+            if gap_minutes(a,s,t)<0: errors.append("Time overlap: "+r+" day "+str(d))
         if r.startswith("r:"): continue
         g=r.startswith("g:"); n=len(events)
         if n>data["maxGroupDay" if g else "maxTeacherDay"]: errors.append("Daily limit: "+r)
         if g: m[4]+=n*(n-1)//2
         for (s,a,ae),(t,b,be) in zip(events,events[1:]):
-            gap=STARTS[period(t)]-STARTS[period(s)]-DURATION
+            gap=gap_minutes(a,s,t)
             tr=journey(a,b,data)
             if tr is None or tr>gap: errors.append("Unknown/impossible route: "+r+" "+str(s)+"→"+str(t))
             if tr is not None:
@@ -137,7 +146,15 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
         for p,a in enumerate(lists):
             z=model.new_bool_var(f"occ_{i}_{p}")
             model.add(z==sum(e[0] for e in a)); occ.append(z)
-        if r.startswith("r:"): continue
+        if r.startswith("r:"):
+            # Different slot numbers do not guarantee non-overlapping actual times.
+            for p in range(5):
+                for q in range(p+1,5):
+                    for x,a,_ in lists[p]:
+                        if STARTS[q]-STARTS[p]<duration(a):
+                            for y,b,_ in lists[q]:
+                                model.add_bool_or([x.negated(),y.negated()])
+            continue
         g=r.startswith("g:")
         own_vars=[x for a in lists for x,l,external in a if not external]
         active=model.new_bool_var(f"active_{i}")
@@ -155,8 +172,8 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
             objective.append(weights[4]*cost)
         for p in range(5):
             for q in range(p+1,5):
-                gap=STARTS[q]-STARTS[p]-DURATION
                 for ai,(x,a,ae) in enumerate(lists[p]):
+                    gap=STARTS[q]-STARTS[p]-duration(a)
                     for bi,(y,b,be) in enumerate(lists[q]):
                         # Consecutiveness is exact: selected endpoints, no occupied intervening slot, active day.
                         conditions=[x,y,active]+[z.negated() for z in occ[p+1:q]]
@@ -185,7 +202,7 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
     solver.parameters.num_search_workers=1
     status=solver.solve(model)
     result={"status":solver.status_name(status),"profile":profile,"weights":dict(zip(METRICS,weights)),"seed":seed,"seconds_limit":seconds,"wall_seconds":solver.wall_time,
-            "warnings":["Fixed rooms, two-week model only; full scope depends on validated input and external constraints.","Travel rounded up to whole minutes. Metrics include known external appointments on active days. Distinct objective from browser heuristic."]}
+            "warnings":["Fixed rooms and standard start times; per-event durationMinutes defaults to 95 when omitted. Full scope depends on validated input and external constraints.","Travel rounded up to whole minutes. Metrics include known external appointments on active days. Distinct objective from browser heuristic."]}
     if status not in (cp_model.OPTIMAL,cp_model.FEASIBLE):
         return result
     chosen={lid:s for (lid,s),x in choices.items() if solver.boolean_value(x)}
