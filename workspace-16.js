@@ -1,17 +1,17 @@
 /* v0.16: merged task workspaces. Legacy tools are retained as expandable sections. */
 const workspaces16=[
  {id:"home12",section:"home",title:"Главная",description:"Выберите задачу и начните работу.",tools:[]},
- {id:"group07",section:"study",title:"Группы и расписание",description:"Сначала выберите группу. Каталоги, направления и формы обучения находятся на этой же странице.",tools:[["programs10","Направления, профили и календарный пилот"],["groups","Полный каталог очных групп"],["scope04","Другие формы и уровни обучения"]]},
+ {id:"group07",section:"study",title:"Группы и расписание",description:"Выберите группу и день. Семестровые таблицы и исследовательские отчёты доступны ниже.",tools:[["programs10","Направления, профили и календарный пилот"],["groups","Полный каталог очных групп"],["scope04","Другие формы и уровни обучения"]]},
  {id:"calendar11",section:"study",title:"Сверка с первоисточниками",description:"Сравнивайте календарные назначения и семестровые документы, не смешивая их.",tools:[["source07","Официальные PDF и извлечённые таблицы"]]},
  {id:"space12",section:"space",title:"Карта и переходы",description:"Ориентация в кампусе, частота переходов и доступные интервалы на одной странице.",tools:[["campus13","Официальная карта, паспорта корпусов и расчёт интервалов"]]},
  {id:"survey15",section:"space",title:"Измерение маршрутов",description:"От приоритетных направлений до журнала замеров и матрицы решателя.",tools:[["routes04","Матрица времени переходов"],["priority06","Источники и приоритеты пилота"],["campus","Справочник корпусов и пилотный переход"]]},
- {id:"scenarios",section:"opt",title:"Варианты и вычислители",description:"Сравнение сценариев пятого курса и расширенные математические модели. Полный расчёт института ещё не выполнен.",tools:[["unified04","Единая модель ограничений"],["exact05","CP-SAT: импорт точного расчёта"]]},
+ {id:"scenarios",section:"opt",title:"Варианты и вычислители",description:"Посмотрите, как можно сократить окна и переходы. Пока расчёт на реальных данных ограничен двумя группами пятого курса.",tools:[["unified04","Расширенная настройка модели"],["exact05","Точный расчёт и проверка результата"]]},
  {id:"baseline09",section:"research",title:"Статистика и эксперименты",description:"Исходные показатели, исследовательские эксперименты и методика оценки.",tools:[["experiment06","Результаты вычислительных экспериментов"],["audit","Критерии и качество данных"]]},
  {id:"review08",section:"research",title:"Проверка данных",description:"Единое место для семантической проверки, исходных записей и журнала решений.",tools:[["review05","Первичный структурный разбор"],["source1","Ручная сверка первого курса"]]},
  {id:"overview",section:"demo",title:"Результаты демо",description:"Условный набор данных, не расписание академии.",tools:[["schedule","Просмотр расписания демо"],["checks","Проверка ограничений демо"]]},
  {id:"optimize",section:"demo",title:"Настройка демо",description:"Учебная настройка расчёта и импорт условной модели.",tools:[["data","Исходные данные и импорт"],["method","Методология демонстрации"]]}
 ];
-const mainSections16=[["home","Главная"],["study","Расписание"],["space","Кампус"],["opt","Оптимизация"],["research","Исследование"],["demo","Учебное демо"]];
+const mainSections16=[["home","Главная"],["study","Расписание"],["space","Кампус"],["opt","Улучшить расписание"],["research","Данные и проверка"],["demo","Попробовать демо"]];
 const opened16=new Set();
 function workspace16(id=tab){return workspaces16.find(w=>w.id===id||w.tools.some(t=>t[0]===id))||workspaces16[0]}
 function visible16(id){let w=workspace16();return w.id===id||w.tools.some(t=>t[0]===id)&&(opened16.has(id)||tab===id)}
@@ -28,6 +28,7 @@ function activate16(id,scroll=false){
  let w=workspace16(id);if(id!==w.id)opened16.add(id);
  tab=id;render();
  // Reopening a workspace must also load its previously expanded children.
+ if(visible16("group07")&&personal23.group&&!personal23.detail&&!personal23.loading)loadPersonal23();
  if(visible16("group07")&&!group07.data&&group07.status!=="loading")loadGroup07();
  if(["home12","space12"].includes(w.id)&&!visual12.baseline&&!visual12.loading)loadVisual12();
  if(visible16("programs10")&&!programs10.data&&!programs10.loading)loadPrograms10();
