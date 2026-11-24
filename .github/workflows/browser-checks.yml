@@ -103,6 +103,15 @@ jobs:
                         await page.locator('#moveDetail29').waitFor();
                       }
                       await page.locator('#course29').selectOption('all');
+                      await page.locator('#jointChoice30').waitFor({timeout:30000});
+                      await page.locator('#jointChoice30').selectOption('strict');
+                      assert.ok(await page.locator('#jointPanel30').isVisible());
+                      await page.locator('#jointChoice30').selectOption('windows');
+                      await page.locator('#reportHTML30').waitFor();
+                      await page.getByText('Открыть аналитическую записку',{exact:true}).click();
+                      assert.ok(await page.getByText('Аналитическая записка: организация учебного процесса',{exact:true}).isVisible());
+                      await page.getByText('Открыть аналитическую записку',{exact:true}).click();
+
                     }
                     if(id==='baseline09') {
                       await page.locator('#exportDiag25').waitFor({timeout:30000});
