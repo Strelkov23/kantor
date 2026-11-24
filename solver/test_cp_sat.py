@@ -1,5 +1,5 @@
 import unittest
-from cp_sat import solve, audit, PROFILES
+from cp_sat import solve, audit, validate, resource_errors, PROFILES
 
 def example():
     return {"institute":"Институт экономики и управления АПК","term":"2026/2027-1","scope":"pilot",
@@ -7,7 +7,40 @@ def example():
       "bufferMinutes":5,"maxGroupDay":5,"maxTeacherDay":5,"blocked":[],
       "lessons":[{"id":"L1","title":"Synthetic A","groups":["Д-Э 508"],"units":["a"],"teachers":["T"],"room":"02-101","building":"02","slot":0,"allowedSlots":[0,1,2]},
       {"id":"L2","title":"Synthetic B","groups":["Д-Э 508","Д-Э 509"],"units":["a","b"],"teachers":["T"],"room":"03-101","building":"03","slot":2,"allowedSlots":[0,1,2]}]}
+def with_evidence():
+    d=example()
+    d["resourceEvidence"]={
+      "units":{"a":{"size":20,"source":"Synthetic test"},"b":{"size":25,"source":"Synthetic test"}},
+      "rooms":{r:{"building":r[:2],"capacity":50,"equipment":["projector"],"availableSlots":[0,1,2],"source":"Synthetic test"} for r in ("02-101","03-101")},
+      "teachers":{"T":{"availableSlots":[0,1,2],"source":"Synthetic test"}}
+    }
+    for l in d["lessons"]: l["requiredEquipment"]=["projector"]
+    return d
+
 class TestSolver(unittest.TestCase):
+    def test_resource_contract(self):
+        d=with_evidence()
+        self.assertFalse(resource_errors(d))
+        self.assertEqual(solve(d,seconds=20)["status"],"OPTIMAL")
+    def test_capacity_flow(self):
+        d=with_evidence();d["resourceEvidence"]["rooms"]["03-101"]["capacity"]=44
+        with self.assertRaisesRegex(ValueError,"room too small"): validate(d)
+        d["resourceEvidence"]["rooms"]["03-101"]["capacity"]=45
+        self.assertFalse(resource_errors(d))
+    def test_equipment_and_resource_availability(self):
+        d=with_evidence();d["resourceEvidence"]["rooms"]["03-101"]["equipment"]=[]
+        with self.assertRaisesRegex(ValueError,"required equipment"): validate(d)
+        d=with_evidence();d["resourceEvidence"]["teachers"]["T"]["availableSlots"]=[0,2]
+        with self.assertRaisesRegex(ValueError,"teacher unavailable"): validate(d)
+        d=with_evidence();d["resourceEvidence"]["rooms"]["02-101"]["availableSlots"]=[0,2]
+        with self.assertRaisesRegex(ValueError,"room unavailable"): validate(d)
+    def test_evidence_missing(self):
+        d=with_evidence();del d["resourceEvidence"]["units"]["b"]
+        with self.assertRaisesRegex(ValueError,"unit size"): validate(d)
+        d=with_evidence();d["resourceEvidence"]["rooms"]["02-101"]["source"]=" "
+        with self.assertRaisesRegex(ValueError,"room capacity"): validate(d)
+        d=example();d["scope"]="institute-day"
+        self.assertTrue(resource_errors(d))
     def test_optimum(self):
         d=example();r=solve(d,seconds=20)
         self.assertEqual(r["status"],"OPTIMAL");self.assertEqual(len(r["lessons"]),2)
