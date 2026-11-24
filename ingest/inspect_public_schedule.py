@@ -35,6 +35,16 @@ def main():
                 urls=sorted(set(re.findall(r"""['"](/(?:api/|schedule/)[A-Za-z0-9_/?=&.-]+)['"]""",js)))
                 candidates.extend({"script":path,"path":x} for x in urls if "group" in x.lower() or "schedule" in x.lower())
             except Exception as e:report.setdefault("scriptErrors",[]).append(str(e))
+        # Inspect inline script declarations for the public group selector only.
+        inline=re.findall(r"<script\b[^>]*>(.*?)</script>",html,re.I|re.S)
+        report["inlineLengths"]=[len(s) for s in inline]
+        snippets=[]
+        for s in inline:
+            for line in s.splitlines():
+                if re.search(r"fetch\(|groupInput|groupData|groupsData|groupList|groupOptions|autocomplete|academicYear|URLSearchParams",line,re.I):
+                    if len(line)<700:snippets.append(line.strip())
+                    else:snippets.append(line[:180]+" [long line omitted]")
+        report["publicSelectorSnippets"]=snippets[:80]
         report["declaredSchedulePaths"]=candidates
     except Exception as e:report.update(status="unavailable",error=str(e))
     print(json.dumps(report,ensure_ascii=False))
