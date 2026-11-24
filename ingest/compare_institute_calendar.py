@@ -1,6 +1,6 @@
 """Institute-only two-week comparison of public calendar and official PDF.
 Produces review snapshots, never modifies original PDF data or solver input."""
-import json,re,time,hashlib
+import argparse,json,re,time,hashlib
 from datetime import datetime,date,timedelta,timezone
 from pathlib import Path
 from compare_calendar import extract,compare,normalized_text
@@ -42,6 +42,12 @@ def count(values):
     for k in values:out[str(k)]=out.get(str(k),0)+1
     return out
 def main():
+    global OUT
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out",type=Path,default=OUT)
+    parser.add_argument("--require-complete",action="store_true")
+    args=parser.parse_args()
+    OUT=args.out.resolve()
     mapping=json.loads((ROOT/"data/electronic-groups-09.json").read_text(encoding="utf-8"))
     sources={i:json.loads((ROOT/f"data/normalized/course-{i}.json").read_text(encoding="utf-8")) for i in range(1,6)}
     expected={g for d in sources.values() for g in d["groups"]}
@@ -78,5 +84,6 @@ def main():
     report["complete"]=len(success)==83
     (OUT/"manifest.json").write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding="utf-8")
     print("TOTALS",json.dumps(totals,ensure_ascii=False),flush=True)
-    # Keep the previous published snapshot if any group failed. Artifact preserves partial diagnostics.
+    # Scheduled publication runs in a temporary output directory, never on the frozen research snapshot.
+    if args.require_complete and not report["complete"]:raise SystemExit("Incomplete collection; publication blocked")
 if __name__=="__main__":main()
