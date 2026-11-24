@@ -394,3 +394,11 @@ assert.deepEqual([removed54.removed,removed54.sourceChanged,removed54.rows[0].so
 assert.deepEqual([added54.added,added54.sourceChanged,added54.rows[0].sourceStatus],[1,0,"a"]);
 assert.deepEqual([changed54.sourceChanged,changed54.rows.length],[1,0]);
 console.log("Calendar integrity and repeated-card diff: passed");
+
+const status55=new Function(read("calendar-current-27.js")+"\nreturn calendarStatus27;")();
+const saved55={source:"frozen",manifest};
+assert.match(status55(saved55,Date.parse("2026-11-24T19:00:00Z")),/23\.11\.2026 – 06\.12\.2026/);
+assert.match(status55(saved55,Date.parse("2026-11-26T19:00:00Z")),/старше 36 часов/);
+assert.doesNotMatch(status55(saved55,Date.parse("2026-12-06T20:59:00Z")),/Период расписания истёк/);
+assert.match(status55(saved55,Date.parse("2026-12-06T21:00:00Z")),/Период расписания истёк/);
+console.log("Schedule coverage and Moscow midnight expiry: passed");
