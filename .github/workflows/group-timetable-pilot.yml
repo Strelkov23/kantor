@@ -1,0 +1,16 @@
+name: KANTOR group timetable pilot
+on:
+  push:
+    paths:
+      - 'ingest/check_group_pages.py'
+      - '.github/workflows/group-timetable-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python ingest/check_group_pages.py
