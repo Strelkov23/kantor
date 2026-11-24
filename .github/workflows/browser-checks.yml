@@ -72,6 +72,8 @@ jobs:
                       await page.locator('#tool16-'+tool+' .foldbody16').waitFor();
                     }
                     if(id==='space12') {
+                      await page.locator("#campusRefresh28").waitFor();
+                      await page.locator("#tool16-space12 .source23").waitFor({timeout:30000});
                       await page.locator('#loadRooms18').click();
                       await page.locator('#roomTemplate18').waitFor({timeout:30000});
                       assert.ok(await page.locator('#roomExport18').isVisible());
@@ -102,6 +104,10 @@ jobs:
                       await page.locator('#resourceDetail26').waitFor();
                       await page.locator('[data-analysis26="rooms"]').click();
                       assert.ok(await page.locator('[data-resource26]').count()>0);
+                      await page.locator('[data-analysis26="disciplines"]').click();
+                      await page.locator("#disciplineExport28").waitFor({timeout:30000});
+                      await page.locator("#disciplineGroup28").selectOption({index:1});
+                      assert.equal(await page.locator("#disciplineGroup28 option").count(),83);
                       await page.locator('[data-analysis26="groups"]').click();
 
                     }
