@@ -95,6 +95,15 @@ jobs:
                       await page.locator('#courseDiag25').selectOption('4');
                       assert.ok(await page.locator('[data-diag-group25]').count()>0);
                       await page.locator('#courseDiag25').selectOption('all');
+                      await page.locator('[data-analysis26="teachers"]').click();
+                      await page.locator('#exportResource26').waitFor({timeout:30000});
+                      assert.ok(await page.locator('[data-resource26]').count()>0);
+                      await page.locator('[data-resource26]').first().click();
+                      await page.locator('#resourceDetail26').waitFor();
+                      await page.locator('[data-analysis26="rooms"]').click();
+                      assert.ok(await page.locator('[data-resource26]').count()>0);
+                      await page.locator('[data-analysis26="groups"]').click();
+
                     }
                     // Wait for local fetches without requiring external services.
                     await page.waitForLoadState('networkidle');
