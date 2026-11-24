@@ -1,0 +1,40 @@
+{
+  "checked": "2026-11-24T13:07:54.902557+00:00",
+  "scope": "ИЭУ АПК, очные курсы 1–5, первый семестр 2026/2027",
+  "status": "extracted_unverified",
+  "run": "https://github.com/Strelkov23/kantor/actions/runs/45400244906",
+  "artifactId": 14921899639,
+  "retentionDays": 7,
+  "courses": [
+    {
+      "course": 1,
+      "pages": 4,
+      "words": 3545,
+      "sha256": "6729b01b2392ba85fb6aeaaf7df680c37a832fb7979598e8b26c3922e73b5984"
+    },
+    {
+      "course": 2,
+      "pages": 4,
+      "words": 4465,
+      "sha256": "3e4599eb26ddc938d84154a91be5bbf383d95de0c9e83f53b78b6ee1424218b3"
+    },
+    {
+      "course": 3,
+      "pages": 4,
+      "words": 4203,
+      "sha256": "3b720b5c179616549f52ee98bbd2dadd3861b62ec822502b9692dff0e4066f09"
+    },
+    {
+      "course": 4,
+      "pages": 3,
+      "words": 3486,
+      "sha256": "6d3ef390f6beb36c9d9985a1ac86fe60f5c666f8e73e4181b6d5ad0763b0e14f"
+    },
+    {
+      "course": 5,
+      "pages": 1,
+      "words": 374,
+      "sha256": "ee9dc8906046da4ddcaedc5815aa7952f4b52cbb9d334c34df1ea78ff093afd9"
+    }
+  ]
+}
