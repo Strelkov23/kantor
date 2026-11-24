@@ -1,4 +1,4 @@
-"""KANTOR 0.19. CP-SAT for fixed rooms and per-event duration, two-week institute model.
+"""KANTOR 0.20. CP-SAT for fixed rooms and per-event duration, two-week institute model.
 Run locally: python solver/cp_sat.py input.json output.json --seconds 120
 No network or personal-data upload. Integer-weight objective distinct from UI heuristic.
 """
@@ -37,6 +37,47 @@ def journey(a, b, data):
     if a["building"] == b["building"]: return math.ceil(buf)
     x = data["routes"].get(a["building"]+"|"+b["building"])
     return None if x is None else math.ceil(x + buf)
+
+def resource_errors(data):
+    """Optional documented resource contract in pilot; mandatory in institute-day.
+    Available slots certify the complete relevant interval, not merely its start.
+    """
+    ev=data.get("resourceEvidence")
+    if ev is None:
+        return ["Full scope requires resourceEvidence"] if data.get("scope")=="institute-day" else []
+    if not isinstance(ev,dict): return ["resourceEvidence must be an object"]
+    units,rooms,teachers=(ev.get(k) for k in ("units","rooms","teachers"))
+    if not all(isinstance(x,dict) for x in (units,rooms,teachers)):
+        return ["resourceEvidence requires units, rooms, teachers objects"]
+    errors=[]
+    def evidence(x):
+        return isinstance(x,dict) and isinstance(x.get("source"),str) and bool(x["source"].strip())
+    def slots(x):
+        a=x.get("availableSlots")
+        return isinstance(a,list) and bool(a) and all(slot_ok(v) for v in a) and len(a)==len(set(a))
+    def tags(x):
+        return isinstance(x,list) and all(isinstance(v,str) and v.strip() for v in x) and len(x)==len(set(x))
+    for u in {u for us in data["groupUnits"].values() for u in us}:
+        x=units.get(u)
+        if not evidence(x) or type(x.get("size")) is not int or not 1<=x["size"]<=10000:
+            errors.append("Missing/invalid unit size and source: "+u)
+    for l in data["lessons"]:
+        lid=l["id"]; x=rooms.get(l["room"])
+        sizes=[units.get(u) for u in l["units"]]
+        known=all(evidence(v) and type(v.get("size")) is int and 1<=v["size"]<=10000 for v in sizes)
+        req=l.get("requiredEquipment")
+        if not tags(req): errors.append(lid+": explicit requiredEquipment list required")
+        if not evidence(x) or x.get("building")!=l["building"] or type(x.get("capacity")) is not int or not 1<=x["capacity"]<=10000 or not tags(x.get("equipment")) or not slots(x):
+            errors.append(lid+": missing/invalid room capacity, equipment, availability or source")
+        else:
+            if known and sum(v["size"] for v in sizes)>x["capacity"]: errors.append(lid+": room too small")
+            if tags(req) and not set(req)<=set(x["equipment"]): errors.append(lid+": required equipment missing")
+            if not set(l["allowedSlots"])<=set(x["availableSlots"]): errors.append(lid+": room unavailable in allowedSlots")
+        for t in l["teachers"]:
+            y=teachers.get(t)
+            if not evidence(y) or not slots(y): errors.append(lid+": missing/invalid teacher availability/source: "+t)
+            elif not set(l["allowedSlots"])<=set(y["availableSlots"]): errors.append(lid+": teacher unavailable in allowedSlots: "+t)
+    return errors
 
 def validate(data):
     def require(ok, msg):
@@ -91,6 +132,8 @@ def validate(data):
             key=(resource,b["slot"])
             require(key not in block_keys,"Duplicate/conflicting external resource block")
             block_keys.add(key)
+    errors=resource_errors(data)
+    require(not errors,"; ".join(errors[:20]))
     return data
 
 def audit(data, chosen, weights):
