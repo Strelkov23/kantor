@@ -141,3 +141,33 @@ assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:files.slice(1)
 assert.throws(()=>bundleApi27.validateBundle27({...bundle27,manifest:{...manifest,complete:false}},cat));
 assert.throws(()=>bundleApi27.validateBundle27({...bundle27,manifest:{...manifest,totals:{...manifest.totals,cards:2600}}},cat));
 assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:[{...files[0],checked:"invalid"},...files.slice(1)]},cat));
+
+const api28=new Function(read("diagnostics-25.js")+"\n"+read("spatial-current-28.js")+"\n"+read("discipline-diagnostics-28.js")+"\nreturn {spatialReport28,disciplineAggregate28,disciplineGroup28,classifyLocation28};")();
+const aliases28=JSON.parse(read("data/location-aliases-14.json"));
+const spatial28=api28.spatialReport28(manifest,files,cat,aliases28);
+for(const mode of ["strict","expanded"]){
+ for(const [k,v] of Object.entries(inputs.spatial[mode].totals))assert.equal(spatial28[mode].totals[k],v);
+ const canonical=r=>Object.fromEntries(r.routes.map(x=>[x.from+"|"+x.to,{count:x.count,minimum:x.minimum,gaps:x.gaps}]));
+ assert.deepEqual(canonical(spatial28[mode]),canonical(inputs.spatial[mode]));
+ for(const g of spatial28[mode].groups){const prev=inputs.spatial[mode].groups.find(x=>x.group===g.group);for(const [k,v] of Object.entries(g))if(k!=="group"&&k!=="course")assert.equal(v,prev[k]||0);}
+}
+for(const [k,v] of Object.entries(inputs.spatial.previous))assert.equal(spatial28.previous[k],v);
+assert.equal(api28.classifyLocation28("01-213; 01-214",cat.buildings,aliases28.aliases,"strict").building,"01");
+assert.equal(api28.classifyLocation28("01-213; 12-214",cat.buildings,aliases28.aliases,"strict").building,null);
+assert.equal(api28.classifyLocation28("29-218",cat.buildings,aliases28.aliases,"strict").building,null);
+assert.equal(api28.classifyLocation28("17-ФОС",cat.buildings,aliases28.aliases,"strict").building,null);
+assert.equal(api28.classifyLocation28("17-ФОС",cat.buildings,aliases28.aliases,"expanded").building,"17А");
+assert.throws(()=>api28.spatialReport28(manifest,files.slice(1),cat,aliases28));
+const disciplinesReport28=api28.disciplineAggregate28(manifest,files,cat);
+assert.deepEqual(disciplinesReport28.totals,{cards:2599,unclassified:0,lecture:889,practice:1471,other:239,overlapCandidates:20,sequenceEligible:704,practiceFirst:410,sameStart:0});
+assert.equal(disciplinesReport28.courses.reduce((n,c)=>n+c.cards,0),2599);
+assert.throws(()=>api28.disciplineAggregate28(manifest,files.slice(1),cat));
+const sample28=(date,start,end,type)=>({calendar:{date,subject:"Тест",type},timing:{start,end}});
+const synthetic28=api28.disciplineGroup28({group:"test",course:1,comparisons:[sample28("2026-11-23",540,635,"Практика"),sample28("2026-11-23",540,635,"Практика"),sample28("2026-11-23",600,660,"Лекция"),sample28("2026-11-24",540,635,"Лекция"),sample28("2026-11-24",780,875,"Практика")]});
+assert.equal(synthetic28.totals.cards,5);
+assert.equal(synthetic28.totals.practiceFirst,1);
+assert.equal(synthetic28.subjects[0].intervals,4);
+assert.equal(synthetic28.subjects[0].sameDay,2);
+assert.equal(synthetic28.subjects[0].overlap,1);
+assert.equal(synthetic28.subjects[0].consecutive,1);
+console.log("Updated spatial and disciplines:",JSON.stringify({strict:spatial28.strict.totals,disciplines:disciplinesReport28.totals}));
