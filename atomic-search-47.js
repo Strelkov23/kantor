@@ -12,12 +12,14 @@ function enrichSwap47(ctx,pair,profile,config,index){
  return {key:"swap:"+pair.key,moves:out};
 }
 function bundlePool47(ctx,pool,profile,config){
- const singles=pool.candidates.map(x=>({key:"single:"+actionKey39(x),moves:[x]})),swaps=[];
+ const singles=pool.candidates.map(x=>({key:"single:"+actionKey39(x),moves:[x]})),swaps=[],cycles=[];let cycleSearch=null;
  if(config.includeSwaps!==false&&config.register){
   const d=swaps46(ctx,config.register,config.requireRoom,config.strict);
   for(const p of d.results){const b=enrichSwap47(ctx,p,profile,config,pool.weeklyIndex);if(b)swaps.push(b)}
+  cycleSearch=cycles48(ctx,config.register,config.requireRoom,config.strict);
+  for(const p of cycleSearch.results){const b=enrichSwap47(ctx,p,profile,config,pool.weeklyIndex);if(b)cycles.push(b)}
  }
- return {bundles:[...singles,...swaps],swapCount:swaps.length,singleCount:singles.length};
+ return {bundles:[...singles,...swaps,...cycles],swapCount:swaps.length,cycleCount:cycles.length,cycleSearch:cycleSearch?{edges:cycleSearch.edges,cycles:cycleSearch.cycles,truncated:cycleSearch.truncated,limit:cycleSearch.limit}:null,singleCount:singles.length};
 }
 function bundleConflict47(a,b,by){
  return a.moves.some(x=>b.moves.some(y=>incompatible39(x,y,by)));
@@ -71,16 +73,16 @@ function auditBundles47(ctx,selected,pool,profile,config){
  if(new Set(units.map(b=>b.key)).size!==units.length||units.reduce((n,b)=>n+b.moves.length,0)>config.limit)throw Error("Нарушен лимит изменений");
  for(let i=0;i<units.length;i++)for(let j=0;j<i;j++)if(bundleConflict47(units[i],units[j],ctx.byId))throw Error("Несовместимые пакеты");
  const moves=units.flatMap(b=>b.moves),swaps=units.filter(b=>b.moves.length>1);
- for(const b of swaps){const [a,c]=b.moves;if(b.moves.length!==2||!a.swapKey||a.swapKey!==c.swapKey||a.oldRoom!==c.newRoom||c.oldRoom!==a.newRoom||a.newDate!==c.newDate||a.newStart!==c.newStart||a.newEnd!==c.newEnd)throw Error("Нарушена атомарность обмена")}
+ for(const b of swaps)if(!validCycle48(b.moves))throw Error("Нарушена атомарность обмена");
  const r=audit39(ctx,moves,{...pool,candidates:[...pool.candidates,...swaps.flatMap(b=>b.moves)]},profile,config);
- return {...r,exchangeCount:swaps.length,exchangeKeys:swaps.map(b=>b.key),actionCount:units.length};
+ return {...r,exchangeCount:swaps.length,cycleCount:swaps.filter(b=>b.moves.length===3).length,pairCount:swaps.filter(b=>b.moves.length===2).length,exchangeKeys:swaps.map(b=>b.key),actionCount:units.length};
 }
 function optimize47(ctx,pool,profile,config,priority){
  const a=pool.atomic,result=bundleSearch47(a.bundles,ctx.byId,config.limit,x=>objective44(priority,x),(x,y)=>bundleConflict47(x,y,ctx.byId),{nodes:config.searchNodes||1500,fair:priority==="fair"});
  let checked,removed=0;const audit=units=>auditBundles47(ctx,units,pool,profile,config);
  try{checked=audit(result.chosen)}catch(e){const safe=[];for(const x of result.chosen){try{audit([...safe,x]);safe.push(x)}catch(err){removed++}}checked=audit(safe)}
  const score=packageScore44(checked.moves,ctx.byId,priority),upper=Math.max(score,result.upper),gap=Math.max(0,upper-score);
- return {...checked,rejected:a.bundles.length-checked.actionCount,considered:a.bundles.length,pedExcluded:pool.excluded,workloadExcluded:pool.workloadExcluded,weeklyExcluded:pool.weeklyExcluded,passportExcluded:pool.passportExcluded,swapCandidates:a.swapCount,singleCandidates:a.singleCount,search:{score,upper,gap,gapPct:upper>eps44?100*gap/upper:0,seed:result.seed,nodes:result.nodes,budget:result.budget,pruned:result.pruned,remaining:result.remaining,eligible:result.eligible,auditRemoved:removed,exact:gap<=eps44,scope:"current single and atomic exchange candidates; changed-lesson budget; compatibility relaxation"}};
+ return {...checked,rejected:a.bundles.length-checked.actionCount,considered:a.bundles.length,pedExcluded:pool.excluded,workloadExcluded:pool.workloadExcluded,weeklyExcluded:pool.weeklyExcluded,passportExcluded:pool.passportExcluded,swapCandidates:a.swapCount,cycleCandidates:a.cycleCount||0,cycleSearch:a.cycleSearch,singleCandidates:a.singleCount,search:{score,upper,gap,gapPct:upper>eps44?100*gap/upper:0,seed:result.seed,nodes:result.nodes,budget:result.budget,pruned:result.pruned,remaining:result.remaining,eligible:result.eligible,auditRemoved:removed,exact:gap<=eps44,scope:"current single and atomic exchange candidates; changed-lesson budget; compatibility relaxation"}};
 }
 const atomic47={enabled:true};
 function bindAtomic47(){on("includeSwaps47","change",e=>{atomic47.enabled=e.target.checked;invalidate39();render()})}
