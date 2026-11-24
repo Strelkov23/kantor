@@ -3,7 +3,8 @@ on:
   push:
     paths:
       - 'index.html'
-      - 'workspace-16.js'
+      - '**.js'
+      - 'data/**'
       - 'tests/workspaces.cjs'
       - '.github/workflows/ui-checks.yml'
   workflow_dispatch:
