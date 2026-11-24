@@ -1,0 +1,107 @@
+name: KANTOR browser smoke checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.js'
+      - '**.css'
+      - 'index.html'
+      - 'data/**'
+      - '.github/workflows/browser-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chromium:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save --package-lock=false playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - name: Serve repository over HTTP
+        run: python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/kantor-http.log 2>&1 &
+      - name: Test actual navigation and capture screenshots
+        shell: bash
+        run: |
+          mkdir -p browser-report
+          node <<'NODE'
+          const { chromium } = require('playwright');
+          const assert = require('node:assert/strict');
+          const fs = require('node:fs');
+          const base = 'http://127.0.0.1:8765/';
+          const pages = [
+            ['home12','home12',[]],
+            ['group07','group07',['programs10','groups','scope04']],
+            ['group07','calendar11',['source07']],
+            ['space12','space12',['campus13']],
+            ['space12','survey15',['routes04','priority06','campus']],
+            ['scenarios','scenarios',['unified04','exact05']],
+            ['baseline09','baseline09',['experiment06','audit']],
+            ['baseline09','review08',['review05','source1']],
+            ['overview','overview',['schedule','checks']],
+            ['overview','optimize',['data','method']]
+          ];
+          (async () => {
+            const browser = await chromium.launch();
+            const findings = [];
+            try {
+              for (const [name,viewport] of Object.entries({ desktop:{width:1440,height:900}, mobile:{width:390,height:844} })) {
+                const context = await browser.newContext({viewport, isMobile:name==='mobile', hasTouch:name==='mobile'});
+                const page = await context.newPage();
+                const errors = [], failedLocal = [];
+                page.on('pageerror', e => errors.push(e.message));
+                page.on('response', r => { if(r.url().startsWith(base) && r.status()>=400 && !r.url().endsWith('favicon.ico')) failedLocal.push(r.status()+' '+r.url()); });
+                page.on('requestfailed', r => { if(r.url().startsWith(base) && r.failure()?.errorText!=='net::ERR_ABORTED') failedLocal.push(r.url()+' '+r.failure()?.errorText); });
+                // External map availability is not an internal navigation check.
+                await page.route('**/*', route => route.request().url().startsWith(base) ? route.continue() : route.abort());
+                await page.goto(base,{waitUntil:'domcontentloaded'});
+                await page.locator('#nav .nav-main12 button').first().waitFor();
+                assert.equal(await page.locator('#nav .nav-main12 button').count(),6);
+                for (const [section,id,tools] of pages) {
+                  try {
+                    await page.locator('#nav .nav-main12 [data-tab="'+section+'"]').click();
+                    if(id!==section) await page.locator('#nav .nav-sub12 [data-tab="'+id+'"]').click();
+                    await page.locator('#tool16-'+id).waitFor();
+                    for (const tool of tools) {
+                      const head = page.locator('#tool16-'+tool+' .foldhead16');
+                      if(await head.getAttribute('aria-expanded')!=='true') await head.click();
+                      await page.locator('#tool16-'+tool+' .foldbody16').waitFor();
+                    }
+                    // Wait for local fetches without requiring external services.
+                    await page.waitForLoadState('networkidle');
+                    await page.screenshot({path:'browser-report/'+name+'-'+id+'.png',fullPage:true});
+                    const dom = await page.evaluate(() => {
+                      const ids = Array.from(document.querySelectorAll('[id]'), n => n.id);
+                      return {duplicates:ids.filter((v,i)=>ids.indexOf(v)!==i), overflow:Math.max(0,document.documentElement.scrollWidth-innerWidth)};
+                    });
+                    findings.push({viewport:name,page:id,...dom});
+                    assert.deepEqual(dom.duplicates,[]);
+                    for(const tool of tools) {
+                      const head=page.locator('#tool16-'+tool+' .foldhead16');
+                      await head.click();
+                      assert.equal(await head.getAttribute('aria-expanded'),'false');
+                    }
+                  } catch(e) { findings.push({viewport:name,page:id,error:String(e)}); }
+                }
+                findings.push({viewport:name,pageErrors:errors,failedLocal});
+                await context.close();
+              }
+            } finally {
+              fs.writeFileSync('browser-report/results.json',JSON.stringify(findings,null,2));
+              await browser.close();
+            }
+            console.log(JSON.stringify(findings,null,2));
+            if(findings.some(x=>x.error||x.duplicates?.length||x.pageErrors?.length||x.failedLocal?.length||x.overflow>4)) process.exitCode=1;
+          })().catch(e=>{console.error(e);process.exitCode=1});
+          NODE
+      - name: Upload screenshots and diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: kantor-browser-report
+          path: browser-report/
+          if-no-files-found: warn
