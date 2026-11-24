@@ -6,6 +6,8 @@ on:
       - '**.js'
       - 'data/**'
       - 'tests/workspaces.cjs'
+      - 'ingest/**'
+      - '.github/workflows/calendar-refresh.yml'
       - '.github/workflows/ui-checks.yml'
   workflow_dispatch:
 permissions:
@@ -20,3 +22,14 @@ jobs:
         with:
           node-version: '22'
       - run: node tests/workspaces.cjs
+
+  publication-gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install beautifulsoup4==4.13.4
+      - run: python ingest/test_calendar_publication.py
