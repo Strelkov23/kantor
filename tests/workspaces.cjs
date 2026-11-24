@@ -135,7 +135,7 @@ for(const k of ["teachers","rooms"]){const r=fixture26[k][0];assert.equal(r.card
 console.log("Observed resources:",JSON.stringify({coverage:observed26.coverage,unknown:observed26.unknown,teachers:observed26.teachers.length,rooms:observed26.rooms.length}));
 
 const bundleApi27=new Function(read("calendar-current-27.js")+"\nreturn {validateBundle27};")();
-const bundle27={version:"0.27",manifest,files};
+const bundle27={version:"0.27",manifest,files,period:{start:"2026-11-23",end:"2026-12-06"}};
 assert.equal(bundleApi27.validateBundle27(bundle27,cat).files.size,83);
 assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:files.slice(1)},cat));
 assert.throws(()=>bundleApi27.validateBundle27({...bundle27,manifest:{...manifest,complete:false}},cat));
@@ -379,3 +379,18 @@ for(const v of mapPilot53.all){
  if(v.from===v.to)assert.ok(v.html.includes("Не рассчитывается"));
 }
 console.log("Interactive campus: 4 points, 6 directions, 16 combinations");
+
+ // Calendar integrity and repeated-card comparisons.
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,period:undefined},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,period:{start:"2026-11-16",end:"2026-11-29"}},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,period:{start:"2026-02-30",end:"2026-03-15"}},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:[{...files[0],sections:[{...files[0].sections[0],dates:["2026-11-30"]},files[0].sections[1]]},...files.slice(1)]},cat));
+assert.throws(()=>bundleApi27.validateBundle27({...bundle27,files:[{...files[0],comparisons:[{...files[0].comparisons[0],calendar:{...files[0].comparisons[0].calendar,date:"2026-01-01"}},...files[0].comparisons.slice(1)]},...files.slice(1)]},cat));
+const diff54=new Function(read("calendar-updates-52.js")+"\nreturn diffCalendar52;")();
+const row54={group:"test",date:"2026-11-24",subject:"test",type:"lecture",teacher:"t",room:"r",start:540,end:635,week:"upper"};
+const a54={...row54,sourceStatus:"a"},z54={...row54,sourceStatus:"z"},b54={...row54,sourceStatus:"b"};
+const removed54=diff54([a54,z54],[z54]),added54=diff54([z54],[a54,z54]),changed54=diff54([a54,z54],[b54,z54]);
+assert.deepEqual([removed54.removed,removed54.sourceChanged,removed54.rows[0].sourceStatus],[1,0,"a"]);
+assert.deepEqual([added54.added,added54.sourceChanged,added54.rows[0].sourceStatus],[1,0,"a"]);
+assert.deepEqual([changed54.sourceChanged,changed54.rows.length],[1,0]);
+console.log("Calendar integrity and repeated-card diff: passed");
