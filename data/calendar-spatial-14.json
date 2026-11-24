@@ -1,0 +1,3792 @@
+{
+  "version": "0.14",
+  "checked": "2026-11-24T13:36:07.374408+00:00",
+  "scope": "83 очные группы",
+  "previous": {
+    "cards": 2599,
+    "days": 804,
+    "blocks": 2555,
+    "multiCardBlocks": 42,
+    "transitions": 1751,
+    "same": 420,
+    "cross": 552,
+    "unknown": 779
+  },
+  "strict": {
+    "totals": {
+      "cards": 2599,
+      "days": 804,
+      "blocks": 2555,
+      "multiCardBlocks": 42,
+      "transitions": 1751,
+      "same": 495,
+      "cross": 774,
+      "unknown": 482
+    },
+    "classification": {
+      "numbered": 1850,
+      "same-building-list": 239,
+      "unresolved": 299,
+      "named": 89,
+      "multiple-buildings": 40,
+      "alias-unconfirmed": 13,
+      "missing": 69
+    },
+    "groups": [
+      {
+        "group": "Д-Э 401",
+        "course": 4,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "same": 18,
+        "cross": 3
+      },
+      {
+        "group": "Д-Э 403",
+        "course": 4,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 10,
+        "cross": 8
+      },
+      {
+        "group": "Д-Э 406",
+        "course": 4,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 9,
+        "cross": 16
+      },
+      {
+        "group": "Д-Э 407",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 6,
+        "cross": 8,
+        "same": 6
+      },
+      {
+        "group": "Д-Э 408",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 7,
+        "same": 13
+      },
+      {
+        "group": "Д-Э 409",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 7,
+        "same": 4,
+        "cross": 9
+      },
+      {
+        "group": "Д-Э 410",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 6,
+        "same": 3,
+        "cross": 11
+      },
+      {
+        "group": "Д-Э 411",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 20,
+        "same": 3
+      },
+      {
+        "group": "Д-Э 412",
+        "course": 4,
+        "cards": 28,
+        "days": 8,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "same": 4,
+        "cross": 16
+      },
+      {
+        "group": "Д-Э 413",
+        "course": 4,
+        "cards": 27,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 17,
+        "same": 11,
+        "cross": 4,
+        "unknown": 2
+      },
+      {
+        "group": "Д-Э 415",
+        "course": 4,
+        "cards": 28,
+        "days": 8,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 13,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 416",
+        "course": 4,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "unknown": 2,
+        "cross": 10,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 417",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 16,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 418",
+        "course": 4,
+        "cards": 28,
+        "days": 9,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 7,
+        "same": 12
+      },
+      {
+        "group": "Д-Э 419",
+        "course": 4,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "same": 12,
+        "unknown": 1,
+        "cross": 8
+      },
+      {
+        "group": "Д-Э 441",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 20,
+        "same": 3
+      },
+      {
+        "group": "Д-Э 442",
+        "course": 4,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 2,
+        "cross": 11,
+        "same": 9
+      },
+      {
+        "group": "Д-Э 443",
+        "course": 4,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 9,
+        "same": 10
+      },
+      {
+        "group": "Д-Э 508",
+        "course": 5,
+        "cards": 27,
+        "days": 6,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "cross": 4,
+        "same": 17
+      },
+      {
+        "group": "Д-Э 509",
+        "course": 5,
+        "cards": 27,
+        "days": 8,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "same": 16,
+        "cross": 3
+      },
+      {
+        "group": "ДЭ 01-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "unknown": 4,
+        "same": 12,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 01-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "same": 5,
+        "unknown": 7,
+        "cross": 11
+      },
+      {
+        "group": "ДЭ 01-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "unknown": 12,
+        "same": 1,
+        "cross": 6
+      },
+      {
+        "group": "ДЭ 02-24",
+        "course": 3,
+        "cards": 37,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 2,
+        "transitions": 25,
+        "unknown": 6,
+        "cross": 5,
+        "same": 14
+      },
+      {
+        "group": "ДЭ 02-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 17,
+        "unknown": 5,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 02-26",
+        "course": 1,
+        "cards": 35,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 6,
+        "transitions": 19,
+        "unknown": 7,
+        "cross": 10,
+        "same": 2
+      },
+      {
+        "group": "ДЭ 03-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 7,
+        "cross": 10,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 03-25",
+        "course": 2,
+        "cards": 29,
+        "days": 8,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 7,
+        "same": 4,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 03-26",
+        "course": 1,
+        "cards": 31,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 2,
+        "transitions": 19,
+        "unknown": 11,
+        "same": 1,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 04-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 8,
+        "cross": 6,
+        "same": 7
+      },
+      {
+        "group": "ДЭ 04-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 4,
+        "transitions": 19,
+        "unknown": 7,
+        "cross": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 05-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 4,
+        "same": 9,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 05-25",
+        "course": 2,
+        "cards": 37,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 2,
+        "transitions": 25,
+        "unknown": 10,
+        "cross": 14,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 05-26",
+        "course": 1,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 16,
+        "unknown": 4
+      },
+      {
+        "group": "ДЭ 06-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 6,
+        "same": 6,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 06-25",
+        "course": 2,
+        "cards": 35,
+        "days": 8,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 27,
+        "cross": 16,
+        "unknown": 7,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 06-26",
+        "course": 1,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "cross": 13,
+        "unknown": 6,
+        "same": 2
+      },
+      {
+        "group": "ДЭ 07-24",
+        "course": 3,
+        "cards": 36,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 4,
+        "transitions": 22,
+        "same": 10,
+        "cross": 5,
+        "unknown": 7
+      },
+      {
+        "group": "ДЭ 07-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 5,
+        "unknown": 16,
+        "cross": 4
+      },
+      {
+        "group": "ДЭ 08-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 8,
+        "cross": 8,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 08-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 8,
+        "unknown": 7,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 08-26",
+        "course": 1,
+        "cards": 31,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 4,
+        "transitions": 17,
+        "unknown": 9,
+        "same": 5,
+        "cross": 3
+      },
+      {
+        "group": "ДЭ 09-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 9,
+        "unknown": 11,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 09-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "same": 7,
+        "unknown": 8,
+        "cross": 4
+      },
+      {
+        "group": "ДЭ 10-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "unknown": 4,
+        "cross": 12,
+        "same": 7
+      },
+      {
+        "group": "ДЭ 10-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 14,
+        "unknown": 6,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 10-26",
+        "course": 1,
+        "cards": 27,
+        "days": 10,
+        "blocks": 26,
+        "multiCardBlocks": 1,
+        "transitions": 16,
+        "cross": 11,
+        "unknown": 2,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 11-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 7,
+        "same": 6,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 11-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 8,
+        "unknown": 7,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 11-26",
+        "course": 1,
+        "cards": 26,
+        "days": 10,
+        "blocks": 26,
+        "multiCardBlocks": 0,
+        "transitions": 16,
+        "cross": 10,
+        "unknown": 2,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 12-24",
+        "course": 3,
+        "cards": 36,
+        "days": 10,
+        "blocks": 34,
+        "multiCardBlocks": 2,
+        "transitions": 24,
+        "unknown": 5,
+        "cross": 15,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 12-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 10,
+        "unknown": 8,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 12-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 1,
+        "transitions": 17,
+        "cross": 6,
+        "unknown": 3,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 13-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 6,
+        "same": 7,
+        "cross": 8
+      },
+      {
+        "group": "ДЭ 13-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 8,
+        "cross": 16,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 13-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 15,
+        "unknown": 4
+      },
+      {
+        "group": "ДЭ 15-24",
+        "course": 3,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 10,
+        "unknown": 9,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 15-25",
+        "course": 2,
+        "cards": 33,
+        "days": 8,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 5,
+        "unknown": 15,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 15-26",
+        "course": 1,
+        "cards": 28,
+        "days": 9,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 4,
+        "same": 7,
+        "unknown": 8
+      },
+      {
+        "group": "ДЭ 16-24",
+        "course": 3,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 5,
+        "unknown": 10,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 16-25",
+        "course": 2,
+        "cards": 33,
+        "days": 8,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 23,
+        "same": 6,
+        "cross": 4,
+        "unknown": 13
+      },
+      {
+        "group": "ДЭ 16-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 5,
+        "same": 5,
+        "unknown": 8
+      },
+      {
+        "group": "ДЭ 17-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 11,
+        "unknown": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 17-25",
+        "course": 2,
+        "cards": 33,
+        "days": 9,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 24,
+        "unknown": 11,
+        "same": 6,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 17-26",
+        "course": 1,
+        "cards": 32,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 3,
+        "transitions": 19,
+        "cross": 5,
+        "same": 5,
+        "unknown": 9
+      },
+      {
+        "group": "ДЭ 18-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 11,
+        "unknown": 9,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 18-25",
+        "course": 2,
+        "cards": 32,
+        "days": 8,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 24,
+        "unknown": 9,
+        "same": 7,
+        "cross": 8
+      },
+      {
+        "group": "ДЭ 20-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 11,
+        "same": 5,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 21-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 13,
+        "cross": 4,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 21-25",
+        "course": 2,
+        "cards": 30,
+        "days": 8,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "cross": 8,
+        "unknown": 6,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 21-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 5,
+        "cross": 11,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 22-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 10,
+        "same": 4,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 22-25",
+        "course": 2,
+        "cards": 31,
+        "days": 9,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "cross": 5,
+        "unknown": 8,
+        "same": 9
+      },
+      {
+        "group": "ДЭ 22-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 1,
+        "transitions": 18,
+        "same": 4,
+        "cross": 11,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 23-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 10,
+        "cross": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 23-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 11,
+        "same": 5,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 24-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 10,
+        "same": 1,
+        "cross": 11
+      },
+      {
+        "group": "ДЭ 24-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 8,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 24-26",
+        "course": 1,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 8,
+        "same": 9,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 25-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 10,
+        "same": 3,
+        "cross": 8
+      },
+      {
+        "group": "ДЭ 25-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 11,
+        "unknown": 6,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 25-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 9,
+        "cross": 6,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 27-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 5,
+        "same": 5,
+        "cross": 10
+      }
+    ],
+    "buildingCards": [
+      {
+        "building": "01",
+        "cards": 914
+      },
+      {
+        "building": "02",
+        "cards": 481
+      },
+      {
+        "building": "12",
+        "cards": 301
+      },
+      {
+        "building": "27",
+        "cards": 153
+      },
+      {
+        "building": "03",
+        "cards": 120
+      },
+      {
+        "building": "28",
+        "cards": 101
+      },
+      {
+        "building": "15",
+        "cards": 60
+      },
+      {
+        "building": "23",
+        "cards": 14
+      },
+      {
+        "building": "17А",
+        "cards": 11
+      },
+      {
+        "building": "21",
+        "cards": 9
+      },
+      {
+        "building": "26",
+        "cards": 8
+      },
+      {
+        "building": "11",
+        "cards": 3
+      },
+      {
+        "building": "06",
+        "cards": 2
+      },
+      {
+        "building": "17",
+        "cards": 1
+      }
+    ],
+    "unknownLocations": [
+      {
+        "room": "СК",
+        "cards": 145
+      },
+      {
+        "room": "(не указано)",
+        "cards": 69
+      },
+      {
+        "room": "29-218",
+        "cards": 27
+      },
+      {
+        "room": "Теннисный корт",
+        "cards": 18
+      },
+      {
+        "room": "29-224",
+        "cards": 16
+      },
+      {
+        "room": "09-ХД",
+        "cards": 15
+      },
+      {
+        "room": "17-ФОС",
+        "cards": 13
+      },
+      {
+        "room": "17-БАг",
+        "cards": 13
+      },
+      {
+        "room": "СК Теннисный корт",
+        "cards": 11
+      },
+      {
+        "room": "СК; \n                                                            \n                                                                СК",
+        "cards": 8
+      },
+      {
+        "room": "06-БХ",
+        "cards": 8
+      },
+      {
+        "room": "29-211",
+        "cards": 7
+      },
+      {
+        "room": "12-113; \n                                                            \n                                                                27-3",
+        "cards": 6
+      },
+      {
+        "room": "17-БП",
+        "cards": 6
+      },
+      {
+        "room": "29-206",
+        "cards": 5
+      },
+      {
+        "room": "27-309; \n                                                            \n                                                                27-306; \n                                                            \n                                                                12-218",
+        "cards": 4
+      },
+      {
+        "room": "27-315; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-218",
+        "cards": 4
+      },
+      {
+        "room": "27 корпус",
+        "cards": 4
+      },
+      {
+        "room": "29-206; \n                                                            \n                                                                29-206",
+        "cards": 4
+      },
+      {
+        "room": "17-БАг; \n                                                            \n                                                                17-БАг",
+        "cards": 4
+      },
+      {
+        "room": "27-1; \n                                                            \n                                                                27-3; \n                                                            \n                                                                12-203",
+        "cards": 2
+      },
+      {
+        "room": "12-113; \n                                                            \n                                                                27-3; \n                                                            \n                                                                12-223",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-218",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211",
+        "cards": 2
+      },
+      {
+        "room": "12-316; \n                                                            \n                                                                12-каф.",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-223",
+        "cards": 2
+      },
+      {
+        "room": "12-каф.; \n                                                            \n                                                                12-каф.",
+        "cards": 2
+      },
+      {
+        "room": "01-214; \n                                                            \n                                                                12-225",
+        "cards": 2
+      },
+      {
+        "room": "01-201; \n                                                            \n                                                                15-107",
+        "cards": 2
+      },
+      {
+        "room": "01-203; \n                                                            \n                                                                15-103",
+        "cards": 2
+      },
+      {
+        "room": "12-каф",
+        "cards": 1
+      },
+      {
+        "room": "12-310а; \n                                                            \n                                                                15-103",
+        "cards": 1
+      },
+      {
+        "room": "12-310а; \n                                                            \n                                                                15-107",
+        "cards": 1
+      },
+      {
+        "room": "СК;",
+        "cards": 1
+      },
+      {
+        "room": "02-210; \n                                                            \n                                                                03-104",
+        "cards": 1
+      },
+      {
+        "room": "12-316; \n                                                            \n                                                                03-104",
+        "cards": 1
+      },
+      {
+        "room": "03-104; \n                                                            \n                                                                12-309а",
+        "cards": 1
+      },
+      {
+        "room": "12-315; \n                                                            \n                                                                12-каф.",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-212",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-210",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-402",
+        "cards": 1
+      },
+      {
+        "room": "01-213; \n                                                            \n                                                                15-108",
+        "cards": 1
+      },
+      {
+        "room": "02-102; \n                                                            \n                                                                01-216",
+        "cards": 1
+      },
+      {
+        "room": "27 Корпус",
+        "cards": 1
+      }
+    ],
+    "routes": [
+      {
+        "from": "12",
+        "to": "01",
+        "count": 88,
+        "minimum": 20,
+        "gaps": {
+          "20": 57,
+          "30": 26,
+          "135": 1,
+          "145": 4
+        }
+      },
+      {
+        "from": "01",
+        "to": "02",
+        "count": 87,
+        "minimum": 20,
+        "gaps": {
+          "20": 58,
+          "30": 25,
+          "135": 2,
+          "145": 2
+        }
+      },
+      {
+        "from": "02",
+        "to": "01",
+        "count": 66,
+        "minimum": 20,
+        "gaps": {
+          "20": 41,
+          "30": 22,
+          "135": 2,
+          "145": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "12",
+        "count": 58,
+        "minimum": 20,
+        "gaps": {
+          "20": 41,
+          "30": 13,
+          "145": 4
+        }
+      },
+      {
+        "from": "03",
+        "to": "01",
+        "count": 46,
+        "minimum": 20,
+        "gaps": {
+          "20": 35,
+          "30": 10,
+          "145": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "12",
+        "count": 36,
+        "minimum": 20,
+        "gaps": {
+          "20": 28,
+          "30": 8
+        }
+      },
+      {
+        "from": "01",
+        "to": "03",
+        "count": 28,
+        "minimum": 20,
+        "gaps": {
+          "20": 17,
+          "30": 10,
+          "145": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "02",
+        "count": 23,
+        "minimum": 20,
+        "gaps": {
+          "20": 20,
+          "30": 3
+        }
+      },
+      {
+        "from": "01",
+        "to": "28",
+        "count": 20,
+        "minimum": 20,
+        "gaps": {
+          "20": 16,
+          "30": 3,
+          "145": 1
+        }
+      },
+      {
+        "from": "28",
+        "to": "01",
+        "count": 20,
+        "minimum": 20,
+        "gaps": {
+          "20": 10,
+          "30": 10
+        }
+      },
+      {
+        "from": "03",
+        "to": "02",
+        "count": 19,
+        "minimum": 20,
+        "gaps": {
+          "20": 12,
+          "30": 4,
+          "145": 3
+        }
+      },
+      {
+        "from": "02",
+        "to": "27",
+        "count": 18,
+        "minimum": 20,
+        "gaps": {
+          "20": 9,
+          "30": 9
+        }
+      },
+      {
+        "from": "02",
+        "to": "28",
+        "count": 17,
+        "minimum": 20,
+        "gaps": {
+          "20": 12,
+          "30": 4,
+          "145": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "01",
+        "count": 16,
+        "minimum": 20,
+        "gaps": {
+          "20": 8,
+          "30": 6,
+          "145": 2
+        }
+      },
+      {
+        "from": "03",
+        "to": "12",
+        "count": 15,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 11
+        }
+      },
+      {
+        "from": "15",
+        "to": "01",
+        "count": 15,
+        "minimum": 20,
+        "gaps": {
+          "20": 14,
+          "30": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "02",
+        "count": 14,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 7,
+          "135": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "03",
+        "count": 13,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 8,
+          "145": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "27",
+        "count": 13,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 7
+        }
+      },
+      {
+        "from": "01",
+        "to": "15",
+        "count": 12,
+        "minimum": 20,
+        "gaps": {
+          "20": 7,
+          "30": 4,
+          "145": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "27",
+        "count": 10,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 4
+        }
+      },
+      {
+        "from": "12",
+        "to": "03",
+        "count": 10,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 4
+        }
+      },
+      {
+        "from": "28",
+        "to": "02",
+        "count": 9,
+        "minimum": 20,
+        "gaps": {
+          "20": 3,
+          "30": 5,
+          "145": 1
+        }
+      },
+      {
+        "from": "15",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 8
+        }
+      },
+      {
+        "from": "27",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 2
+        }
+      },
+      {
+        "from": "27",
+        "to": "21",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 4
+        }
+      },
+      {
+        "from": "28",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 4
+        }
+      },
+      {
+        "from": "12",
+        "to": "28",
+        "count": 7,
+        "minimum": 20,
+        "gaps": {
+          "20": 5,
+          "30": 2
+        }
+      },
+      {
+        "from": "15",
+        "to": "03",
+        "count": 7,
+        "minimum": 20,
+        "gaps": {
+          "20": 7
+        }
+      },
+      {
+        "from": "02",
+        "to": "15",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "30": 3,
+          "145": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "15",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 3
+        }
+      },
+      {
+        "from": "27",
+        "to": "28",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 1
+        }
+      },
+      {
+        "from": "15",
+        "to": "02",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 2
+        }
+      },
+      {
+        "from": "23",
+        "to": "01",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 2
+        }
+      },
+      {
+        "from": "26",
+        "to": "01",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 3,
+          "30": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "23",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 3
+        }
+      },
+      {
+        "from": "03",
+        "to": "28",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "260": 1
+        }
+      },
+      {
+        "from": "17А",
+        "to": "02",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "02",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "26",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 3
+        }
+      },
+      {
+        "from": "01",
+        "to": "11",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "01",
+        "to": "17А",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "145": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "23",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "17А",
+        "to": "01",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "27",
+        "to": "15",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "30": 1
+        }
+      },
+      {
+        "from": "17А",
+        "to": "27",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "28",
+        "to": "06",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "28",
+        "to": "27",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "06",
+        "to": "01",
+        "count": 2,
+        "minimum": 135,
+        "gaps": {
+          "135": 2
+        }
+      },
+      {
+        "from": "01",
+        "to": "26",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "17А",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "23",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "11",
+        "to": "01",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "15",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "12",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "11",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "17А",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "11",
+        "to": "12",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "17А",
+        "to": "28",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "01",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "27",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "03",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "26",
+        "to": "02",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "28",
+        "to": "15",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      }
+    ]
+  },
+  "expanded": {
+    "totals": {
+      "cards": 2599,
+      "days": 804,
+      "blocks": 2555,
+      "multiCardBlocks": 42,
+      "transitions": 1751,
+      "same": 496,
+      "cross": 783,
+      "unknown": 472
+    },
+    "classification": {
+      "numbered": 1850,
+      "same-building-list": 239,
+      "unresolved": 299,
+      "named": 102,
+      "multiple-buildings": 40,
+      "missing": 69
+    },
+    "groups": [
+      {
+        "group": "Д-Э 401",
+        "course": 4,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "same": 18,
+        "cross": 3
+      },
+      {
+        "group": "Д-Э 403",
+        "course": 4,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 10,
+        "cross": 8
+      },
+      {
+        "group": "Д-Э 406",
+        "course": 4,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 9,
+        "cross": 16
+      },
+      {
+        "group": "Д-Э 407",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 6,
+        "cross": 8,
+        "same": 6
+      },
+      {
+        "group": "Д-Э 408",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 7,
+        "same": 13
+      },
+      {
+        "group": "Д-Э 409",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 7,
+        "same": 4,
+        "cross": 9
+      },
+      {
+        "group": "Д-Э 410",
+        "course": 4,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 6,
+        "same": 3,
+        "cross": 11
+      },
+      {
+        "group": "Д-Э 411",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 20,
+        "same": 3
+      },
+      {
+        "group": "Д-Э 412",
+        "course": 4,
+        "cards": 28,
+        "days": 8,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "same": 4,
+        "cross": 16
+      },
+      {
+        "group": "Д-Э 413",
+        "course": 4,
+        "cards": 27,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 17,
+        "same": 11,
+        "cross": 4,
+        "unknown": 2
+      },
+      {
+        "group": "Д-Э 415",
+        "course": 4,
+        "cards": 28,
+        "days": 8,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 13,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 416",
+        "course": 4,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 12,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 417",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 16,
+        "same": 7
+      },
+      {
+        "group": "Д-Э 418",
+        "course": 4,
+        "cards": 28,
+        "days": 9,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 7,
+        "same": 12
+      },
+      {
+        "group": "Д-Э 419",
+        "course": 4,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "same": 12,
+        "unknown": 1,
+        "cross": 8
+      },
+      {
+        "group": "Д-Э 441",
+        "course": 4,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 20,
+        "same": 3
+      },
+      {
+        "group": "Д-Э 442",
+        "course": 4,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 2,
+        "cross": 11,
+        "same": 9
+      },
+      {
+        "group": "Д-Э 443",
+        "course": 4,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 9,
+        "same": 10
+      },
+      {
+        "group": "Д-Э 508",
+        "course": 5,
+        "cards": 27,
+        "days": 6,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "cross": 4,
+        "same": 17
+      },
+      {
+        "group": "Д-Э 509",
+        "course": 5,
+        "cards": 27,
+        "days": 8,
+        "blocks": 27,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "same": 16,
+        "cross": 3
+      },
+      {
+        "group": "ДЭ 01-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "unknown": 4,
+        "same": 12,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 01-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "same": 5,
+        "unknown": 7,
+        "cross": 11
+      },
+      {
+        "group": "ДЭ 01-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "unknown": 12,
+        "same": 1,
+        "cross": 6
+      },
+      {
+        "group": "ДЭ 02-24",
+        "course": 3,
+        "cards": 37,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 2,
+        "transitions": 25,
+        "unknown": 6,
+        "cross": 5,
+        "same": 14
+      },
+      {
+        "group": "ДЭ 02-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 17,
+        "unknown": 5,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 02-26",
+        "course": 1,
+        "cards": 35,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 6,
+        "transitions": 19,
+        "unknown": 7,
+        "cross": 10,
+        "same": 2
+      },
+      {
+        "group": "ДЭ 03-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 7,
+        "cross": 10,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 03-25",
+        "course": 2,
+        "cards": 29,
+        "days": 8,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 7,
+        "same": 4,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 03-26",
+        "course": 1,
+        "cards": 31,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 2,
+        "transitions": 19,
+        "unknown": 11,
+        "same": 1,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 04-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 8,
+        "cross": 6,
+        "same": 7
+      },
+      {
+        "group": "ДЭ 04-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 4,
+        "transitions": 19,
+        "unknown": 7,
+        "cross": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 05-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 4,
+        "same": 9,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 05-25",
+        "course": 2,
+        "cards": 37,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 2,
+        "transitions": 25,
+        "unknown": 10,
+        "cross": 14,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 05-26",
+        "course": 1,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 16,
+        "unknown": 4
+      },
+      {
+        "group": "ДЭ 06-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 6,
+        "same": 6,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 06-25",
+        "course": 2,
+        "cards": 35,
+        "days": 8,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 27,
+        "cross": 16,
+        "unknown": 7,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 06-26",
+        "course": 1,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "cross": 13,
+        "unknown": 6,
+        "same": 2
+      },
+      {
+        "group": "ДЭ 07-24",
+        "course": 3,
+        "cards": 36,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 4,
+        "transitions": 22,
+        "same": 10,
+        "cross": 5,
+        "unknown": 7
+      },
+      {
+        "group": "ДЭ 07-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 5,
+        "unknown": 16,
+        "cross": 4
+      },
+      {
+        "group": "ДЭ 08-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 6,
+        "cross": 10,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 08-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 8,
+        "unknown": 7,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 08-26",
+        "course": 1,
+        "cards": 31,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 4,
+        "transitions": 17,
+        "unknown": 6,
+        "same": 6,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 09-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 9,
+        "unknown": 11,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 09-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "same": 7,
+        "unknown": 7,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 10-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "unknown": 4,
+        "cross": 12,
+        "same": 7
+      },
+      {
+        "group": "ДЭ 10-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 14,
+        "unknown": 6,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 10-26",
+        "course": 1,
+        "cards": 27,
+        "days": 10,
+        "blocks": 26,
+        "multiCardBlocks": 1,
+        "transitions": 16,
+        "cross": 11,
+        "unknown": 2,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 11-24",
+        "course": 3,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 7,
+        "same": 6,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 11-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 8,
+        "unknown": 7,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 11-26",
+        "course": 1,
+        "cards": 26,
+        "days": 10,
+        "blocks": 26,
+        "multiCardBlocks": 0,
+        "transitions": 16,
+        "cross": 10,
+        "unknown": 2,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 12-24",
+        "course": 3,
+        "cards": 36,
+        "days": 10,
+        "blocks": 34,
+        "multiCardBlocks": 2,
+        "transitions": 24,
+        "unknown": 5,
+        "cross": 15,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 12-25",
+        "course": 2,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 10,
+        "unknown": 8,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 12-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 27,
+        "multiCardBlocks": 1,
+        "transitions": 17,
+        "cross": 6,
+        "unknown": 3,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 13-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 4,
+        "same": 7,
+        "cross": 10
+      },
+      {
+        "group": "ДЭ 13-25",
+        "course": 2,
+        "cards": 35,
+        "days": 10,
+        "blocks": 35,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "unknown": 8,
+        "cross": 16,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 13-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 15,
+        "unknown": 4
+      },
+      {
+        "group": "ДЭ 15-24",
+        "course": 3,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 10,
+        "unknown": 9,
+        "same": 1
+      },
+      {
+        "group": "ДЭ 15-25",
+        "course": 2,
+        "cards": 33,
+        "days": 8,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 25,
+        "same": 5,
+        "unknown": 15,
+        "cross": 5
+      },
+      {
+        "group": "ДЭ 15-26",
+        "course": 1,
+        "cards": 28,
+        "days": 9,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 19,
+        "cross": 4,
+        "same": 7,
+        "unknown": 8
+      },
+      {
+        "group": "ДЭ 16-24",
+        "course": 3,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 5,
+        "unknown": 10,
+        "same": 5
+      },
+      {
+        "group": "ДЭ 16-25",
+        "course": 2,
+        "cards": 33,
+        "days": 8,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 23,
+        "same": 6,
+        "cross": 4,
+        "unknown": 13
+      },
+      {
+        "group": "ДЭ 16-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 5,
+        "same": 5,
+        "unknown": 8
+      },
+      {
+        "group": "ДЭ 17-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 11,
+        "unknown": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 17-25",
+        "course": 2,
+        "cards": 33,
+        "days": 9,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 24,
+        "unknown": 11,
+        "same": 6,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 17-26",
+        "course": 1,
+        "cards": 32,
+        "days": 10,
+        "blocks": 29,
+        "multiCardBlocks": 3,
+        "transitions": 19,
+        "cross": 5,
+        "same": 5,
+        "unknown": 9
+      },
+      {
+        "group": "ДЭ 18-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 33,
+        "multiCardBlocks": 0,
+        "transitions": 23,
+        "cross": 11,
+        "unknown": 9,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 18-25",
+        "course": 2,
+        "cards": 32,
+        "days": 8,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 24,
+        "unknown": 9,
+        "same": 7,
+        "cross": 8
+      },
+      {
+        "group": "ДЭ 20-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 11,
+        "same": 5,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 21-24",
+        "course": 3,
+        "cards": 33,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 2,
+        "transitions": 21,
+        "unknown": 13,
+        "cross": 4,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 21-25",
+        "course": 2,
+        "cards": 30,
+        "days": 8,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "cross": 8,
+        "unknown": 6,
+        "same": 8
+      },
+      {
+        "group": "ДЭ 21-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 5,
+        "cross": 11,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 22-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 10,
+        "same": 4,
+        "cross": 7
+      },
+      {
+        "group": "ДЭ 22-25",
+        "course": 2,
+        "cards": 31,
+        "days": 9,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "cross": 5,
+        "unknown": 8,
+        "same": 9
+      },
+      {
+        "group": "ДЭ 22-26",
+        "course": 1,
+        "cards": 29,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 1,
+        "transitions": 18,
+        "same": 4,
+        "cross": 11,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 23-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 10,
+        "cross": 8,
+        "same": 4
+      },
+      {
+        "group": "ДЭ 23-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "cross": 11,
+        "same": 5,
+        "unknown": 2
+      },
+      {
+        "group": "ДЭ 24-24",
+        "course": 3,
+        "cards": 32,
+        "days": 10,
+        "blocks": 32,
+        "multiCardBlocks": 0,
+        "transitions": 22,
+        "unknown": 10,
+        "same": 1,
+        "cross": 11
+      },
+      {
+        "group": "ДЭ 24-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 8,
+        "cross": 12
+      },
+      {
+        "group": "ДЭ 24-26",
+        "course": 1,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 8,
+        "same": 9,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 25-24",
+        "course": 3,
+        "cards": 31,
+        "days": 10,
+        "blocks": 31,
+        "multiCardBlocks": 0,
+        "transitions": 21,
+        "unknown": 10,
+        "same": 3,
+        "cross": 8
+      },
+      {
+        "group": "ДЭ 25-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "cross": 11,
+        "unknown": 6,
+        "same": 3
+      },
+      {
+        "group": "ДЭ 25-26",
+        "course": 1,
+        "cards": 28,
+        "days": 10,
+        "blocks": 28,
+        "multiCardBlocks": 0,
+        "transitions": 18,
+        "same": 9,
+        "cross": 6,
+        "unknown": 3
+      },
+      {
+        "group": "ДЭ 27-25",
+        "course": 2,
+        "cards": 30,
+        "days": 10,
+        "blocks": 30,
+        "multiCardBlocks": 0,
+        "transitions": 20,
+        "unknown": 5,
+        "same": 5,
+        "cross": 10
+      }
+    ],
+    "buildingCards": [
+      {
+        "building": "01",
+        "cards": 914
+      },
+      {
+        "building": "02",
+        "cards": 481
+      },
+      {
+        "building": "12",
+        "cards": 301
+      },
+      {
+        "building": "27",
+        "cards": 153
+      },
+      {
+        "building": "03",
+        "cards": 120
+      },
+      {
+        "building": "28",
+        "cards": 101
+      },
+      {
+        "building": "15",
+        "cards": 60
+      },
+      {
+        "building": "17А",
+        "cards": 24
+      },
+      {
+        "building": "23",
+        "cards": 14
+      },
+      {
+        "building": "21",
+        "cards": 9
+      },
+      {
+        "building": "26",
+        "cards": 8
+      },
+      {
+        "building": "11",
+        "cards": 3
+      },
+      {
+        "building": "06",
+        "cards": 2
+      },
+      {
+        "building": "17",
+        "cards": 1
+      }
+    ],
+    "unknownLocations": [
+      {
+        "room": "СК",
+        "cards": 145
+      },
+      {
+        "room": "(не указано)",
+        "cards": 69
+      },
+      {
+        "room": "29-218",
+        "cards": 27
+      },
+      {
+        "room": "Теннисный корт",
+        "cards": 18
+      },
+      {
+        "room": "29-224",
+        "cards": 16
+      },
+      {
+        "room": "09-ХД",
+        "cards": 15
+      },
+      {
+        "room": "17-БАг",
+        "cards": 13
+      },
+      {
+        "room": "СК Теннисный корт",
+        "cards": 11
+      },
+      {
+        "room": "СК; \n                                                            \n                                                                СК",
+        "cards": 8
+      },
+      {
+        "room": "06-БХ",
+        "cards": 8
+      },
+      {
+        "room": "29-211",
+        "cards": 7
+      },
+      {
+        "room": "12-113; \n                                                            \n                                                                27-3",
+        "cards": 6
+      },
+      {
+        "room": "17-БП",
+        "cards": 6
+      },
+      {
+        "room": "29-206",
+        "cards": 5
+      },
+      {
+        "room": "27-309; \n                                                            \n                                                                27-306; \n                                                            \n                                                                12-218",
+        "cards": 4
+      },
+      {
+        "room": "27-315; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-218",
+        "cards": 4
+      },
+      {
+        "room": "27 корпус",
+        "cards": 4
+      },
+      {
+        "room": "29-206; \n                                                            \n                                                                29-206",
+        "cards": 4
+      },
+      {
+        "room": "17-БАг; \n                                                            \n                                                                17-БАг",
+        "cards": 4
+      },
+      {
+        "room": "27-1; \n                                                            \n                                                                27-3; \n                                                            \n                                                                12-203",
+        "cards": 2
+      },
+      {
+        "room": "12-113; \n                                                            \n                                                                27-3; \n                                                            \n                                                                12-223",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-218",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211",
+        "cards": 2
+      },
+      {
+        "room": "12-316; \n                                                            \n                                                                12-каф.",
+        "cards": 2
+      },
+      {
+        "room": "27-316; \n                                                            \n                                                                12-211; \n                                                            \n                                                                12-223",
+        "cards": 2
+      },
+      {
+        "room": "12-каф.; \n                                                            \n                                                                12-каф.",
+        "cards": 2
+      },
+      {
+        "room": "01-214; \n                                                            \n                                                                12-225",
+        "cards": 2
+      },
+      {
+        "room": "01-201; \n                                                            \n                                                                15-107",
+        "cards": 2
+      },
+      {
+        "room": "01-203; \n                                                            \n                                                                15-103",
+        "cards": 2
+      },
+      {
+        "room": "12-каф",
+        "cards": 1
+      },
+      {
+        "room": "12-310а; \n                                                            \n                                                                15-103",
+        "cards": 1
+      },
+      {
+        "room": "12-310а; \n                                                            \n                                                                15-107",
+        "cards": 1
+      },
+      {
+        "room": "СК;",
+        "cards": 1
+      },
+      {
+        "room": "02-210; \n                                                            \n                                                                03-104",
+        "cards": 1
+      },
+      {
+        "room": "12-316; \n                                                            \n                                                                03-104",
+        "cards": 1
+      },
+      {
+        "room": "03-104; \n                                                            \n                                                                12-309а",
+        "cards": 1
+      },
+      {
+        "room": "12-315; \n                                                            \n                                                                12-каф.",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-212",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-210",
+        "cards": 1
+      },
+      {
+        "room": "15-107; \n                                                            \n                                                                01-402",
+        "cards": 1
+      },
+      {
+        "room": "01-213; \n                                                            \n                                                                15-108",
+        "cards": 1
+      },
+      {
+        "room": "02-102; \n                                                            \n                                                                01-216",
+        "cards": 1
+      },
+      {
+        "room": "27 Корпус",
+        "cards": 1
+      }
+    ],
+    "routes": [
+      {
+        "from": "12",
+        "to": "01",
+        "count": 88,
+        "minimum": 20,
+        "gaps": {
+          "20": 57,
+          "30": 26,
+          "135": 1,
+          "145": 4
+        }
+      },
+      {
+        "from": "01",
+        "to": "02",
+        "count": 87,
+        "minimum": 20,
+        "gaps": {
+          "20": 58,
+          "30": 25,
+          "135": 2,
+          "145": 2
+        }
+      },
+      {
+        "from": "02",
+        "to": "01",
+        "count": 66,
+        "minimum": 20,
+        "gaps": {
+          "20": 41,
+          "30": 22,
+          "135": 2,
+          "145": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "12",
+        "count": 58,
+        "minimum": 20,
+        "gaps": {
+          "20": 41,
+          "30": 13,
+          "145": 4
+        }
+      },
+      {
+        "from": "03",
+        "to": "01",
+        "count": 46,
+        "minimum": 20,
+        "gaps": {
+          "20": 35,
+          "30": 10,
+          "145": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "12",
+        "count": 36,
+        "minimum": 20,
+        "gaps": {
+          "20": 28,
+          "30": 8
+        }
+      },
+      {
+        "from": "01",
+        "to": "03",
+        "count": 28,
+        "minimum": 20,
+        "gaps": {
+          "20": 17,
+          "30": 10,
+          "145": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "02",
+        "count": 23,
+        "minimum": 20,
+        "gaps": {
+          "20": 20,
+          "30": 3
+        }
+      },
+      {
+        "from": "01",
+        "to": "28",
+        "count": 20,
+        "minimum": 20,
+        "gaps": {
+          "20": 16,
+          "30": 3,
+          "145": 1
+        }
+      },
+      {
+        "from": "28",
+        "to": "01",
+        "count": 20,
+        "minimum": 20,
+        "gaps": {
+          "20": 10,
+          "30": 10
+        }
+      },
+      {
+        "from": "03",
+        "to": "02",
+        "count": 19,
+        "minimum": 20,
+        "gaps": {
+          "20": 12,
+          "30": 4,
+          "145": 3
+        }
+      },
+      {
+        "from": "02",
+        "to": "27",
+        "count": 18,
+        "minimum": 20,
+        "gaps": {
+          "20": 9,
+          "30": 9
+        }
+      },
+      {
+        "from": "02",
+        "to": "28",
+        "count": 17,
+        "minimum": 20,
+        "gaps": {
+          "20": 12,
+          "30": 4,
+          "145": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "01",
+        "count": 16,
+        "minimum": 20,
+        "gaps": {
+          "20": 8,
+          "30": 6,
+          "145": 2
+        }
+      },
+      {
+        "from": "03",
+        "to": "12",
+        "count": 15,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 11
+        }
+      },
+      {
+        "from": "15",
+        "to": "01",
+        "count": 15,
+        "minimum": 20,
+        "gaps": {
+          "20": 14,
+          "30": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "02",
+        "count": 14,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 7,
+          "135": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "03",
+        "count": 13,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 8,
+          "145": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "27",
+        "count": 13,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 7
+        }
+      },
+      {
+        "from": "01",
+        "to": "15",
+        "count": 12,
+        "minimum": 20,
+        "gaps": {
+          "20": 7,
+          "30": 4,
+          "145": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "27",
+        "count": 10,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 4
+        }
+      },
+      {
+        "from": "12",
+        "to": "03",
+        "count": 10,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 4
+        }
+      },
+      {
+        "from": "28",
+        "to": "02",
+        "count": 9,
+        "minimum": 20,
+        "gaps": {
+          "20": 3,
+          "30": 5,
+          "145": 1
+        }
+      },
+      {
+        "from": "15",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 8
+        }
+      },
+      {
+        "from": "27",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 6,
+          "30": 2
+        }
+      },
+      {
+        "from": "27",
+        "to": "21",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 4
+        }
+      },
+      {
+        "from": "28",
+        "to": "12",
+        "count": 8,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 4
+        }
+      },
+      {
+        "from": "12",
+        "to": "28",
+        "count": 7,
+        "minimum": 20,
+        "gaps": {
+          "20": 5,
+          "30": 2
+        }
+      },
+      {
+        "from": "15",
+        "to": "03",
+        "count": 7,
+        "minimum": 20,
+        "gaps": {
+          "20": 7
+        }
+      },
+      {
+        "from": "02",
+        "to": "15",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "30": 3,
+          "145": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "15",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 3
+        }
+      },
+      {
+        "from": "27",
+        "to": "28",
+        "count": 5,
+        "minimum": 20,
+        "gaps": {
+          "20": 4,
+          "30": 1
+        }
+      },
+      {
+        "from": "15",
+        "to": "02",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 2
+        }
+      },
+      {
+        "from": "23",
+        "to": "01",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 2
+        }
+      },
+      {
+        "from": "26",
+        "to": "01",
+        "count": 4,
+        "minimum": 20,
+        "gaps": {
+          "20": 3,
+          "30": 1
+        }
+      },
+      {
+        "from": "01",
+        "to": "23",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 3
+        }
+      },
+      {
+        "from": "03",
+        "to": "28",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "260": 1
+        }
+      },
+      {
+        "from": "17А",
+        "to": "02",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "02",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 2,
+          "30": 1
+        }
+      },
+      {
+        "from": "27",
+        "to": "26",
+        "count": 3,
+        "minimum": 20,
+        "gaps": {
+          "20": 3
+        }
+      },
+      {
+        "from": "01",
+        "to": "11",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "01",
+        "to": "17А",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "145": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "17А",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "12",
+        "to": "23",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "17А",
+        "to": "01",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "17А",
+        "to": "03",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "17А",
+        "to": "12",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 2
+        }
+      },
+      {
+        "from": "27",
+        "to": "15",
+        "count": 2,
+        "minimum": 20,
+        "gaps": {
+          "20": 1,
+          "30": 1
+        }
+      },
+      {
+        "from": "17А",
+        "to": "27",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "17А",
+        "to": "28",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "28",
+        "to": "06",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "28",
+        "to": "17А",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "28",
+        "to": "27",
+        "count": 2,
+        "minimum": 30,
+        "gaps": {
+          "30": 2
+        }
+      },
+      {
+        "from": "06",
+        "to": "01",
+        "count": 2,
+        "minimum": 135,
+        "gaps": {
+          "135": 2
+        }
+      },
+      {
+        "from": "01",
+        "to": "26",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "02",
+        "to": "23",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "11",
+        "to": "01",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "12",
+        "to": "17А",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "15",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "12",
+        "count": 1,
+        "minimum": 20,
+        "gaps": {
+          "20": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "11",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "03",
+        "to": "17А",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "11",
+        "to": "12",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "01",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "21",
+        "to": "27",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "23",
+        "to": "03",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "26",
+        "to": "02",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      },
+      {
+        "from": "28",
+        "to": "15",
+        "count": 1,
+        "minimum": 30,
+        "gaps": {
+          "30": 1
+        }
+      }
+    ]
+  },
+  "notes": "Уровень корпуса, не входа. Строгий режим допускает перечни аудиторий только одного корпуса и документированные именованные помещения. Расширенный дополнительно принимает сокращение 17-ФОС как гипотезу. Не подтверждает подгруппы, индивидуальные маршруты, расстояния или время ходьбы."
+}
