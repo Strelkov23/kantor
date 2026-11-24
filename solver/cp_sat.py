@@ -170,6 +170,14 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
                         model.add_bool_and(conditions).only_enforce_if(z)
                         model.add_bool_or([t.negated() for t in conditions]+[z])
                         objective.append(coeff*z)
+    # An independently verified existing timetable supplies a feasible warm start
+    # and a safe upper bound: never return a worse score on this objective.
+    baseline_assignment={l["id"]:l["slot"] for l in data["lessons"]}
+    baseline_check=audit(data,baseline_assignment,weights)
+    if not baseline_check["errors"]:
+        for (lid,s),x in choices.items():
+            model.add_hint(x,int(s==baseline_assignment[lid]))
+        model.add(sum(objective)<=baseline_check["score"])
     model.minimize(sum(objective))
     solver=cp_model.CpSolver()
     solver.parameters.max_time_in_seconds=seconds
@@ -185,7 +193,7 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
     if check["errors"] or abs(check["score"]-solver.objective_value)>1e-6:
         raise RuntimeError("Independent audit failed: "+repr(check))
     result.update(objective=solver.objective_value,best_bound=solver.best_objective_bound,relative_gap=max(0,solver.objective_value-solver.best_objective_bound)/max(1,abs(solver.objective_value)),
-                  baseline=audit(data,{l["id"]:l["slot"] for l in data["lessons"]},weights),audit=check,
+                  baseline=baseline_check,audit=check,
                   lessons=[{**l,"slot":chosen[l["id"]]} for l in data["lessons"]])
     return result
 
