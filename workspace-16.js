@@ -29,7 +29,7 @@ function activate16(id,scroll=false){
  tab=id;render();
  // Reopening a workspace must also load its previously expanded children.
  if(visible16("group07")&&personal23.group&&!personal23.detail&&!personal23.loading)loadPersonal23();
- if(visible16("group07")&&!group07.data&&group07.status!=="loading")loadGroup07();
+ if(visible16("group07")&&advanced23&&!group07.data&&group07.status!=="loading")loadGroup07();
  if(["home12","space12"].includes(w.id)&&!visual12.baseline&&!visual12.loading)loadVisual12();
  if(visible16("programs10")&&!programs10.data&&!programs10.loading)loadPrograms10();
  if(visible16("calendar11")&&!calendar11.data&&!calendar11.loading)load11();
