@@ -16,9 +16,16 @@ function diffCalendar52(oldRows,newRows){
  for(const q of oldRows)add(oldBy,q);for(const q of newRows)add(newBy,q);
  const removed=[],added=[];let unchanged=0,sourceChanged=0;
  for(const k of new Set([...oldBy.keys(),...newBy.keys()])){
-  const a=(oldBy.get(k)||[]).slice().sort((x,y)=>x.sourceStatus.localeCompare(y.sourceStatus)),b=(newBy.get(k)||[]).slice().sort((x,y)=>x.sourceStatus.localeCompare(y.sourceStatus)),n=Math.min(a.length,b.length);unchanged+=n;
-  const statuses=new Map();for(const q of a)statuses.set(q.sourceStatus,(statuses.get(q.sourceStatus)||0)+1);let same=0;for(const q of b){const c=statuses.get(q.sourceStatus)||0;if(c){same++;statuses.set(q.sourceStatus,c-1)}}sourceChanged+=n-same;
-  removed.push(...a.slice(n));added.push(...b.slice(n));
+  const a=(oldBy.get(k)||[]).slice(),b=(newBy.get(k)||[]).slice(),n=Math.min(a.length,b.length);unchanged+=n;
+  // First pair identical source statuses, then pair remaining cards. Unpaired
+  // records must retain the actual unmatched source status, not sorted position.
+  const byStatus=new Map(),leftA=[],leftB=[];
+  for(const q of a){if(!byStatus.has(q.sourceStatus))byStatus.set(q.sourceStatus,[]);byStatus.get(q.sourceStatus).push(q)}
+  for(const q of b){const bucket=byStatus.get(q.sourceStatus);if(bucket?.length)bucket.pop();else leftB.push(q)}
+  for(const bucket of byStatus.values())leftA.push(...bucket);
+  leftA.sort((x,y)=>x.sourceStatus.localeCompare(y.sourceStatus));leftB.sort((x,y)=>x.sourceStatus.localeCompare(y.sourceStatus));
+  const changed=Math.min(leftA.length,leftB.length);sourceChanged+=changed;
+  removed.push(...leftA.slice(changed));added.push(...leftB.slice(changed));
  }
  const dateBounds=rows=>{const d=rows.map(x=>x.date).sort();return {from:d[0]||null,to:d.at(-1)||null}},oldPeriod=dateBounds(oldRows),newPeriod=dateBounds(newRows);
  const oldDates=new Set(oldRows.map(q=>JSON.stringify([q.group,q.date]))),newDates=new Set(newRows.map(q=>JSON.stringify([q.group,q.date])));
