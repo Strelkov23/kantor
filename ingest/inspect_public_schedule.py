@@ -49,6 +49,22 @@ def main():
         wanted={g["id"] for g in cat["groups"]}
         report["targetOptions"]=[o for o in p.options if any(str(v).strip() in wanted for v in o.values())]
         report["datalistCount"]=len(p.options)
+        def norm(value):return re.sub(r"[\s\-–—]+","",str(value)).upper()
+        target={norm(g):g for g in wanted}
+        data_match=re.search(r'<script[^>]*id=["\']group-filter-data["\'][^>]*>(.*?)</script>',html,re.I|re.S)
+        if data_match:
+            rows=json.loads(data_match.group(1))
+            report["groupRowKeys"]=list(rows[0]) if rows else []
+            matched=[]
+            for row in rows:
+                # Only use fields that identify group names, not any student data.
+                values=[str(v) for k,v in row.items() if k.startswith("group") and isinstance(v,(str,int))]
+                found={target[norm(v)] for v in values if norm(v) in target}
+                for g in found:
+                    matched.append({"group":g,**{k:v for k,v in row.items() if k in ("group_id","group_name","group_label","department_id","department_label","course_label","study_form","education_level","specialty_label","specialization_label")}})
+            report["matchedGroups"]=matched
+            report["matchedGroupCount"]=len({r["group"] for r in matched})
+        report["sampleTargetOptions"]=[o for o in p.options if any(any(norm(v).startswith(k) for k in target) for v in o.values())][:5]
         report["yearOptions"]=p.select_options
         # Show only public selector logic, not the embedded institution-wide group dataset.
         report["selectorLogic"]=[s[:12000] for s in inline if "function syncGroupHidden" in s and len(s)<20000]
