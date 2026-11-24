@@ -126,7 +126,7 @@ function renderOpportunities29(){
 }
 function bindOpportunities29(){
  const s=opportunities29;
- on("runOpportunities29","click",loadOpportunities29);
+ on("runOpportunities29","click",()=>loadOpportunities29());
  for(const [id,k] of [["course29","course"],["group29","group"],["weekMove32","week"]])on(id,"change",e=>{s[k]=e.target.value;s.selected="";render()});
  document.querySelectorAll("[data-view29]").forEach(b=>b.onclick=()=>{s.view=b.dataset.view29;render()});
  document.querySelectorAll("[data-move29]").forEach(b=>b.onclick=()=>{s.selected=b.dataset.move29;render();$("moveDetail29")?.scrollIntoView?.({block:"start"})});
