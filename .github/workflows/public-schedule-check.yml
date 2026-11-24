@@ -1,0 +1,16 @@
+name: KANTOR public schedule check
+on:
+  push:
+    paths:
+      - 'ingest/inspect_public_schedule.py'
+      - '.github/workflows/public-schedule-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - run: python ingest/inspect_public_schedule.py
