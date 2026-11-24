@@ -1,0 +1,839 @@
+{
+  "version": "0.9",
+  "academicYear": 2026,
+  "source": "https://eg.timacad.ru/schedule/groups/",
+  "run": "https://github.com/Strelkov23/kantor/actions/runs/45403437545",
+  "status": "Public selector group identifiers; individual schedules not reconciled",
+  "groups": [
+    {
+      "group": "Д-Э 401",
+      "group_id": 1064,
+      "group_name": "Д-Э401",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1064"
+    },
+    {
+      "group": "Д-Э 403",
+      "group_id": 1153,
+      "group_name": "Д-Э403",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1153"
+    },
+    {
+      "group": "Д-Э 406",
+      "group_id": 1130,
+      "group_name": "Д-Э406",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1130"
+    },
+    {
+      "group": "Д-Э 407",
+      "group_id": 1056,
+      "group_name": "Д-Э407",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1056"
+    },
+    {
+      "group": "Д-Э 408",
+      "group_id": 1220,
+      "group_name": "Д-Э408",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1220"
+    },
+    {
+      "group": "Д-Э 409",
+      "group_id": 1420,
+      "group_name": "Д-Э409",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1420"
+    },
+    {
+      "group": "Д-Э 410",
+      "group_id": 1326,
+      "group_name": "Д-Э410",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1326"
+    },
+    {
+      "group": "Д-Э 411",
+      "group_id": 1297,
+      "group_name": "Д-Э411",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1297"
+    },
+    {
+      "group": "Д-Э 412",
+      "group_id": 1186,
+      "group_name": "Д-Э412",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1186"
+    },
+    {
+      "group": "Д-Э 413",
+      "group_id": 1055,
+      "group_name": "Д-Э413",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1055"
+    },
+    {
+      "group": "Д-Э 415",
+      "group_id": 1174,
+      "group_name": "Д-Э415",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1174"
+    },
+    {
+      "group": "Д-Э 416",
+      "group_id": 1378,
+      "group_name": "Д-Э416",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1378"
+    },
+    {
+      "group": "Д-Э 417",
+      "group_id": 1227,
+      "group_name": "Д-Э417",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1227"
+    },
+    {
+      "group": "Д-Э 418",
+      "group_id": 1149,
+      "group_name": "Д-Э418",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1149"
+    },
+    {
+      "group": "Д-Э 419",
+      "group_id": 1021,
+      "group_name": "Д-Э419",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1021"
+    },
+    {
+      "group": "Д-Э 441",
+      "group_id": 1490,
+      "group_name": "Д-Э441",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1490"
+    },
+    {
+      "group": "Д-Э 442",
+      "group_id": 1491,
+      "group_name": "Д-Э442",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1491"
+    },
+    {
+      "group": "Д-Э 443",
+      "group_id": 1489,
+      "group_name": "Д-Э443",
+      "course_label": "Четвертый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1489"
+    },
+    {
+      "group": "Д-Э 508",
+      "group_id": 1302,
+      "group_name": "Д-Э508",
+      "course_label": "Пятый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1302"
+    },
+    {
+      "group": "Д-Э 509",
+      "group_id": 1377,
+      "group_name": "Д-Э509",
+      "course_label": "Пятый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1377"
+    },
+    {
+      "group": "ДЭ 01-24",
+      "group_id": 1097,
+      "group_name": "ДЭ 01-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1097"
+    },
+    {
+      "group": "ДЭ 01-25",
+      "group_id": 1008,
+      "group_name": "ДЭ 01-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1008"
+    },
+    {
+      "group": "ДЭ 01-26",
+      "group_id": 1781,
+      "group_name": "ДЭ 01-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1781"
+    },
+    {
+      "group": "ДЭ 02-24",
+      "group_id": 1336,
+      "group_name": "ДЭ 02-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1336"
+    },
+    {
+      "group": "ДЭ 02-25",
+      "group_id": 1073,
+      "group_name": "ДЭ 02-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1073"
+    },
+    {
+      "group": "ДЭ 02-26",
+      "group_id": 1775,
+      "group_name": "ДЭ 02-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1775"
+    },
+    {
+      "group": "ДЭ 03-24",
+      "group_id": 1298,
+      "group_name": "ДЭ 03-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1298"
+    },
+    {
+      "group": "ДЭ 03-25",
+      "group_id": 1128,
+      "group_name": "ДЭ 03-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1128"
+    },
+    {
+      "group": "ДЭ 03-26",
+      "group_id": 1779,
+      "group_name": "ДЭ 03-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1779"
+    },
+    {
+      "group": "ДЭ 04-24",
+      "group_id": 1210,
+      "group_name": "ДЭ 04-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1210"
+    },
+    {
+      "group": "ДЭ 04-25",
+      "group_id": 1340,
+      "group_name": "ДЭ 04-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1340"
+    },
+    {
+      "group": "ДЭ 05-24",
+      "group_id": 1436,
+      "group_name": "ДЭ 05-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1436"
+    },
+    {
+      "group": "ДЭ 05-25",
+      "group_id": 1181,
+      "group_name": "ДЭ 05-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1181"
+    },
+    {
+      "group": "ДЭ 05-26",
+      "group_id": 1646,
+      "group_name": "ДЭ 05-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1646"
+    },
+    {
+      "group": "ДЭ 06-24",
+      "group_id": 1144,
+      "group_name": "ДЭ 06-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1144"
+    },
+    {
+      "group": "ДЭ 06-25",
+      "group_id": 1027,
+      "group_name": "ДЭ 06-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1027"
+    },
+    {
+      "group": "ДЭ 06-26",
+      "group_id": 1785,
+      "group_name": "ДЭ 06-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1785"
+    },
+    {
+      "group": "ДЭ 07-24",
+      "group_id": 1059,
+      "group_name": "ДЭ 07-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Специалитет",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1059"
+    },
+    {
+      "group": "ДЭ 07-25",
+      "group_id": 1262,
+      "group_name": "ДЭ 07-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1262"
+    },
+    {
+      "group": "ДЭ 08-24",
+      "group_id": 1012,
+      "group_name": "ДЭ 08-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1012"
+    },
+    {
+      "group": "ДЭ 08-25",
+      "group_id": 1397,
+      "group_name": "ДЭ 08-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1397"
+    },
+    {
+      "group": "ДЭ 08-26",
+      "group_id": 1778,
+      "group_name": "ДЭ 08-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1778"
+    },
+    {
+      "group": "ДЭ 09-25",
+      "group_id": 1402,
+      "group_name": "ДЭ 09-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1402"
+    },
+    {
+      "group": "ДЭ 09-26",
+      "group_id": 1783,
+      "group_name": "ДЭ 09-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1783"
+    },
+    {
+      "group": "ДЭ 10-24",
+      "group_id": 1094,
+      "group_name": "ДЭ 10-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1094"
+    },
+    {
+      "group": "ДЭ 10-25",
+      "group_id": 1057,
+      "group_name": "ДЭ 10-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1057"
+    },
+    {
+      "group": "ДЭ 10-26",
+      "group_id": 1784,
+      "group_name": "ДЭ 10-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1784"
+    },
+    {
+      "group": "ДЭ 11-24",
+      "group_id": 1373,
+      "group_name": "ДЭ 11-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1373"
+    },
+    {
+      "group": "ДЭ 11-25",
+      "group_id": 1023,
+      "group_name": "ДЭ 11-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1023"
+    },
+    {
+      "group": "ДЭ 11-26",
+      "group_id": 1787,
+      "group_name": "ДЭ 11-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1787"
+    },
+    {
+      "group": "ДЭ 12-24",
+      "group_id": 1209,
+      "group_name": "ДЭ 12-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1209"
+    },
+    {
+      "group": "ДЭ 12-25",
+      "group_id": 1426,
+      "group_name": "ДЭ 12-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1426"
+    },
+    {
+      "group": "ДЭ 12-26",
+      "group_id": 1782,
+      "group_name": "ДЭ 12-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1782"
+    },
+    {
+      "group": "ДЭ 13-24",
+      "group_id": 1295,
+      "group_name": "ДЭ 13-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1295"
+    },
+    {
+      "group": "ДЭ 13-25",
+      "group_id": 1001,
+      "group_name": "ДЭ 13-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1001"
+    },
+    {
+      "group": "ДЭ 13-26",
+      "group_id": 1780,
+      "group_name": "ДЭ 13-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1780"
+    },
+    {
+      "group": "ДЭ 15-24",
+      "group_id": 1003,
+      "group_name": "ДЭ 15-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1003"
+    },
+    {
+      "group": "ДЭ 15-25",
+      "group_id": 1221,
+      "group_name": "ДЭ 15-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1221"
+    },
+    {
+      "group": "ДЭ 15-26",
+      "group_id": 1671,
+      "group_name": "ДЭ 15-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1671"
+    },
+    {
+      "group": "ДЭ 16-24",
+      "group_id": 1347,
+      "group_name": "ДЭ 16-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1347"
+    },
+    {
+      "group": "ДЭ 16-25",
+      "group_id": 1112,
+      "group_name": "ДЭ 16-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1112"
+    },
+    {
+      "group": "ДЭ 16-26",
+      "group_id": 1789,
+      "group_name": "ДЭ 16-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1789"
+    },
+    {
+      "group": "ДЭ 17-24",
+      "group_id": 1214,
+      "group_name": "ДЭ 17-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1214"
+    },
+    {
+      "group": "ДЭ 17-25",
+      "group_id": 1265,
+      "group_name": "ДЭ 17-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1265"
+    },
+    {
+      "group": "ДЭ 17-26",
+      "group_id": 1768,
+      "group_name": "ДЭ 17-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1768"
+    },
+    {
+      "group": "ДЭ 18-24",
+      "group_id": 1423,
+      "group_name": "ДЭ 18-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1423"
+    },
+    {
+      "group": "ДЭ 18-25",
+      "group_id": 1018,
+      "group_name": "ДЭ 18-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1018"
+    },
+    {
+      "group": "ДЭ 20-26",
+      "group_id": 1765,
+      "group_name": "ДЭ 20-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1765"
+    },
+    {
+      "group": "ДЭ 21-24",
+      "group_id": 1353,
+      "group_name": "ДЭ 21-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1353"
+    },
+    {
+      "group": "ДЭ 21-25",
+      "group_id": 1102,
+      "group_name": "ДЭ 21-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1102"
+    },
+    {
+      "group": "ДЭ 21-26",
+      "group_id": 1643,
+      "group_name": "ДЭ 21-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1643"
+    },
+    {
+      "group": "ДЭ 22-24",
+      "group_id": 1366,
+      "group_name": "ДЭ 22-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1366"
+    },
+    {
+      "group": "ДЭ 22-25",
+      "group_id": 1106,
+      "group_name": "ДЭ 22-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1106"
+    },
+    {
+      "group": "ДЭ 22-26",
+      "group_id": 1680,
+      "group_name": "ДЭ 22-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1680"
+    },
+    {
+      "group": "ДЭ 23-24",
+      "group_id": 1200,
+      "group_name": "ДЭ 23-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1200"
+    },
+    {
+      "group": "ДЭ 23-26",
+      "group_id": 1786,
+      "group_name": "ДЭ 23-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1786"
+    },
+    {
+      "group": "ДЭ 24-24",
+      "group_id": 1126,
+      "group_name": "ДЭ 24-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1126"
+    },
+    {
+      "group": "ДЭ 24-25",
+      "group_id": 1170,
+      "group_name": "ДЭ 24-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1170"
+    },
+    {
+      "group": "ДЭ 24-26",
+      "group_id": 1656,
+      "group_name": "ДЭ 24-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1656"
+    },
+    {
+      "group": "ДЭ 25-24",
+      "group_id": 1255,
+      "group_name": "ДЭ 25-24",
+      "course_label": "Третий",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1255"
+    },
+    {
+      "group": "ДЭ 25-25",
+      "group_id": 1218,
+      "group_name": "ДЭ 25-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1218"
+    },
+    {
+      "group": "ДЭ 25-26",
+      "group_id": 1788,
+      "group_name": "ДЭ 25-26",
+      "course_label": "Первый",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1788"
+    },
+    {
+      "group": "ДЭ 27-25",
+      "group_id": 1356,
+      "group_name": "ДЭ 27-25",
+      "course_label": "Второй",
+      "department_id": 22,
+      "study_form": "Очная",
+      "education_level": "Бакалавриат",
+      "url": "https://eg.timacad.ru/schedule/groups/?academic_year=2026&group=1356"
+    }
+  ]
+}
