@@ -153,6 +153,11 @@ for(const mode of ["strict","expanded"]){
 }
 for(const [k,v] of Object.entries(inputs.spatial.previous))assert.equal(spatial28.previous[k],v);
 assert.equal(api28.classifyLocation28("01-213; 01-214",cat.buildings,aliases28.aliases,"strict").building,"01");
+assert.equal(api28.classifyLocation28("01-213;",cat.buildings,aliases28.aliases,"numbered").building,null);
+assert.equal(api28.classifyLocation28("01-213 / ",cat.buildings,aliases28.aliases,"numbered").building,null);
+assert.equal(api28.classifyLocation28(" 01-213 ",cat.buildings,aliases28.aliases,"numbered").building,"01");
+assert.equal(api28.classifyLocation28("01-213;",cat.buildings,aliases28.aliases,"strict").building,"01");
+assert.equal(api28.classifyLocation28("01-213; 01-214",cat.buildings,aliases28.aliases,"numbered").building,null);
 assert.equal(api28.classifyLocation28("01-213; 12-214",cat.buildings,aliases28.aliases,"strict").building,null);
 assert.equal(api28.classifyLocation28("29-218",cat.buildings,aliases28.aliases,"strict").building,null);
 assert.equal(api28.classifyLocation28("17-ФОС",cat.buildings,aliases28.aliases,"strict").building,null);
