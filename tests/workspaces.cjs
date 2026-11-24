@@ -47,3 +47,26 @@ assert.throws(()=>roomChecks.roomEvidence18(envelope([{...passport,verifiedDate:
 assert.throws(()=>roomChecks.roomEvidence18(envelope([passport,passport]),inventory));
 assert.throws(()=>roomChecks.roomEvidence18(envelope([{...passport,source:""}]),inventory));
 console.log("Room inventory:",JSON.stringify({total:inventory.total,recognized:inventory.recognized,rooms:inventory.rooms.length,unknown:inventory.total-inventory.recognized}));
+
+const surveySource=read("survey-15.js");
+const routeCalc=new Function(surveySource.slice(0,surveySource.indexOf("function renderSurvey15"))+"\n"+read("route-analysis-22.js")+"\nreturn routeAnalysis22;")();
+const settings22={buffer:5,factor:1.25,tight:5};
+const routeReport=routeCalc(inputs.spatial,inputs.points,inputs.walk,{},settings22);
+assert.equal(routeReport.total,774);
+assert.equal(routeReport.totals.model,381);
+assert.equal(routeReport.totals.unknown,393);
+assert.equal(routeReport.totals.field,0);
+assert.equal(routeReport.totals.short,494);
+assert.equal(routeReport.curve[19].count,624);
+assert.equal(routeReport.missingKnown.length,6);
+assert.equal(routeReport.totals.model+routeReport.totals.unknown+routeReport.totals.field,routeReport.total);
+const mockSample22=i=>({id:"synthetic-"+i,date:"2026-11-24",condition:"normal",minutes:15+i,fromEntrance:"test A",toEntrance:"test B",source:"synthetic test",meters:null});
+const routeMeasured=routeCalc(inputs.spatial,inputs.points,inputs.walk,{"12|01":[1,2,3].map(mockSample22)},settings22);
+assert.equal(routeMeasured.totals.field,88);
+assert.equal(routeMeasured.totals.model,293);
+assert.equal(routeMeasured.totals.lateField,57);
+const inconsistent=[1,2,3].map(mockSample22);inconsistent[2].toEntrance="different";
+assert.equal(routeCalc(inputs.spatial,inputs.points,inputs.walk,{"12|01":inconsistent},settings22).totals.field,0);
+const corrupted=JSON.parse(JSON.stringify(inputs.spatial));corrupted.strict.routes[0].count++;
+assert.throws(()=>routeCalc(corrupted,inputs.points,inputs.walk,{},settings22));
+console.log("Route analysis:",JSON.stringify(routeReport.totals));
