@@ -47,7 +47,7 @@ async function load08(){
   if(mode==="flows"&&!Array.isArray(d.flows))throw Error("Некорректные потоки");
   if(t!==token08)return;state08.manifest=m;if(mode==="cells")state08.courseData[course]=d;if(mode==="flows")state08.flows=d;state08.status="ready";
  }catch(e){if(t!==token08)return;state08.status="error";state08.error=e.message}
- if(tab==="review08")render()
+ if(visible16("review08"))render()
 }
 function bind08(){
  on("load08","click",load08);on("mode08","change",e=>{state08.mode=e.target.value;state08.filter=state08.mode==="cells"?"complex":"all";state08.page=0;load08()});on("course08","change",e=>{state08.course=+e.target.value;state08.page=0;load08()});
