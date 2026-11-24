@@ -81,6 +81,8 @@ jobs:
                     if(id==='group07') {
                       await page.locator('#personalGroup23').selectOption('Д-Э 401');
                       await page.locator('#personalWeek23').waitFor({timeout:30000});
+                      assert.match(await page.locator('#personalWeek23 option').first().textContent(),/Верхняя/);
+                      assert.match(await page.locator('#personalWeek23 option').nth(1).textContent(),/Нижняя/);
                       await page.locator('#personalWeek23').selectOption({index:0});
                       assert.equal(await page.locator('.personal-lesson23').count(),15);
                       await page.locator('#personalDay23').selectOption('2026-11-23');
@@ -119,6 +121,11 @@ jobs:
                       await page.locator('#courseDiag25').selectOption('4');
                       assert.ok(await page.locator('[data-diag-group25]').count()>0);
                       await page.locator('#courseDiag25').selectOption('all');
+                      await page.locator('[data-analysis26="weeks"]').click();
+                      await page.locator('#exportWeeks32').waitFor({timeout:30000});
+                      assert.equal(await page.locator('[data-week-group32]').count(),166);
+                      await page.locator('#period32').selectOption('2026-11-30');
+                      assert.equal(await page.locator('[data-week-group32]').count(),83);
                       await page.locator('[data-analysis26="teachers"]').click();
                       await page.locator('#exportResource26').waitFor({timeout:30000});
                       assert.ok(await page.locator('[data-resource26]').count()>0);
