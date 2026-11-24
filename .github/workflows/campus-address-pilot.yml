@@ -1,0 +1,17 @@
+name: KANTOR limited campus address pilot
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - run: python spatial/osm_pilot.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: campus-address-candidates
+          path: osm-campus-pilot.json
+          retention-days: 14
