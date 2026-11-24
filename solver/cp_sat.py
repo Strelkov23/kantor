@@ -1,4 +1,4 @@
-"""KANTOR 0.20. CP-SAT for fixed rooms and per-event duration, two-week institute model.
+"""KANTOR 0.21. CP-SAT for time and approved room choices, two-week institute model.
 Run locally: python solver/cp_sat.py input.json output.json --seconds 120
 No network or personal-data upload. Integer-weight objective distinct from UI heuristic.
 """
@@ -38,13 +38,24 @@ def journey(a, b, data):
     x = data["routes"].get(a["building"]+"|"+b["building"])
     return None if x is None else math.ceil(x + buf)
 
+def flexible(l): return "allowedRooms" in l
+
+def room_options(data,l):
+    """Return only documented permitted room/slot combinations, not inferred rooms."""
+    if not flexible(l):
+        return [(s,l) for s in sorted(set(l["allowedSlots"]))]
+    rooms=data["resourceEvidence"]["rooms"]
+    return [(s,{**l,"room":rid,"building":rooms[rid]["building"]})
+            for rid in sorted(l["allowedRooms"])
+            for s in sorted(set(l["allowedSlots"]) & set(rooms[rid]["availableSlots"]))]
+
 def resource_errors(data):
     """Optional documented resource contract in pilot; mandatory in institute-day.
     Available slots certify the complete relevant interval, not merely its start.
     """
     ev=data.get("resourceEvidence")
     if ev is None:
-        return ["Full scope requires resourceEvidence"] if data.get("scope")=="institute-day" else []
+        return ["Full scope requires resourceEvidence"] if data.get("scope")=="institute-day" or any(flexible(l) for l in data["lessons"]) else []
     if not isinstance(ev,dict): return ["resourceEvidence must be an object"]
     units,rooms,teachers=(ev.get(k) for k in ("units","rooms","teachers"))
     if not all(isinstance(x,dict) for x in (units,rooms,teachers)):
@@ -67,12 +78,24 @@ def resource_errors(data):
         known=all(evidence(v) and type(v.get("size")) is int and 1<=v["size"]<=10000 for v in sizes)
         req=l.get("requiredEquipment")
         if not tags(req): errors.append(lid+": explicit requiredEquipment list required")
-        if not evidence(x) or x.get("building")!=l["building"] or type(x.get("capacity")) is not int or not 1<=x["capacity"]<=10000 or not tags(x.get("equipment")) or not slots(x):
-            errors.append(lid+": missing/invalid room capacity, equipment, availability or source")
-        else:
-            if known and sum(v["size"] for v in sizes)>x["capacity"]: errors.append(lid+": room too small")
-            if tags(req) and not set(req)<=set(x["equipment"]): errors.append(lid+": required equipment missing")
-            if not set(l["allowedSlots"])<=set(x["availableSlots"]): errors.append(lid+": room unavailable in allowedSlots")
+        candidates=l.get("allowedRooms",[l["room"]])
+        if not isinstance(candidates,list) or not candidates or not all(isinstance(v,str) and v.strip() for v in candidates) or len(set(candidates))!=len(candidates) or len(candidates)>30:
+            errors.append(lid+": allowedRooms must contain 1–30 distinct room IDs")
+            candidates=[]
+        if flexible(l) and l["room"] not in candidates:
+            errors.append(lid+": original room must appear in allowedRooms")
+        possible=False
+        for rid in candidates:
+            x=rooms.get(rid)
+            if not evidence(x) or not isinstance(x.get("building"),str) or not x["building"].strip() or (rid==l["room"] and x["building"]!=l["building"]) or type(x.get("capacity")) is not int or not 1<=x["capacity"]<=10000 or not tags(x.get("equipment")) or not slots(x):
+                errors.append(lid+": missing/invalid room capacity, equipment, availability or source: "+rid)
+                continue
+            if known and sum(v["size"] for v in sizes)>x["capacity"]: errors.append(lid+": room too small: "+rid)
+            if tags(req) and not set(req)<=set(x["equipment"]): errors.append(lid+": required equipment missing: "+rid)
+            if flexible(l):
+                possible |= bool(set(l["allowedSlots"]) & set(x["availableSlots"]))
+            elif not set(l["allowedSlots"])<=set(x["availableSlots"]): errors.append(lid+": room unavailable in allowedSlots")
+        if flexible(l) and not possible: errors.append(lid+": no eligible room/slot pair")
         for t in l["teachers"]:
             y=teachers.get(t)
             if not evidence(y) or not slots(y): errors.append(lid+": missing/invalid teacher availability/source: "+t)
@@ -138,12 +161,21 @@ def validate(data):
 
 def audit(data, chosen, weights):
     """Independent direct calculation, using actual consecutive appointments."""
-    by=defaultdict(list); errors=[]; m=[0]*8
+    by=defaultdict(list); errors=[]; m=[0]*8; room_changes=0
     for l in data["lessons"]:
-        s=chosen.get(l["id"])
+        value=chosen.get(l["id"])
+        s,rid=value if isinstance(value,tuple) else (value,l["room"])
         if s not in l["allowedSlots"]: errors.append("Invalid/missing slot: "+l["id"]); continue
-        m[5]+=s!=l["slot"]; m[7]+=day(s)!=day(l["slot"])
-        for r in resources(l): by[r,day(s)].append((s,l,False))
+        if flexible(l):
+            if rid not in l["allowedRooms"] or s not in data["resourceEvidence"]["rooms"][rid]["availableSlots"]:
+                errors.append("Invalid room/slot pair: "+l["id"]); continue
+            selected={**l,"room":rid,"building":data["resourceEvidence"]["rooms"][rid]["building"]}
+        else:
+            if rid!=l["room"]: errors.append("Fixed room changed: "+l["id"]); continue
+            selected=l
+        room_changes+=rid!=l["room"]
+        m[5]+=s!=l["slot"] or rid!=l["room"]; m[7]+=day(s)!=day(l["slot"])
+        for r in resources(selected): by[r,day(s)].append((s,selected,False))
     if set(chosen)!={l["id"] for l in data["lessons"]}: errors.append("Assignment IDs differ")
     for b in data["blocked"]:
         for r in b["resources"]: by[r,day(b["slot"])].append((b["slot"],b,True))
@@ -164,7 +196,7 @@ def audit(data, chosen, weights):
             if tr is not None:
                 m[2 if g else 3]+=tr; m[6]+=gap-tr<10
             m[0 if g else 1]+=max(0,period(t)-period(s)-1)
-    return {"errors":errors,"metrics":dict(zip(METRICS,m)),"score":sum(x*w for x,w in zip(m,weights))}
+    return {"errors":errors,"metrics":dict(zip(METRICS,m)),"score":sum(x*w for x,w in zip(m,weights)),"room_changes":room_changes}
 
 def solve(data, profile="balanced", seconds=120, seed=2026):
     from ortools.sat.python import cp_model
@@ -174,10 +206,10 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
     choices={}; at=defaultdict(list); objective=[]; one=model.new_constant(1)
     for i,l in enumerate(data["lessons"]):
         vs=[]
-        for s in sorted(set(l["allowedSlots"])):
-            x=model.new_bool_var(f"x_{i}_{s}"); choices[l["id"],s]=x; vs.append(x)
-            objective.append((weights[5]*(s!=l["slot"])+weights[7]*(day(s)!=day(l["slot"])))*x)
-            for r in resources(l): at[r,day(s),period(s)].append((x,l,False))
+        for j,(s,a) in enumerate(room_options(data,l)):
+            x=model.new_bool_var(f"x_{i}_{j}"); choices[l["id"],s,a["room"]]=x; vs.append(x)
+            objective.append((weights[5]*(s!=l["slot"] or a["room"]!=l["room"])+weights[7]*(day(s)!=day(l["slot"])))*x)
+            for r in resources(a): at[r,day(s),period(s)].append((x,a,False))
         model.add_exactly_one(vs)
     for b in data["blocked"]:
         for r in b["resources"]: at[r,day(b["slot"]),period(b["slot"])].append((one,b,True))
@@ -232,11 +264,11 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
                         objective.append(coeff*z)
     # An independently verified existing timetable supplies a feasible warm start
     # and a safe upper bound: never return a worse score on this objective.
-    baseline_assignment={l["id"]:l["slot"] for l in data["lessons"]}
+    baseline_assignment={l["id"]:(l["slot"],l["room"]) for l in data["lessons"]}
     baseline_check=audit(data,baseline_assignment,weights)
     if not baseline_check["errors"]:
-        for (lid,s),x in choices.items():
-            model.add_hint(x,int(s==baseline_assignment[lid]))
+        for (lid,s,rid),x in choices.items():
+            model.add_hint(x,int((s,rid)==baseline_assignment[lid]))
         model.add(sum(objective)<=baseline_check["score"])
     model.minimize(sum(objective))
     solver=cp_model.CpSolver()
@@ -245,16 +277,17 @@ def solve(data, profile="balanced", seconds=120, seed=2026):
     solver.parameters.num_search_workers=1
     status=solver.solve(model)
     result={"status":solver.status_name(status),"profile":profile,"weights":dict(zip(METRICS,weights)),"seed":seed,"seconds_limit":seconds,"wall_seconds":solver.wall_time,
-            "warnings":["Fixed rooms and standard start times; per-event durationMinutes defaults to 95 when omitted. Full scope depends on validated input and external constraints.","Travel rounded up to whole minutes. Metrics include known external appointments on active days. Distinct objective from browser heuristic."]}
+            "warnings":["Approved room alternatives (if specified) and standard start times; per-event durationMinutes defaults to 95 when omitted. Full scope depends on validated input and external constraints.","Travel rounded up to whole minutes. Metrics include known external appointments on active days. Distinct objective from browser heuristic."]}
     if status not in (cp_model.OPTIMAL,cp_model.FEASIBLE):
         return result
-    chosen={lid:s for (lid,s),x in choices.items() if solver.boolean_value(x)}
+    chosen={lid:(s,rid) for (lid,s,rid),x in choices.items() if solver.boolean_value(x)}
     check=audit(data,chosen,weights)
     if check["errors"] or abs(check["score"]-solver.objective_value)>1e-6:
         raise RuntimeError("Independent audit failed: "+repr(check))
     result.update(objective=solver.objective_value,best_bound=solver.best_objective_bound,relative_gap=max(0,solver.objective_value-solver.best_objective_bound)/max(1,abs(solver.objective_value)),
                   baseline=baseline_check,audit=check,
-                  lessons=[{**l,"slot":chosen[l["id"]]} for l in data["lessons"]])
+                  lessons=[{**l,"slot":chosen[l["id"]][0],"room":chosen[l["id"]][1],
+                            "building":data["resourceEvidence"]["rooms"][chosen[l["id"]][1]]["building"] if flexible(l) else l["building"]} for l in data["lessons"]])
     return result
 
 def main():
