@@ -51,21 +51,32 @@ function normalizePhysical07(d,catalog){
 }
 
 function classifyPhysical07(r,catalog){
- let raw=r.raw.trim(), flat=raw.replace(/\s+/g," "), teacherPattern=/[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+(?:\s+[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+)*\s+[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\./gu;
- let rooms=[...flat.matchAll(/(?:^|\s|\.)((?:\d{2}[А-ЯA-Z]?)-\d{1,4}[А-Яа-яЁёA-Za-z]?)(?=$|\s|[,;])/gu)];
- let teachers=[...flat.matchAll(teacherPattern)];
- // A single teacher, numeric room, known building and ordinary type are necessary, not sufficient.
- let m=flat.match(/^(лек|пр|лаб)\s*\.\s*(.+?)\s+([А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+(?:\s+[А-ЯЁA-Z][А-ЯЁа-яёA-Za-z-]+)*\s+[А-ЯЁA-Z]\.\s*[А-ЯЁA-Z]\.)\s*(\d{2}[А-ЯA-Z]?-\d{1,4}[А-Яа-яЁёA-Za-z]?)$/u);
- let reason="";
+ const raw=r.raw.trim(), lines=raw.split(/\n/).map(s=>s.trim()).filter(Boolean), flat=raw.replace(/\s+/g," ");
+ const initials="[А-ЯЁA-Z]\\.\\s*[А-ЯЁA-Z]\\.";
+ const upper="[А-ЯЁA-Z][А-ЯЁA-Z-]+";
+ const room="\\d{2}[А-ЯA-Z]?-\\d{1,4}[А-Яа-яЁёA-Za-z]?";
+ const name=upper+"(?:\\s+"+upper+")*\\s+"+initials;
+ const terminal=new RegExp("^("+name+")\\s*("+room+")$","u");
+ const attached=new RegExp("^(.*?)\\s+("+upper+"\\s+"+initials+")\\s*("+room+")$","u");
+ const teacherMentions=[...flat.matchAll(new RegExp(initials,"gu"))];
+ const rooms=[...flat.matchAll(new RegExp(room+"(?=$|\\s|[,;])","gu"))];
+ let last=lines.at(-1)||"", m=last.match(terminal), title="",teacher="",roomValue="",reason="";
+ if(m&&lines.length>1){teacher=m[1];roomValue=m[2];title=lines.slice(0,-1).join(" ")}
+ else{
+  m=last.match(attached);
+  if(m){title=[...lines.slice(0,-1),m[1]].join(" ");teacher=m[2];roomValue=m[3];
+   // Uppercase text immediately before an attached surname is ambiguous (acronym vs compound surname).
+   if(new RegExp("(?:^|\\s)"+upper+"$","u").test(m[1]))reason="Неоднозначная граница фамилии и названия дисциплины";
+  }
+ }
+ let lesson=title.match(/^(лек|пр|лаб)\s*\.\s*(.+)$/u);
  if(r.geometryStatus!=="mapped")reason="Геометрия не определена";
- else if(/(?:\b[12]\s*п\/?г|подгрупп|[12]\s*пг|РКИ|КпоВ|ФТД|КМ:)/iu.test(flat))reason="Подгруппа, выборная дисциплина или специальная запись";
- else if(!m||teachers.length!==1||rooms.length!==1)reason="Сложная или неоднозначная структура преподавателя/аудитории";
- else if(!Object.hasOwn(catalog.buildings,m[4].split("-")[0]))reason="Корпус не найден в справочнике";
+ else if(/(?:[12]\s*п\/?г|подгрупп|РКИ|КпоВ|ФТД|КМ:)/iu.test(flat))reason="Подгруппа, выборная дисциплина или специальная запись";
+ else if(!lesson||!teacher||teacherMentions.length!==1||rooms.length!==1)reason="Сложная или неоднозначная структура преподавателя/аудитории";
+ else if(!Object.hasOwn(catalog.buildings,roomValue.split("-")[0]))reason="Корпус не найден в справочнике";
+ else if(/[;]|(?:лек|пр|лаб)\s*\./iu.test(lesson[2]))reason="Возможны несколько занятий";
  if(reason)return {...r,parseStatus:"manual",parseReason:reason,suggestion:null};
- // Teacher pattern can greedily include uppercase words from title; reject mismatches.
- let surname=m[3].replace(/\s+/g," ").trim(), title=m[2].trim();
- if(!title||/[;]|(?:лек|пр|лаб)\s*\./iu.test(title))return {...r,parseStatus:"manual",parseReason:"Возможны несколько занятий",suggestion:null};
- return {...r,parseStatus:"simple",parseReason:"Структурный кандидат; состав участников и достоверность требуют сверки",suggestion:{type:m[1],title,teacher:surname,room:m[4],building:m[4].split("-")[0]}};
+ return {...r,parseStatus:"simple",parseReason:"Структурный кандидат; состав участников и достоверность требуют сверки",suggestion:{type:lesson[1],title:lesson[2].trim().replace(/\s+/g," "),teacher:teacher.replace(/\s+/g," ").replace(/([А-ЯЁA-Z]\.)\s+([А-ЯЁA-Z]\.)$/u,"$1$2"),room:roomValue,building:roomValue.split("-")[0]}};
 }
 function semanticReview07(normalized,catalog){
  let records=normalized.flatMap(d=>d.records).map(r=>classifyPhysical07(r,catalog)), by=new Map(), events=[];
