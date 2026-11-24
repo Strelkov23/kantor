@@ -64,3 +64,18 @@ async function loadSpatial28(force=false){
  spatialPending28=(async()=>{const snap=await calendarSnapshot27(force);if(spatialCache28?.snapshot.manifest.checked===snap.manifest.checked)return {...spatialCache28,snapshot:snap};const [files,aliases]=await Promise.all([calendarFiles27(snap),getJson08("data/location-aliases-14.json")]);const report=spatialReport28(snap.manifest,files,instituteCatalog,aliases);spatialCache28={report,aliases,snapshot:snap};return spatialCache28})();
  try{return await spatialPending28}finally{spatialPending28=null}
 }
+
+let campusSummary28={data:null,snapshot:null,loading:false,error:""};
+function renderCampusSummary28(){
+ const s=campusSummary28,d=s.data?.strict,t=d?.totals;
+ let html='<section class="panel"><div class="eyebrow23">Календарная диагностика</div><h2>Насколько удобно перемещаться между корпусами?</h2><p>Последовательные временные блоки групп, фактические интервалы между занятиями и однозначно распознанные корпуса.</p><div class="row"><button class="primary" id="campusRefresh28" '+(s.loading?"disabled":"")+'>'+(s.loading?"Расчёт…":d?"Обновить расчёт":"Рассчитать по календарю")+'</button><button data-tab="survey15">Проверить время ходьбы</button><button data-tab="campus13">Карта и подробный отчёт</button></div><p role="status">'+esc(s.error)+'</p>';
+ if(!d)return html+'<p class="muted">Данные появятся после загрузки проверенного календарного снимка.</p></section>';
+ const short=d.routes.reduce((n,r)=>n+Object.entries(r.gaps).reduce((a,[g,v])=>a+(+g<=20?v:0),0),0);
+ return html+'<div class="source23">'+esc(calendarStatus27(s.snapshot))+'</div><div class="grid">'+[["Внутри корпуса",t.same],["Между корпусами",t.cross],["До 20 минут между корпусами",short],["Неизвестная локация",t.unknown],["Дней с неизвестным временем",t.unusableDays]].map(([n,v])=>'<div class="metric"><small>'+esc(n)+'</small><strong>'+v+'</strong></div>').join("")+'</div><h3>Самые частые направления</h3>'+chartRows12(d.routes.slice(0,8).map(r=>[r.from+" → "+r.to,r.count]))+'<p class="muted">Число переходов групповых блоков, а не отдельных людей. Короткий перерыв сам по себе не означает риск опоздания: нужно знать время пути. Неизвестная локация не считается нулевым переходом.</p></section>';
+}
+async function refreshCampus28(force=false){
+ const s=campusSummary28;if(s.loading)return;s.loading=true;s.error="";render();
+ try{const r=await loadSpatial28(force);s.data=r.report;s.snapshot=r.snapshot}catch(e){s.error=e.message}
+ s.loading=false;if(visible16("space12"))render();
+}
+function bindCampusSummary28(){on("campusRefresh28","click",()=>refreshCampus28(true))}
