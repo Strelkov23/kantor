@@ -85,7 +85,24 @@ function candidates29(d){
   }
  }
  results.sort((a,b)=>(b.groupBefore.windows-b.groupAfter.windows)-(a.groupBefore.windows-a.groupAfter.windows)||(b.groupBefore.span-b.groupAfter.span)-(a.groupBefore.span-a.groupAfter.span)||a.unresolved-b.unresolved||a.group.localeCompare(b.group,"ru")||a.date.localeCompare(b.date)||a.oldStart-b.oldStart||a.newStart-b.newStart);
+ const rejected=["occupied","orderOrTravel","noJointImprovement","ambiguousMatchingResource"].reduce((n,k)=>n+(reasons[k]||0),0);
+ if(eligible!==d.totals.eligible||attempts!==rejected+results.length||results.length!==[...groupCounts.values()].reduce((a,b)=>a+b,0))throw Error("Нарушен баланс проверки вариантов");
+ // Recheck each reported move against the original flat snapshot rather than relying
+ // on the indexes used to generate it.
+ for(const x of results)if(!auditMove29(d.cards,x))throw Error("Независимая проверка переноса не пройдена");
  return {checked:d.checked,eligible,attempts,reasons,results,groupCounts:Object.fromEntries(groupCounts)};
+}
+function auditMove29(cards,x){
+ const q=cards.find(c=>c.id===x.id);
+ if(!q||!q.eligible||q.date!==x.date||q.group!==x.group||q.subject!==x.subject||q.teacherName!==x.teacher||q.room!==x.room||q.start!==x.oldStart||q.end!==x.oldEnd||!starts29.includes(x.newStart)||x.newStart===q.start||x.newEnd-x.newStart!==q.end-q.start)return false;
+ const day=cards.filter(c=>c.date===q.date),next={...q,start:x.newStart,end:x.newEnd};
+ if(day.some(c=>c.id!==q.id&&c.time&&c.start<next.end&&next.start<c.end&&(c.group===q.group||c.teacher===q.teacher||c.roomKey===q.roomKey)))return false;
+ const group=day.filter(c=>c.group===q.group),teacher=unique29(day.filter(c=>c.teacher===q.teacher));
+ for(const [a,oldScore,newScore] of [[group,x.groupBefore,x.groupAfter],[teacher,x.teacherBefore,x.teacherAfter]]){
+  const b=a.map(c=>c.id===q.id?next:c);
+  if(collision29(a)||collision29(b)||!routeSafe29(a,b)||JSON.stringify(dayScore29(a))!==JSON.stringify(oldScore)||JSON.stringify(dayScore29(b))!==JSON.stringify(newScore))return false;
+ }
+ return x.groupAfter.windows<x.groupBefore.windows&&x.groupAfter.span<=x.groupBefore.span&&x.teacherAfter.windows<=x.teacherBefore.windows&&x.teacherAfter.span<=x.teacherBefore.span;
 }
 let opportunities29={data:null,readiness:null,snapshot:null,loading:false,error:"",course:"all",group:"",selected:"",view:"moves"};
 async function loadOpportunities29(){
