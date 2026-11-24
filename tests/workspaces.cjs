@@ -309,3 +309,41 @@ assert.equal(api32.monday32("2027-01-01"),"2026-12-28");
 assert.throws(()=>api32.monday32("2026-02-30"));
 assert.throws(()=>api32.weekAggregate32(manifest,files.slice(1),cat));
 console.log("Academic cycle:",JSON.stringify(weeks32.periods.map(p=>({start:p.monday,type:p.status,evidence:p.evidence,cards:p.totals.cards,windows:p.totals.windows}))));
+
+const src33=["diagnostics-25.js","rooms-18.js","resource-diagnostics-26.js","spatial-current-28.js","opportunities-29.js","evidence-register-31.js","academic-weeks-32.js","interday-33.js"].map(read).join("\n");
+const api33=new Function(src33+"\nreturn {readiness29,reviewRegistry31,weekAggregate32,context33,interday33,verifyInterday33,possibleResource33};")();
+const ctx33=api33.context33(ready30,reg31,weeks32,files,manifest),result33=api33.interday33(ctx33);
+assert.equal(result33.attempts,22835);
+assert.equal(result33.moves.length,0);
+assert.deepEqual(result33.reasons,{"inactive-teacher-day":7840,"order-travel-or-overlap":6563,"subject-order":3492,"worse-load":377,"no-gain":12,"ambiguous-or-overlap-day":4210,"week-or-source":340,"explicit-resource":1});
+const gs33=manifest.groups.map(g=>({...g,cards:0})),fs33=gs33.map(g=>({group:g.group,course:g.course,checked:manifest.checked,comparisons:[]}));
+const teacher33="Иванов Иван Иванович";
+const card33=(date,start,subject,teachers=teacher33,rooms="02-101",weekLabel="Неделя: Верхняя")=>({calendar:{date,subject,type:"Практика",teachers,rooms,weekLabel,time:"Тест"},timing:{start,end:start+95},status:"text-and-room-match"});
+const source33=[card33("2026-11-23",540,"А"),card33("2026-11-23",655,"Б"),card33("2026-11-23",1010,"В"),card33("2026-11-24",540,"Г")];
+fs33[0].comparisons=source33.slice();
+function fixture33(){
+ gs33.forEach((g,i)=>g.cards=fs33[i].comparisons.length);
+ const m={...manifest,groups:gs33,totals:{cards:gs33.reduce((n,g)=>n+g.cards,0)}};
+ const r=api33.readiness29(m,fs33,cat,aliases28),v=api33.reviewRegistry31(m,fs33,cat);
+ // Synthetic explicit week contract; not a public timetable or inferred week.
+ const w={checked:m.checked,cycle:"verified-alternation",byGroup:new Map(gs33.map(g=>[g.group,[{monday:"2026-11-23",status:"upper",dates:["2026-11-23","2026-11-24"]},{monday:"2026-11-30",status:"lower",dates:["2026-11-30"]}]]))};
+ return api33.context33(r,v,w,fs33,m);
+}
+let fx33=fixture33(),q33=fx33.ready.cards.find(q=>q.subject==="В");
+const good33=api33.verifyInterday33(fx33,q33,"2026-11-24",655).move;
+assert.ok(good33);
+assert.equal(good33.groupBefore.windows,2);
+assert.equal(good33.groupAfter.windows,0);
+assert.equal(good33.groupBefore.span-good33.groupAfter.span,240);
+assert.equal(good33.unresolved,0);
+assert.equal(api33.verifyInterday33(fx33,q33,"2026-11-30",655).reason,"not-eligible");
+fs33[1].comparisons=[card33("2026-11-24",655,"Занято","Петров Петр Петрович","02-101; 02-102")];
+fx33=fixture33();q33=fx33.ready.cards.find(q=>q.subject==="В");
+assert.equal(api33.verifyInterday33(fx33,q33,"2026-11-24",655).reason,"explicit-resource");
+fs33[1].comparisons=[card33("2026-11-24",655,"Занято","Иванов И.И.","02-103")];
+fx33=fixture33();q33=fx33.ready.cards.find(q=>q.subject==="В");
+assert.equal(api33.verifyInterday33(fx33,q33,"2026-11-24",655).reason,"ambiguous-match");
+fs33[1].comparisons=[];fs33[0].comparisons=[...source33.slice(0,3),card33("2026-11-24",540,"Г",teacher33,"03-101")];
+fx33=fixture33();q33=fx33.ready.cards.find(q=>q.subject==="В");
+assert.equal(api33.verifyInterday33(fx33,q33,"2026-11-24",655).reason,"order-travel-or-overlap");
+console.log("Interday screening:",JSON.stringify({attempts:result33.attempts,moves:result33.moves.length,reasons:result33.reasons}));
