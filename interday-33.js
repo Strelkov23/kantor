@@ -7,7 +7,7 @@ function context33(ready,registry,weeks,files,manifest){
  if(weeks.cycle!=="verified-alternation")throw Error("Учебный цикл не подтверждён для всех групп");
  const byId=new Map(ready.cards.map(q=>[q.id,q])),occ=new Map(registry.occupancy.entries.map(q=>[q.id,q]));
  if(byId.size!==ready.cards.length||occ.size!==byId.size||ready.cards.some(q=>!occ.has(q.id)))throw Error("Несогласованный реестр ресурсов");
- const metadata=new Map(),teacherDays=new Map(),roomDays=new Map(),groupDays=new Map(),datesByGroup=new Map();
+ const metadata=new Map(),teacherDays=new Map(),roomDays=new Map(),groupDays=new Map(),datesByGroup=new Map(),subjectWeeks=new Map(),dateCards=new Map();
  const add=(m,k,x)=>{if(!m.has(k))m.set(k,[]);m.get(k).push(x)};
  const key=(v,date)=>JSON.stringify([v,date]);
  for(let i=0;i<files.length;i++){
@@ -21,13 +21,13 @@ function context33(ready,registry,weeks,files,manifest){
  }
  for(const q of ready.cards){
   const o=occ.get(q.id);
-  add(groupDays,key(q.group,q.date),q);
+  add(groupDays,key(q.group,q.date),q);add(dateCards,q.date,q);add(subjectWeeks,JSON.stringify([q.group,monday32(q.date),key26(q.subject)]),q);
   if(!datesByGroup.has(q.group))datesByGroup.set(q.group,new Set());
   datesByGroup.get(q.group).add(q.date);
   for(const t of o.knownTeachers)add(teacherDays,key(t,q.date),q);
   for(const r of o.knownRooms)add(roomDays,key(r,q.date),q);
  }
- return {ready,registry,weeks,byId,occ,metadata,teacherDays,roomDays,groupDays,datesByGroup,key};
+ return {ready,registry,weeks,byId,occ,metadata,teacherDays,roomDays,groupDays,datesByGroup,subjectWeeks,dateCards,key};
 }
 function scoreDays33(days){
  const sum={windows:0,span:0,activeDays:0,lessonMinutes:0,maxSpan:0,maxBlocks:0};
@@ -56,7 +56,7 @@ function adjacency33(before,after){
 function possibleResource33(ctx,q,newDate,start){
  const next={...q,date:newDate,start,end:start+95},o=ctx.occ.get(q.id),moved={...o,date:newDate,start,end:start+95},unclear=new Set();
  // Scan both original and target intervals against every explicit resource token.
- for(const v of ctx.ready.cards){
+ for(const v of [...(ctx.dateCards.get(q.date)||[]),...(newDate===q.date?[]:ctx.dateCards.get(newDate)||[])]){
   if(v.id===q.id)continue;
   const e=ctx.occ.get(v.id);
   const original=v.date===q.date&&(!v.time||overlap29(v,q));
@@ -84,7 +84,7 @@ function verifyInterday33(ctx,q,date,start){
  // Protect sequence of the same subject, including other weekdays of this week.
  const next={...q,date,start,end:start+95},position=x=>x.date+"|"+String(x.start).padStart(4,"0");
  const sign=(a,b)=>Math.sign(position(a).localeCompare(position(b)));
- if(ctx.ready.cards.some(x=>x.id!==q.id&&x.group===q.group&&monday32(x.date)===w.monday&&key26(x.subject)===key26(q.subject)&&(!x.time||sign(q,x)!==sign(next,x))))return {reason:"subject-order"};
+ if((ctx.subjectWeeks.get(JSON.stringify([q.group,w.monday,key26(q.subject)]))||[]).some(x=>x.id!==q.id&&(!x.time||sign(q,x)!==sign(next,x))))return {reason:"subject-order"};
  const afterG=[ga.filter(x=>x.id!==q.id),[...gb,next]],afterT=[ta.filter(x=>x.id!==q.id),[...tb,next]];
  if(!adjacency33([ga,gb],afterG)||!adjacency33([ta,tb],afterT))return {reason:"order-travel-or-overlap"};
  const G=scoreDays33([ga,gb]),T=scoreDays33([ta,tb]),G2=scoreDays33(afterG),T2=scoreDays33(afterT);
