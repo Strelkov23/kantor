@@ -1,5 +1,11 @@
 /* 0.28: recompute spatial reports from the selected calendar snapshot. */
 function classifyLocation28(raw,known,aliases,mode){
+ // Baseline 0.13 accepts a single conventional code in the original field.
+ // Do not discard separators before checking the baseline: "01-213;" is a list.
+ if(mode==="numbered"){
+  const value=String(raw??"").trim(),m=value.match(/^(\d{2}[А-ЯA-Z]?)-\d{1,4}[А-Яа-яЁёA-Za-z]?$/u);
+  return m&&Object.hasOwn(known,m[1])&&m[1]!=="29"?{building:m[1],reason:"numbered"}:{building:null,reason:value?"unresolved":"missing"};
+ }
  const parts=String(raw??"").split(/;| \/ /).map(s=>s.trim().replace(/\s+/gu," ")).filter(Boolean);
  if(!parts.length)return {building:null,reason:"missing"};
  const ids=[],reasons=[];
