@@ -130,6 +130,14 @@ jobs:
                       await page.locator("#disciplineExport28").waitFor({timeout:30000});
                       await page.locator("#disciplineGroup28").selectOption({index:1});
                       assert.equal(await page.locator("#disciplineGroup28 option").count(),83);
+                      await page.locator('[data-analysis26="evidence"]').click();
+                      await page.locator('#reviewExport31').waitFor({timeout:30000});
+                      await page.locator('[data-review-select31]').first().click();
+                      await page.locator('#reviewDetail31').waitFor();
+                      await page.locator('[data-review-mode31="teachers"]').click();
+                      assert.ok(await page.locator('[data-review-select31]').count()>0);
+                      await page.locator('[data-review-mode31="subgroups"]').click();
+                      assert.ok(await page.locator('[data-review-select31]').count()>0);
                       await page.locator('[data-analysis26="groups"]').click();
 
                     }
