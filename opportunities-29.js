@@ -105,10 +105,9 @@ function auditMove29(cards,x){
  return x.groupAfter.windows<x.groupBefore.windows&&x.groupAfter.span<=x.groupBefore.span&&x.teacherAfter.windows<=x.teacherBefore.windows&&x.teacherAfter.span<=x.teacherBefore.span;
 }
 let opportunities29={data:null,readiness:null,snapshot:null,loading:false,error:"",course:"all",group:"",selected:"",view:"moves",week:"all"};
-async function loadOpportunities29(){
- const s=opportunities29;if(s.loading)return;s.loading=true;s.error="";render();
- try{const snap=await calendarSnapshot27(true),[files,aliases]=await Promise.all([calendarFiles27(snap),getJson08("data/location-aliases-14.json")]);const ready=readiness29(snap.manifest,files,instituteCatalog,aliases),data=candidates29(ready);s.readiness=ready;s.data=data;s.snapshot=snap;s.selected="";prepareWeeks32(snap,files);for(const x of data.results){const w=week32.data?.byGroup.get(x.group)?.find(w=>w.monday===monday32(x.date));x.weekType=w?.status||"unknown";x.weekStart=monday32(x.date)}s.week="all";prepareJoint30(ready,data);prepareReport30(snap,files,aliases,ready,data);prepareReview31(snap,files);prepareInterday33(snap,files)}catch(e){s.error=e.message}
- s.loading=false;if(visible16("scenarios"))render();
+async function loadOpportunities29(selectedSnapshot=null){
+ const s=opportunities29;if(s.loading||multi39.running)return;s.loading=true;s.error="";render();
+ try{const snap=selectedSnapshot||await calendarSnapshot27(true);if(s.snapshot&&Date.parse(snap.manifest.checked)<=Date.parse(s.snapshot.manifest.checked)&&inter33.context){s.error=snap.warning||"Используется уже загруженная версия; расчёты сохранены.";return}const [files,aliases]=await Promise.all([calendarFiles27(snap),getJson08("data/location-aliases-14.json")]);const ready=readiness29(snap.manifest,files,instituteCatalog,aliases),data=candidates29(ready);s.readiness=ready;s.data=data;s.snapshot=snap;s.selected="";prepareWeeks32(snap,files);for(const x of data.results){const w=week32.data?.byGroup.get(x.group)?.find(w=>w.monday===monday32(x.date));x.weekType=w?.status||"unknown";x.weekStart=monday32(x.date)}s.week="all";prepareJoint30(ready,data);prepareReport30(snap,files,aliases,ready,data);prepareReview31(snap,files);prepareInterday33(snap,files);resetUpdates52()}catch(e){s.error=e.message}finally{s.loading=false;if(visible16("scenarios"))render()}
 }
 function opportunityRows29(){let s=opportunities29;return (s.data?.results||[]).filter(x=>(s.course==="all"||x.course===+s.course)&&(s.week==="all"||s.week===(x.weekType||"unknown"))&&key26(x.group).includes(key26(s.group)))}
 function renderOpportunities29(){
