@@ -7,11 +7,18 @@ function groupRows07(){return group07.data?.records?.filter(r=>r.groups.includes
 function groupSchedule07(){
  let a=groupRows07(),d=group07.data;
  if(!d)return "";
- let rows=Array.from({length:5},(_,p)=>'<tr><th>'+times[p]+'</th>'+days.slice(0,5).map((_,day)=>{
+ const timesEnd=["10:35","12:30","14:35","16:30","18:25"];
+ function lessonCard(r){
+   let kind=/^лек\s*\./u.test(r.raw)?"lecture":/^пр\s*\./u.test(r.raw)?"practice":"other",label=kind==="lecture"?"Лекция":kind==="practice"?"Практика":"Другой вид";
+   let s=r.suggestion;
+   return '<div class="schedulecard12 '+kind+'"><span class="lesson-type12 '+kind+'">'+label+'</span>'+(s?'<b>'+esc(s.title)+'</b><small>'+esc(s.teacher)+'</small><span class="room12">'+esc(s.room)+'</span>':'<div style="white-space:pre-line">'+esc(r.raw)+'</div>')+'<details><summary>Источник и статус</summary><div style="white-space:pre-line">'+esc(r.raw)+'</div><small>'+ (r.parseStatus==="simple"?"Структурный кандидат":"Нужна сверка")+' · <a target="_blank" rel="noopener" href="'+esc(d.source)+'#page='+r.page+'">'+esc(r.id)+'</a></small></details></div>';
+ }
+ let rows=Array.from({length:5},(_,p)=>'<tr><th>'+times[p]+'<small>'+timesEnd[p]+'</small></th>'+days.slice(0,5).map((_,day)=>{
   let list=a.filter(r=>r.day===day&&r.period===p);
-  return '<td style="vertical-align:top;min-width:155px">'+(list.length?list.map(r=>'<div style="white-space:pre-line;text-align:left">'+esc(r.raw)+'</div><small class="muted">'+(r.parseStatus==="simple"?"Структурный кандидат":"Нужна сверка")+' · <a target="_blank" rel="noopener" href="'+esc(d.source)+'#page='+r.page+'">'+esc(r.id)+'</a></small>').join("<hr>"):'<span class="muted">—</span>')+'</td>'
+  return '<td style="vertical-align:top;min-width:155px">'+(list.length?list.map(lessonCard).join(""):'<span class="muted">—</span>')+'</td>'
  }).join("")+'</tr>').join("");
- return '<p>В этой половине расписания: '+a.length+' непустых позиций. Пустая ячейка означает отсутствие извлечённого текста, а не гарантию отсутствия оперативных изменений.</p><div class="scroll"><table><thead><tr><th>Пара</th>'+days.slice(0,5).map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+rows+'</tbody></table></div><p><button id="groupCSV07">CSV расписания группы</button> <button id="groupJSON07">JSON исходного курса</button></p>'
+ let mobile=days.map((n,day)=>'<section class="daycard12"><h3>'+esc(["Понедельник","Вторник","Среда","Четверг","Пятница"][day])+'</h3>'+a.filter(r=>r.day===day).sort((x,y)=>x.period-y.period).map(r=>'<div class="daylesson12"><div class="daytime12">'+times[r.period]+'<small>'+timesEnd[r.period]+'</small></div>'+lessonCard(r)+'</div>').join("")+(a.some(r=>r.day===day)?"":'<p class="muted">Нет извлечённых занятий</p>')+'</section>').join("");
+ return '<p>В этой половине расписания: '+a.length+' непустых позиций. Цвет показывает предполагаемый вид занятия; исходный текст доступен в карточке. Время окончания — стандартное из PDF, не оперативный журнал.</p><div class="schedule-desktop12 scroll"><table><thead><tr><th>Время</th>'+days.slice(0,5).map(x=>'<th>'+esc(x)+'</th>').join("")+'</tr></thead><tbody>'+rows+'</tbody></table></div><div class="schedule-mobile12">'+mobile+'</div><p class="muted">Отсутствие записи не исключает оперативных изменений.</p><p><button id="groupCSV07">CSV расписания группы</button> <button id="groupJSON07">JSON исходного курса</button></p>'
 }
 function reportView07(){
  let r=group07.report;if(!r)return '<p>Нажмите «Загрузить отчёт».</p>';
