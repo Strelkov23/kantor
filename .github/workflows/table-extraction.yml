@@ -1,0 +1,39 @@
+name: KANTOR table extraction
+on:
+  push:
+    paths:
+      - 'ingest/extract_tables.py'
+      - '.github/workflows/table-extraction.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kantor-table-extraction
+  cancel-in-progress: false
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r ingest/requirements.txt
+      - run: python ingest/extract_tables.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: institute-physical-tables
+          path: data/source-tables/
+          retention-days: 14
+      - name: Preserve source snapshot in repository
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/source-tables/
+          if ! git diff --cached --quiet; then
+            git commit -m "Preserve review-only official institute table extraction"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
