@@ -311,7 +311,7 @@ assert.throws(()=>api32.weekAggregate32(manifest,files.slice(1),cat));
 console.log("Academic cycle:",JSON.stringify(weeks32.periods.map(p=>({start:p.monday,type:p.status,evidence:p.evidence,cards:p.totals.cards,windows:p.totals.windows}))));
 
 const src33=["diagnostics-25.js","rooms-18.js","resource-diagnostics-26.js","spatial-current-28.js","opportunities-29.js","evidence-register-31.js","academic-weeks-32.js","interday-33.js"].map(read).join("\n");
-const api33=new Function(src33+"\nreturn {readiness29,reviewRegistry31,weekAggregate32,context33,interday33,verifyInterday33,possibleResource33};")();
+const api33=new Function(src33+"\nreturn {readiness29,reviewRegistry31,weekAggregate32,context33,interday33,verifyInterday33,possibleResource33,resourceReview33};")();
 const ctx33=api33.context33(ready30,reg31,weeks32,files,manifest),result33=api33.interday33(ctx33);
 assert.equal(result33.attempts,22835);
 assert.equal(result33.moves.length,0);
@@ -347,3 +347,6 @@ fs33[1].comparisons=[];fs33[0].comparisons=[...source33.slice(0,3),card33("2026-
 fx33=fixture33();q33=fx33.ready.cards.find(q=>q.subject==="В");
 assert.equal(api33.verifyInterday33(fx33,q33,"2026-11-24",655).reason,"order-travel-or-overlap");
 console.log("Interday screening:",JSON.stringify({attempts:result33.attempts,moves:result33.moves.length,reasons:result33.reasons}));
+
+const resourceReviewFixture33=api33.resourceReview33(ctx33,screen30);
+assert.deepEqual(resourceReviewFixture33.map(x=>[x.group,x.previousUnclear,x.remainingUnclear,x.explicitHits.length]),[["ДЭ 16-26",33,28,0],["Д-Э 441",47,33,0]]);
