@@ -54,9 +54,9 @@ function spatialReport28(manifest,files,catalog,aliases){
  if(manifest.complete!==true||manifest.groups.length!==83||files.length!==83||new Set(manifest.groups.map(g=>g.group)).size!==83||manifest.groups.some(g=>!catalog.groups.some(c=>c.id===g.group)))throw Error("Нужны 83 группы");
  files.forEach((f,i)=>{let g=manifest.groups[i];if(f.group!==g.group||f.checked!==manifest.checked||f.comparisons.length!==g.cards)throw Error("Несовпадение снимка")});
  const calc=mode=>combineSpatial28(files.map(f=>spatialGroup28(f,catalog.buildings,aliases.aliases,mode)));
- const previous=calc("numbered").totals,strict=calc("strict"),expanded=calc("expanded");
+ const numbered=calc("numbered"),previous=numbered.totals,strict=calc("strict"),expanded=calc("expanded");
  if(strict.totals.cards!==manifest.totals.cards||strict.totals.transitions!==previous.transitions||expanded.totals.transitions!==previous.transitions||strict.totals.unknown>previous.unknown||expanded.totals.unknown>strict.totals.unknown)throw Error("Некорректное уточнение");
- return {version:"0.14",checked:manifest.checked,previous,strict,expanded,notes:"Пересчитано по выбранному календарному снимку. Строгий режим учитывает только однозначные корпуса; ФОС — отдельная гипотеза. Не индивидуальные маршруты и не замеры ходьбы."};
+ return {version:"0.14",checked:manifest.checked,previous,numbered,strict,expanded,notes:"Пересчитано по выбранному календарному снимку. Строгий режим учитывает только однозначные корпуса; ФОС — отдельная гипотеза. Не индивидуальные маршруты и не замеры ходьбы."};
 }
 let spatialCache28=null,spatialPending28=null;
 async function loadSpatial28(force=false){
