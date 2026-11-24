@@ -89,6 +89,13 @@ jobs:
                       await page.locator('#advancedToggle23').click();
                       await page.locator('#personalDay23').selectOption('all');
                     }
+                    if(id==='baseline09') {
+                      await page.locator('#exportDiag25').waitFor({timeout:30000});
+                      assert.equal(await page.locator('#courseDiag25 option').count(),6);
+                      await page.locator('#courseDiag25').selectOption('4');
+                      assert.ok(await page.locator('[data-diag-group25]').count()>0);
+                      await page.locator('#courseDiag25').selectOption('all');
+                    }
                     // Wait for local fetches without requiring external services.
                     await page.waitForLoadState('networkidle');
                     await page.screenshot({path:'browser-report/'+name+'-'+id+'.png',fullPage:true});
