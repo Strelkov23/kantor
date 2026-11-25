@@ -1,7 +1,7 @@
 name: KANTOR browser smoke checks
 on:
   push:
-    branches: [main, ux-decision-workflow-054]
+    branches: [main, ux-decision-workflow-054, decision-comparison-055]
     paths:
       - '**.js'
       - '**.css'
@@ -200,6 +200,12 @@ jobs:
                           assert.ok(await card.getByText('Проверка данных:',{exact:true}).isVisible());
                           assert.equal(await card.locator('details').getAttribute('open'),null);
                         }
+                        const compare55=page.getByRole('region',{name:'Сравнение моделей'});
+                        assert.equal(await compare55.locator('tbody tr').count(),8);
+                        assert.equal(await compare55.locator('thead button').count(),4);
+                        await compare55.locator('thead button').nth(2).click();
+                        assert.equal(await page.locator('[data-pick45="2"]').getAttribute('aria-pressed'),'true');
+                        assert.match(await compare55.innerText(),/Сравнение по 7 критериям/);
                         await page.locator('#chartMetric51').selectOption('windows');
                         await page.locator('[data-pick45="1"]').click();
                         assert.equal(await page.locator('[data-pick45="1"]').getAttribute('aria-pressed'),'true');
