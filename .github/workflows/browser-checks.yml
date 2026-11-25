@@ -1,7 +1,7 @@
 name: KANTOR browser smoke checks
 on:
   push:
-    branches: [main]
+    branches: [main, ux-decision-workflow-054]
     paths:
       - '**.js'
       - '**.css'
@@ -112,6 +112,17 @@ jobs:
                       if(await head.getAttribute('aria-expanded')!=='true') await head.click();
                       await page.locator('#tool16-'+tool+' .foldbody16').waitFor();
                     }
+                    if(id==='home12') {
+                      const home=page.locator('#tool16-home12');
+                      for(const title of ['1. Исходное расписание','2. Критерии и ограничения оптимизации','3. Расчёт и сравнение альтернатив']){
+                        assert.ok(await home.getByRole('heading',{name:title,exact:true}).isVisible());
+                      }
+                      await home.getByRole('button',{name:'Расчёт альтернатив',exact:true}).waitFor();
+                      await page.waitForFunction(()=>{const d=visual12.homeDiag;return !!d&&d.checked===visual12.calendar?.checked},null,{timeout:30000});
+                      const metrics=await page.evaluate(()=>({groups:visual12.homeDiag.groups.length,cards:visual12.homeDiag.totals.cards,windows:visual12.homeDiag.totals.windows}));
+                      assert.deepEqual(metrics,{groups:83,cards:2599,windows:92});
+                      assert.ok(await home.locator('.metric').filter({hasText:'Окна между парами'}).locator('strong').filter({hasText:/^92$/}).isVisible());
+                    }
                     if(id==='space12') {
                       await page.locator("#campusRefresh28").waitFor();
                       await page.locator("#tool16-space12 .source23").waitFor({timeout:30000});
@@ -180,6 +191,15 @@ jobs:
                         await page.locator('#guideRun45').click();
                         await page.locator('#guideResults45').waitFor({timeout:180000});
                         assert.equal(await page.locator('[data-pick45]').count(),4);
+                        const choices=page.locator('#guideResults45 .choice45');
+                        assert.equal(await choices.count(),4);
+                        for(const card of await choices.all()){
+                          assert.match(await card.innerText(),/Исходное → расчётное значение/);
+                          assert.match(await card.locator('dd').first().innerText(),/^\d+ → \d+ \((?:−\d+|\+\d+|0)\)$/);
+                          assert.ok(await card.getByText('Окна преподавателей, ед.',{exact:true}).isVisible());
+                          assert.ok(await card.getByText('Проверка данных:',{exact:true}).isVisible());
+                          assert.equal(await card.locator('details').getAttribute('open'),null);
+                        }
                         await page.locator('#chartMetric51').selectOption('windows');
                         await page.locator('[data-pick45="1"]').click();
                         assert.equal(await page.locator('[data-pick45="1"]').getAttribute('aria-pressed'),'true');
