@@ -402,3 +402,20 @@ assert.match(status55(saved55,Date.parse("2026-11-26T19:00:00Z")),/старше 
 assert.doesNotMatch(status55(saved55,Date.parse("2026-12-06T20:59:00Z")),/Период расписания истёк/);
 assert.match(status55(saved55,Date.parse("2026-12-06T21:00:00Z")),/Период расписания истёк/);
 console.log("Schedule coverage and Moscow midnight expiry: passed");
+
+
+ // Version 0.55: trade-off analysis and honest signed charts.
+const decision55=new Function("esc",read("responsive-optimization-51.js")+"\nreturn {signedBars55,compareModels55,renderComparison55,chartModels51};")(String);
+const run55=(name,g,t,span,cross,tc,moves,uncertain)=>({name,before:{group:{windows:10,span:1000},teacher:{windows:10}},after:{group:{windows:10-g,span:1000-span},teacher:{windows:10-t}},groupCross:cross,teacherCross:tc,moves:Array.from({length:moves},()=>({})),uncertain});
+const good55=run55("A",3,2,100,4,2,5,0),worse55=run55("B",2,1,80,3,1,6,1),trade55=run55("C",4,1,90,-2,3,5,0),equal55={...good55,name:"D"};
+assert.deepEqual(decision55.compareModels55([good55,worse55,trade55,equal55]).dominatedBy,[[],[0,3],[],[]]);
+assert.deepEqual(decision55.compareModels55([good55,{...worse55,uncertain:undefined}]).dominatedBy,[[],[]]);
+const bars55=decision55.signedBars55([-4,0,2,undefined]);
+assert.deepEqual(bars55,[{left:0,width:50,negative:true,signed:true},{left:50,width:0,negative:false,signed:true},{left:50,width:25,negative:false,signed:true},null]);
+assert.equal(decision55.signedBars55([0,5])[1].width,100);
+assert.match(decision55.chartModels51([good55,trade55],0),/background:#b42318/);
+const html55=decision55.renderComparison55([good55,worse55,trade55,equal55],0);
+assert.match(html55,/Уступает: A, D/);
+assert.match(html55,/−2/);
+assert.match(decision55.renderComparison55([good55,{...worse55,uncertain:undefined}],0),/Недостаточно данных/);
+console.log("Decision comparison: Pareto, trade-offs, ties, missing values and signed chart passed");
